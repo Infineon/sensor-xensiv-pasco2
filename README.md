@@ -44,11 +44,11 @@ This code example requires the XENSIV™ PAS CO2 Wing Board as part of the Conne
 
 - [Connected Sensor Kit](https://www.infineon.com/connectedsensorkit)
 - [CYSBSYSKIT-DEV-01](https://github.com/cypresssemiconductorco/TARGET_CYSBSYSKIT-DEV-01)
-- [API Reference Guide](https://cypresssemiconductorco.github.io/pasco2_api_reference_manual/html/index.html)
-- [CO2 Sensors](https://www.infineon.com/cms/en/product/sensor/co2-sensors/#)
+- [API Reference Guide](https://cypresssemiconductorco.github.io/sensor-xensiv-pasco2/pasco2_api_reference_manual/html/index.html)
+- [CO2 Sensors](https://www.infineon.com/cms/en/product/sensor/co2-sensors)
 - [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
 - [PSoC 6 Code Examples using ModusToolbox IDE](https://github.com/cypresssemiconductorco/Code-Examples-for-ModusToolbox-Software)
-- [PSoC 6 Resources -](https://community.cypress.com/)
+- [PSoC 6 Resources](https://community.cypress.com/)
 
 ---
 © Infineon Semiconductors, 2019-2021.
