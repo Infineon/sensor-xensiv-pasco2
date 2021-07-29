@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['press_5fmr',['press_mr',['../structdps368__dev__t.html#a2123f67e1f623857b253403112237335',1,'dps368_dev_t']]],
-  ['press_5fosr',['press_osr',['../structdps368__dev__t.html#a7205002f2891acaae20d62ccf6989540',1,'dps368_dev_t']]],
-  ['pressure_5fmeasurement_5fosr',['pressure_measurement_osr',['../structdps368__config__t.html#a2b128d45dc8c9573af5015a5f874778d',1,'dps368_config_t']]],
-  ['pressure_5fmeasurement_5frate',['pressure_measurement_rate',['../structdps368__config__t.html#a2aa2d7b62efd9eb4856d339a10f597ab',1,'dps368_config_t']]],
-  ['prs_5fosr_5fscale_5fcoeff',['prs_osr_scale_coeff',['../structdps368__dev__t.html#a267578403ba81a1acc76f439ca35db5b',1,'dps368_dev_t']]]
+  ['meas_5fcfg',['meas_cfg',['../structdps368__dev__t.html#a40da312a0040b76875d8b2d5397ff247',1,'dps368_dev_t']]],
+  ['measurement_5fperiod',['measurement_period',['../structmtb__pasco2__config__t.html#ab171e9b70c2f37eaa2f853705142ef2e',1,'mtb_pasco2_config_t']]],
+  ['measurement_5ftimeout',['measurement_timeout',['../structdps368__dev__t.html#a3ebdfb34c6ba443054ecf03d691f1497',1,'dps368_dev_t::measurement_timeout()'],['../structdps368__config__t.html#a729415e57a927a550e550a479c94423b',1,'dps368_config_t::measurement_timeout()']]]
 ];

@@ -2,6 +2,8 @@
 
 ## Overview
 
+Note: This is an Early Access Software for PASCO2 devices in ModusToolbox. This software is made available for evaluation purposes only and is not recommended for production development.
+
 This library provides APIs to interface with the PAS CO2 sensor that allows user to read the CO2 concentration.
 
 ## Features
@@ -51,4 +53,6 @@ This code example requires the XENSIV™ PAS CO2 Wing Board as part of the Conne
 - [PSoC 6 Resources](https://community.cypress.com/)
 
 ---
-© Infineon Semiconductors, 2019-2021.
+**Engineering Samples Release**
+
+© Infineon Technologies AG, 2021.

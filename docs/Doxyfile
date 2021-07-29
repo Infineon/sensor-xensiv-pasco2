@@ -1,0 +1,9 @@
+
+@INCLUDE_PATH    = $(IFX_MTB_DEVOPS_PATH)/doxygen
+@INCLUDE         = doxy_default.conf
+PROJECT_NAME     = "mtb-pasco2-driver"
+PROJECT_BRIEF    = ""
+RECURSIVE        = NO
+OUTPUT_DIRECTORY = build/docs
+INPUT            = ./
+EXCLUDE          = "./README.md" "./RELEASE.md"

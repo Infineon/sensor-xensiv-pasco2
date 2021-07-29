@@ -1,6 +1,6 @@
 /***************************************************************************//**
  * \file mtb_pasco2.h
- * \version 0.5.0
+ * \version 0.6.0 (Engineering Samples Release)
  * \brief
  * This file is the public interface of the Infineon PASCO2 sensor.
  *
@@ -25,6 +25,10 @@
 ********************************************************************************
 * \mainpage XENSIV PAS CO2 Library
 ********************************************************************************
+* \note This is an Early Access Software for PASCO2 devices in ModusToolbox. This
+* software is made available for evaluation purposes only and is not recommended
+* for production development.
+* 
 * The PASCO2 Library is providing high-level interfaces implemented for the PASCO2 Wingboard 
 * connected to the CYSBSYSKIT-DEV-01. This
 * provides initialization and access to the CO2 ppm data.
@@ -286,7 +290,7 @@
 ********************************************************************************
 *
 * The PAS CO2 library Flash and RAM memory consumption is as follows:
-* * Code Size - 4312 Bytes
+* * Code Size - 5144 Bytes
 * * Data Size - 512 Bytes
 *
 *
@@ -396,22 +400,51 @@ extern "C" {
 #define MTB_PASCO2_COMMUNICATION_ERROR      (5U)		/**< Communication error from sensor  */
 #define MTB_PASCO2_CONFIGURATION_ERROR      (6U)		/**< Measurement interval is not in valid range i.e. [10-4095] Seconds  */
 #define MTB_PASCO2_SENSOR_NOT_FOUND			(7U)		/**< PAS CO2 Wing board not found  */
+#define MTB_PASCO2_SENSOR_NOT_READY			(8U)		/**< PAS CO2 sensor not ready  */
 /** \} */
 
 #define MTB_PASCO2_SUCCESS                              CY_RSLT_SUCCESS             /**< Result success */
-#define CY_RSLT_MODULE_BOARD_HARDWARE_PASCO2_WING   (0x01C7U)                   /**< PASCO2 module error code */
+#define CY_RSLT_MODULE_BOARD_HARDWARE_PASCO2_WING       (0x01C7U)                   /**< PASCO2 module error code */
 
-#define MTB_PASCO2_RESULT_CREATE(x)                     CY_RSLT_CREATE(CY_RSLT_TYPE_WARNING, CY_RSLT_MODULE_BOARD_HARDWARE_PASCO2_WING, (x) ) /**< Create a result value from the specified type, module, and result code */
-#define MTB_PASCO2_RESULT_PENDING                       CY_RSLT_CREATE(CY_RSLT_TYPE_INFO, CY_RSLT_MODULE_BOARD_HARDWARE_PASCO2_WING, (MTB_PASCO2_PPM_PENDING) )   /**< Create a result for sensor value pending */
-#define MTB_PASCO2_RESULT_SENSOR_BUSY                   CY_RSLT_CREATE(CY_RSLT_TYPE_INFO, CY_RSLT_MODULE_BOARD_HARDWARE_PASCO2_WING, (MTB_PASCO2_SENSOR_BUSY) )   /**< Create a result for sensor busy  */
-#define MTB_PASCO2_RESULT_SENSOR_NOT_FOUND              CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL, CY_RSLT_MODULE_BOARD_HARDWARE_PASCO2_WING, (MTB_PASCO2_SENSOR_NOT_FOUND) )   /**< Create a result for board not found  */
-#define MTB_PASCO2_RESULT_VOLTAGE_ERROR                 MTB_PASCO2_RESULT_CREATE(MTB_PASCO2_VOLTAGE_ERROR)              /**< Create a result for sensor voltage error */
-#define MTB_PASCO2_RESULT_TEMPERATURE_ERROR             MTB_PASCO2_RESULT_CREATE(MTB_PASCO2_TEMPERATURE_ERROR)          /**< Create a result for sensor temperature error */
-#define MTB_PASCO2_RESULT_COMMUNICATION_ERROR           MTB_PASCO2_RESULT_CREATE(MTB_PASCO2_COMMUNICATION_ERROR)        /**< Create a result for sensor communication error */
-#define MTB_PASCO2_RESULT_CONFIGURATION_ERROR           MTB_PASCO2_RESULT_CREATE(MTB_PASCO2_CONFIGURATION_ERROR)
+#define MTB_PASCO2_RESULT_CREATE(type, x)               CY_RSLT_CREATE((type), CY_RSLT_MODULE_BOARD_HARDWARE_PASCO2_WING, (x) ) /**< Create a result value from the specified type, module, and result code */
+#define MTB_PASCO2_RESULT_PENDING                       MTB_PASCO2_RESULT_CREATE(CY_RSLT_TYPE_INFO, MTB_PASCO2_PPM_PENDING)   /**< Create a result for sensor value pending */
+#define MTB_PASCO2_RESULT_SENSOR_BUSY                   MTB_PASCO2_RESULT_CREATE(CY_RSLT_TYPE_INFO, MTB_PASCO2_SENSOR_BUSY)   /**< Create a result for sensor busy  */
+#define MTB_PASCO2_RESULT_VOLTAGE_ERROR                 MTB_PASCO2_RESULT_CREATE(CY_RSLT_TYPE_WARNING, MTB_PASCO2_VOLTAGE_ERROR)              /**< Create a result for sensor voltage error */
+#define MTB_PASCO2_RESULT_TEMPERATURE_ERROR             MTB_PASCO2_RESULT_CREATE(CY_RSLT_TYPE_WARNING, MTB_PASCO2_TEMPERATURE_ERROR)          /**< Create a result for sensor temperature error */
+#define MTB_PASCO2_RESULT_COMMUNICATION_ERROR           MTB_PASCO2_RESULT_CREATE(CY_RSLT_TYPE_WARNING, MTB_PASCO2_COMMUNICATION_ERROR)        /**< Create a result for sensor communication error */
+#define MTB_PASCO2_RESULT_CONFIGURATION_ERROR           MTB_PASCO2_RESULT_CREATE(CY_RSLT_TYPE_ERROR, MTB_PASCO2_CONFIGURATION_ERROR)
+#define MTB_PASCO2_RESULT_SENSOR_NOT_FOUND              MTB_PASCO2_RESULT_CREATE(CY_RSLT_TYPE_FATAL, MTB_PASCO2_SENSOR_NOT_FOUND)   /**< Create a result for board not found  */
+#define MTB_PASCO2_RESULT_SENSOR_NOT_READY              MTB_PASCO2_RESULT_CREATE(CY_RSLT_TYPE_ERROR, MTB_PASCO2_SENSOR_NOT_READY) /**< Create a result for PAS CO2 sensor not ready  */
+
 /*******************************************************************************
  * Data Types
  *******************************************************************************/
+typedef enum 
+{
+    MTB_PASCO2_OP_MODE_DEFAULT = 0,	    /**< Default mode: Continuous mode */
+    MTB_PASCO2_OP_MODE_IDLE = 1, 		/**< Idle mode */
+    MTB_PASCO2_OP_MODE_SINGLE = 2, 	    /**< Single shot mode */
+    MTB_PASCO2_OP_MODE_CONTINUOUS = 3	/**< Continuous mode */
+} mtb_pasco2_op_mode_t;
+
+typedef enum
+{
+    MTB_PASCO2_BOC_CFG_DEFAULT = 0,     /**< Default BOC configuration: Automatic baseline offset compensation enabled */
+    MTB_PASCO2_BOC_CFG_DISABLED = 1,	/**< Automatic baseline offset compensation disabled */
+    MTB_PASCO2_BOC_CFG_AUTOMATIC = 2,	/**< Automatic baseline offset compensation enabled */
+    MTB_PASCO2_BOC_CFG_FORCED = 3,		/**< Forced compensation */
+} mtb_pasco2_boc_cfg_t;
+
+typedef enum
+{
+    MTB_PASCO2_CMD_SOFT_RESET = 0xA3,		/**< Soft reset the sensor */
+    MTB_PASCO2_CMD_RESET_ABOC = 0xBC,	/**< resets the ABOC context */
+    MTB_PASCO2_CMD_SAVE_FCS_CALIB_OFFSET = 0xCF,	/**< Saves the force calibration offset into the non volatile memory */
+    MTB_PASCO2_CMD_DISABLE_IIR_FILTER = 0xDF,	/**< Disable the stepwise reactive IIR filter */
+    MTB_PASCO2_CMD_RESET_FCS = 0xFC,	/**< Resets the forced calibration correction factor */
+    MTB_PASCO2_CMD_ENABLE_IIR_FILTER = 0xFE,	/**< Enable the stepwise reactive IIR filter */
+} mtb_pasco2_cmd_t;
+
 /******************************************************************************/
 /** \addtogroup group_pasco2_structures *//** \{ */
 /******************************************************************************/
@@ -424,6 +457,12 @@ uint8_t internal[MTB_PASCO2_CONTEXT_SIZE]; /**< internal memory buffer to hold s
 /** Structure holding the configuration parameters for PASCO2 sensor. */
 typedef struct{
     uint16_t measurement_period; /**<  Measurement period in seconds, default 10s */
+    mtb_pasco2_op_mode_t op_mode; /**<  operation mode, default is continuous mode */
+    uint16_t calibration_ref; /**<  Calibration reference value of CO2 in ppm*/
+    mtb_pasco2_boc_cfg_t boc_cfg; /**<  baseline offset calibration mode, default ABOC */
+    bool use_external_pressure_ref; /**< if set to true enables the possibility to provide directly the pressure reference value for the next CO2 measurement 
+                                         if set to false the pressure reference value will be read from the DPS3x connected to the same I2C bus as the PAS CO2 sensor */
+    uint16_t pressure_ref;  /**< current pressure compensation value */
 } mtb_pasco2_config_t;
 /** \} */
 /******************************************************************************/
@@ -433,12 +472,22 @@ typedef struct{
 /**
  * Initialize the PASCO2 for I2C communication. Then also applies the default
  * configuration settings for both PASCO2 and DPS368 sensors.
+ * @note It configures the INT pin to low active. Therefore after mtb_pasco2_init is done, the INT pin drives a constant high level.
  * @param[in,out] context Pointer to a PASCO2 object. The caller must allocate the memory
  *  for this object but the init function will initialize its contents.
  * @param[in] inst I2C instance to use for communicating with the PASCO2 sensor.
  * @return MTB_PASCO2_SUCCESS if properly initialized, else an error indicating what went wrong.
  */
 cy_rslt_t mtb_pasco2_init(mtb_pasco2_context_t *context, cyhal_i2c_t *inst);
+
+/**
+ * @brief applies reset value to sensor.
+ *
+ * @param[in] context Pointer to a PASCO2 object.
+ * @param[in] cmd value for sensor.
+ * @return cy_rslt_t MTB_PASCO2_SUCCESS if the requested reset value is successfully applied, else an error message.
+ */
+cy_rslt_t mtb_pasco2_command(const mtb_pasco2_context_t *context, mtb_pasco2_cmd_t cmd);
 
 /**
  * @brief Gets the current PASCO2 configuration parameters.
@@ -455,7 +504,7 @@ cy_rslt_t mtb_pasco2_get_config(const mtb_pasco2_context_t *context, mtb_pasco2_
  * @param[in] pas_config configuration structure which contains new library parameters.
  * @return cy_rslt_t MTB_PASCO2_SUCCESS if the parameter is set successfully, else an error message.
  */
-cy_rslt_t mtb_pasco2_set_config(const mtb_pasco2_context_t *context, const mtb_pasco2_config_t *pas_config);
+cy_rslt_t mtb_pasco2_set_config(mtb_pasco2_context_t *context, const mtb_pasco2_config_t *pas_config);
 
 /** Get PASCO2 product and revision id's.
  * The product and revision id is updated only if the result equals MTB_PASCO2_SUCCESS.
@@ -474,7 +523,7 @@ cy_rslt_t mtb_pasco2_get_info(const mtb_pasco2_context_t *context, uint8_t *prod
  * @param[out] ppm pointer to hold CO2 ppm value.
  * @return cy_rslt_t the status of the get ppm request: MTB_PASCO2_SUCCESS | MTB_PASCO2_RESULT_VOLTAGE_ERROR | MTB_PASCO2_RESULT_TEMPERATURE_ERROR | MTB_PASCO2_RESULT_COMMUNICATION_ERROR | MTB_PASCO2_PPM_PENDING | MTB_PASCO2_SENSOR_BUSY
  */
-cy_rslt_t mtb_pasco2_get_ppm(const mtb_pasco2_context_t *context, uint16_t *ppm);
+cy_rslt_t mtb_pasco2_get_ppm(mtb_pasco2_context_t *context, uint16_t *ppm);
 /** \} */
 #ifdef __cplusplus
 }

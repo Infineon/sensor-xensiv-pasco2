@@ -1,5 +1,7 @@
 # XENSIV™ PAS CO2 (1st Generation) Release Notes
 
+Note: This is an Early Access Software for PASCO2 devices in ModusToolbox. This software is made available for evaluation purposes only and is not recommended for production development.
+
 This library provides functions for interfacing with the XSENSIV PAS CO2 sensor as used on PAS CO2 Wing Board.
 
 ### What's Included?
@@ -10,6 +12,12 @@ This library provides functions for interfacing with the XSENSIV PAS CO2 sensor 
 #### v0.5.0
 
 * Initial release
+
+#### v0.6.0
+
+* Baseline offset and forced compensation calibration configurable
+* Pressure reference can be configured from external source
+
 
 ### Supported Software and Tools
 
@@ -33,4 +41,6 @@ Minimum required ModusToolbox Software Environment: v2.2
 * [PSoC 6 Middleware](https://github.com/cypresssemiconductorco/psoc6-middleware)
 
 ---
-© Infineon Technologies Corporation, 2019-2020.
+**Engineering Samples Release**
+
+© Infineon Technologies AG, 2021.
