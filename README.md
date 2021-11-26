@@ -125,7 +125,7 @@ See the implementation for the platform-specific functions in *xensiv_pasco2_mtb
 
 ### More information
 
-- [PAS CO2 sensor API reference guide](https://infineon.github.io/sensor-xensiv-pasco2/pasco2_api_reference_manual/html/index.html)
+- [PAS CO2 sensor API reference guide](https://infineon.github.io/sensor-xensiv-pasco2/html/index.html)
 - [XENSIV™ PAS CO2 sensor](https://www.infineon.com/cms/en/product/sensor/co2-sensors/)
 - [Connected sensor kit](https://www.infineon.com/connectedsensorkit)
 - [EVAL_PASCO2_MINIBOARD](https://www.infineon.com/cms/en/product/evaluation-boards/eval_pasco2_miniboard)
