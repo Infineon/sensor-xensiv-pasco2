@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['xensiv_5fpasco2_5falarm_5ftype_5fhigh_5fto_5flow_157',['XENSIV_PASCO2_ALARM_TYPE_HIGH_TO_LOW',['../group__group__board__libs.html#ggad46a9f4100efaac3b2d143e8683d90e1a9d0a5b56dcbbd92a2ed5246c27e36d7e',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5falarm_5ftype_5flow_5fto_5fhigh_158',['XENSIV_PASCO2_ALARM_TYPE_LOW_TO_HIGH',['../group__group__board__libs.html#ggad46a9f4100efaac3b2d143e8683d90e1ae028e38de703a09473d0ec4be708b197',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fboc_5fcfg_5fautomatic_159',['XENSIV_PASCO2_BOC_CFG_AUTOMATIC',['../group__group__board__libs.html#gga06608546c54577ef3486d1794201362fa2f3cae70a6073e536595f8db808652d4',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fboc_5fcfg_5fdisable_160',['XENSIV_PASCO2_BOC_CFG_DISABLE',['../group__group__board__libs.html#gga06608546c54577ef3486d1794201362fa60f97a88b76132ec5a426f32ae2bb61b',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fboc_5fcfg_5fforced_161',['XENSIV_PASCO2_BOC_CFG_FORCED',['../group__group__board__libs.html#gga06608546c54577ef3486d1794201362fabb144a4ce66ce84fce0615140ec128fa',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fcmd_5freset_5faboc_162',['XENSIV_PASCO2_CMD_RESET_ABOC',['../group__group__board__libs.html#gga0fb0b6cde2e7d1ce92e0e126791fe9ceacb9d7a28e46ae054429a92414811c865',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fcmd_5freset_5ffcs_163',['XENSIV_PASCO2_CMD_RESET_FCS',['../group__group__board__libs.html#gga0fb0b6cde2e7d1ce92e0e126791fe9cea17999652e04d8ec852839fe0656f64ed',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fcmd_5fsave_5ffcs_5fcalib_5foffset_164',['XENSIV_PASCO2_CMD_SAVE_FCS_CALIB_OFFSET',['../group__group__board__libs.html#gga0fb0b6cde2e7d1ce92e0e126791fe9cea503e2ec908264c62241411b15b19d888',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fcmd_5fsoft_5freset_165',['XENSIV_PASCO2_CMD_SOFT_RESET',['../group__group__board__libs.html#gga0fb0b6cde2e7d1ce92e0e126791fe9cea4886ef1600c106f8d672ce61a3947c4e',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5finterrupt_5ffunction_5falarm_166',['XENSIV_PASCO2_INTERRUPT_FUNCTION_ALARM',['../group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a4a1caf908c4ba9779cda3e20ea43cd67',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5finterrupt_5ffunction_5fbusy_167',['XENSIV_PASCO2_INTERRUPT_FUNCTION_BUSY',['../group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4ac8ebcfdbc71eeb75808cdd318e77af67',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5finterrupt_5ffunction_5fdrdy_168',['XENSIV_PASCO2_INTERRUPT_FUNCTION_DRDY',['../group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a44ce217f8dd88627466fababd822443c',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5finterrupt_5ffunction_5fearly_169',['XENSIV_PASCO2_INTERRUPT_FUNCTION_EARLY',['../group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a6a7a8d2e68bfdeb5e51fc07b923cfe4d',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5finterrupt_5ffunction_5fnone_170',['XENSIV_PASCO2_INTERRUPT_FUNCTION_NONE',['../group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a365987c012f83651e7ba776f77199faa',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5finterrupt_5ftype_5fhigh_5factive_171',['XENSIV_PASCO2_INTERRUPT_TYPE_HIGH_ACTIVE',['../group__group__board__libs.html#gga1822f1abc722b317d95bbe888fa71855a7dfab1601c5b0f4a413a604ba41c9241',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5finterrupt_5ftype_5flow_5factive_172',['XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE',['../group__group__board__libs.html#gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fop_5fmode_5fcontinuous_173',['XENSIV_PASCO2_OP_MODE_CONTINUOUS',['../group__group__board__libs.html#ggaf74e06da88cf86200c27f319dc31cd02a5194caafa19e79e022ea120caa17d4b6',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fop_5fmode_5fidle_174',['XENSIV_PASCO2_OP_MODE_IDLE',['../group__group__board__libs.html#ggaf74e06da88cf86200c27f319dc31cd02af23e7705a0df1d4ffe1b29ffb380cae9',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fop_5fmode_5fsingle_175',['XENSIV_PASCO2_OP_MODE_SINGLE',['../group__group__board__libs.html#ggaf74e06da88cf86200c27f319dc31cd02a36b988b8e81b47447fec5bf9276003ce',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fpwm_5fmode_5fsingle_5fpulse_176',['XENSIV_PASCO2_PWM_MODE_SINGLE_PULSE',['../group__group__board__libs.html#gga0bd29f11c6d5abff29998ac6848f4683af315b567a388ca925d3d249624d4856f',1,'xensiv_pasco2.h']]],
+  ['xensiv_5fpasco2_5fpwm_5fmode_5ftrain_5fpulse_177',['XENSIV_PASCO2_PWM_MODE_TRAIN_PULSE',['../group__group__board__libs.html#gga0bd29f11c6d5abff29998ac6848f4683aaaff349e14c405a3bae1918e7e7ed1bd',1,'xensiv_pasco2.h']]]
+];
