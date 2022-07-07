@@ -6,7 +6,7 @@
  *
  ***************************************************************************************************
  * \copyright
- * Copyright 2021 Infineon Technologies AG
+ * Copyright 2021-2022 Infineon Technologies AG
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,6 +24,11 @@
 
 #ifndef XENSIV_PASCO2_REGS_H_
 #define XENSIV_PASCO2_REGS_H_
+
+/**
+ * \addtogroup group_board_libs XENSIV™ PAS CO2 sensor
+ * \{
+ */
 
 #define XENSIV_PASCO2_REG_PROD_ID                       (0x00U)                                                 /*!< REG_PROD: Address */
 #define XENSIV_PASCO2_REG_SENS_STS                      (0x01U)                                                 /*!< SENS_STS: Address */
@@ -127,5 +132,7 @@
 
 #define XENSIV_PASCO2_REG_SENS_RST_SRTRG_POS            (0U)                                                    /*!< SENS_RST: SRTRG position */
 #define XENSIV_PASCO2_REG_SENS_RST_SRTRG_MSK            (0xffU << XENSIV_PASCO2_REG_SENS_RST_SRTRG_POS)         /*!< SENS_RST: SRTRG mask */
+
+/** \} group_board_libs */
 
 #endif

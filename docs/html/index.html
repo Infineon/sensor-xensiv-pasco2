@@ -94,17 +94,21 @@ Overview</h1>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Quick start</h2>
 <p>For the hardware setup, check the "Quick start with the PSoC™ 6 Wi-Fi Bluetooth&amp;reg; pioneer kit" section of the <a href="https://www.infineon.com/cms/de/product/sensor/co2-sensors/#!?fileId=5546d4627600a6bc0176041139e77780">Programming guide for XENSIV™ PAS CO2 sensor</a>.</p>
+<p><b>Figure 1. XENSIV™ PAS CO2 Sensor2Go kit I2C interface connection to the PSoC™ 6 Wi-Fi Bluetooth&reg; pioneer kit</b></p>
 <p><img src="pasco2_i2c_connection.png" alt="" class="inline"/>   </p>
 <p><img src="docs/html/pasco2_i2c_connection.png" alt="" class="inline"/></p>
-<p><b>Figure 1. XENSIV™ PAS CO2 Sensor2Go kit I2C interface connection to the PSoC™ 6 Wi-Fi Bluetooth&reg; pioneer kit</b></p>
+<p>Alternatively you can use the <a href="https://github.com/Infineon/TARGET_CYSBSYSKIT-DEV-01">CYSBSYSKIT-DEV-01 Rapid IoT Connect Developer Kit</a> together with the XENSIV™ PAS CO2 Wing Board.</p>
 <p>Do the following to create a simple application which outputs the CO2 ppm data from the sensor to the UART.</p>
 <ol type="1">
-<li>Create an empty PSoC™ 6 application.</li>
-<li>Add this library to the application.</li>
-<li>Add the retarget-io library using the library manager.</li>
+<li>Create an empty ModusToolbox application for your board, e.g. CYSBSYSKIT-DEV-01.</li>
+<li><p class="startli">Add this library, i.e. sensor-xensiv-pasco2, to the application using the Library Manager.</p>
+<p class="startli"><b>Figure 2. Library Manager</b></p>
+<p class="startli"><img src="library_manager.png" alt="" class="inline"/>   </p>
+<p class="startli"><img src="docs/html/library_manager.png" alt="" class="inline"/></p>
+</li>
+<li>Add the retarget-io library using the Library Manager.</li>
 <li>Place the following code in the <em>main.c</em> file.</li>
-<li>Define I2C SDA and SCL as appropriate for your hardware configuration:</li>
-<li>Build the application and program the kit.</li>
+<li>Define I2C SDA and SCL as appropriate for your hardware configuration. <b>Note</b> If using CYSBSYSDEV-DEV-01 kit and PAS CO2 wingboard, define macro USE_CYSBSYSDEV_KIT_01_WINGBOARD</li>
 </ol>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cyhal.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;cybsp.h&quot;</span></div>
@@ -114,17 +118,25 @@ Quick start</h2>
 <div class="line"><span class="comment">/*******************************************************************************</span></div>
 <div class="line"><span class="comment">* Macros</span></div>
 <div class="line"><span class="comment">*******************************************************************************/</span></div>
-<div class="line"><span class="preprocessor">#define PIN_XENSIV_PASCO2_I2C_SDA   NC</span></div>
-<div class="line"><span class="preprocessor">#define PIN_XENSIV_PASCO2_I2C_SCL   NC</span></div>
+<div class="line"><span class="preprocessor">#define PIN_XENSIV_PASCO2_I2C_SDA       CYBSP_I2C_SDA</span></div>
+<div class="line"><span class="preprocessor">#define PIN_XENSIV_PASCO2_I2C_SCL       CYBSP_I2C_SCL</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#define I2C_MASTER_FREQUENCY (100000U)</span></div>
+<div class="line"><span class="preprocessor">#if defined(USE_CYSBSYSDEV_KIT_01_WINGBOARD)</span></div>
+<div class="line"><span class="comment">/* Output pin for sensor PSEL line */</span></div>
+<div class="line"><span class="preprocessor">#define PIN_XENSIV_PASCO2_PSEL          P5_3</span></div>
+<div class="line"><span class="comment">/* Output pin for PAS CO2 Wing Board power switch */</span></div>
+<div class="line"><span class="preprocessor">#define PIN_XENSIV_PASCO2_POWER_SWITCH  P10_5</span></div>
+<div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#define WAIT_SENSOR_RDY_MS          (2000)      </span><span class="comment">/* Wait time for sensor ready (milliseconds) */</span><span class="preprocessor"></span></div>
+<div class="line"><span class="preprocessor">#define I2C_MASTER_FREQUENCY            (100000U)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Wait time for sensor ready (milliseconds) */</span></div>
+<div class="line"><span class="preprocessor">#define WAIT_SENSOR_RDY_MS              (2000)</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/* The CO2 concentration value acquired by the sensor depends on the external atmospheric pressure.</span></div>
 <div class="line"><span class="comment">   To compensate for this effect, pressure values can be acquired from a pressure sensor such as an</span></div>
 <div class="line"><span class="comment">   Infineon XENSIV&amp;trade; DPS3xx. (https://github.com/Infineon/sensor-xensiv-dps3xx) */</span></div>
-<div class="line"><span class="preprocessor">#define DEFAULT_PRESSURE_REF_HPA    (0x3F7)     </span><span class="comment">/* Default atmospheric pressure to compensate for (hPa) */</span><span class="preprocessor"></span></div>
+<div class="line"><span class="preprocessor">#define DEFAULT_PRESSURE_REF_HPA        (0x3F7)     </span><span class="comment">/* Default atmospheric pressure to compensate for (hPa) */</span><span class="preprocessor"></span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*******************************************************************************</span></div>
 <div class="line"><span class="comment">* Global Variables</span></div>
@@ -132,7 +144,7 @@ Quick start</h2>
 <div class="line"><span class="keyword">static</span> cyhal_i2c_t cyhal_i2c;</div>
 <div class="line"><span class="keyword">static</span> <a class="code" href="structxensiv__pasco2__t.html">xensiv_pasco2_t</a> xensiv_pasco2;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    cy_rslt_t result = CY_RSLT_SUCCESS;</div>
 <div class="line"> </div>
@@ -159,6 +171,16 @@ Quick start</h2>
 <div class="line">    result = cyhal_i2c_configure(&amp;cyhal_i2c, &amp;i2c_master_config);</div>
 <div class="line">    CY_ASSERT(result == CY_RSLT_SUCCESS);</div>
 <div class="line"> </div>
+<div class="line"><span class="preprocessor">#if defined(USE_CYSBSYSDEV_KIT_01_WINGBOARD)</span></div>
+<div class="line">    <span class="comment">/* Initialize and enable PAS CO2 Wing Board I2C channel communication*/</span></div>
+<div class="line">    result = cyhal_gpio_init(PIN_XENSIV_PASCO2_PSEL, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_STRONG, <span class="keyword">false</span>);</div>
+<div class="line">    CY_ASSERT(result == CY_RSLT_SUCCESS);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">/* Initialize and enable PAS CO2 Wing Board power switch */</span></div>
+<div class="line">    result = cyhal_gpio_init(PIN_XENSIV_PASCO2_POWER_SWITCH, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_STRONG, <span class="keyword">true</span>);</div>
+<div class="line">    CY_ASSERT(result == CY_RSLT_SUCCESS);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
 <div class="line">    cyhal_system_delay_ms(WAIT_SENSOR_RDY_MS);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">/* Initialize PAS CO2 sensor with default parameter values */</span></div>
@@ -169,6 +191,23 @@ Quick start</h2>
 <div class="line">        CY_ASSERT(0);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
+<div class="line"><span class="preprocessor">#if defined(USE_CYSBSYSDEV_KIT_01_WINGBOARD)</span></div>
+<div class="line">    <span class="comment">/* Configure PAS CO2 Wing board interrupt to enable 12V boost converter in wingboard */</span></div>
+<div class="line">    <a class="code" href="unionxensiv__pasco2__interrupt__config__t.html">xensiv_pasco2_interrupt_config_t</a> int_config =</div>
+<div class="line">    {</div>
+<div class="line">        .<a class="code" href="unionxensiv__pasco2__interrupt__config__t.html#a773d45d985d2be3ab7d0dabce00ee95e">b</a>.int_func = <a class="code" href="group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a365987c012f83651e7ba776f77199faa">XENSIV_PASCO2_INTERRUPT_FUNCTION_NONE</a>,</div>
+<div class="line">        .b.int_typ = (uint32_t)<a class="code" href="group__group__board__libs.html#gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e">XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE</a></div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="group__group__board__libs.html#ga8cddfe96e78141108553b0725733c2b8">xensiv_pasco2_set_interrupt_config</a>(&amp;xensiv_pasco2, int_config);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != CY_RSLT_SUCCESS)</div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;PAS CO2 interrupt configuration error&quot;</span>);</div>
+<div class="line">        CY_ASSERT(0);</div>
+<div class="line">    }</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
+<div class="line">    uint16_t ppm;</div>
 <div class="line">    <span class="keywordflow">for</span> (;;)</div>
 <div class="line">    {</div>
 <div class="line">        result = <a class="code" href="group__group__board__libs__mtb.html#ga1f3304bd562b511f18df659342011aea">xensiv_pasco2_mtb_read</a>(&amp;xensiv_pasco2, DEFAULT_PRESSURE_REF_HPA, &amp;ppm);</div>
@@ -179,21 +218,46 @@ Quick start</h2>
 <div class="line">        cyhal_system_delay_ms(10);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+</div><!-- fragment --><ol type="1">
+<li>Connect the board to your PC using the provided USB cable through the KitProg3 USB connector.</li>
+<li>Open a terminal program and select the KitProg3 COM port. Set the serial port parameters to 8N1 and 115200 baud.</li>
+<li><p class="startli">Build the application and program the kit. After programming, the application starts automatically.</p>
+<p class="startli"><b>Figure 3. Terminal output on program startup</b></p>
+<p class="startli"><img src="example-terminal.png" alt="" class="inline"/>   </p>
+<p class="startli"><img src="docs/html/example-terminal.png" alt="" class="inline"/></p>
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Use the library in your own platform</h2>
-<p>The library can be used in your own platform by copying three files to your project, i.e., <em>xensiv_pasco2.c</em>, <em>xensiv_pasco2.h</em> and <em>xensiv_pasco2_regs.h</em>.</p>
-<p>The library depends on platform-specific implementation of the following functions:</p>
-<div class="fragment"><div class="line">int32_t <a class="code" href="group__group__board__libs.html#ga79ba3ff2b6d3b6e0d59277ad2c066295">xensiv_pasco2_plat_i2c_transfer</a>(<span class="keywordtype">void</span> * ctx, uint16_t dev_addr, <span class="keyword">const</span> uint8_t * tx_buffer, <span class="keywordtype">size_t</span> tx_len, uint8_t * rx_buffer, <span class="keywordtype">size_t</span> rx_len);</div>
-<div class="line">int32_t <a class="code" href="group__group__board__libs.html#ga30258b2d0b775dd70dac784ba7583a02">xensiv_pasco2_plat_uart_read</a>(<span class="keywordtype">void</span> *ctx, uint8_t * data, <span class="keywordtype">size_t</span> len);</div>
-<div class="line">int32_t <a class="code" href="group__group__board__libs.html#ga9300d953c5b0e034b91c1eb35e5b6a87">xensiv_pasco2_plat_uart_write</a>(<span class="keywordtype">void</span> *ctx, <span class="keyword">const</span> uint8_t * data, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><span class="keywordtype">void</span> <a class="code" href="group__group__board__libs.html#ga6b0f690782033eb82ac184e541152801">xensiv_pasco2_plat_delay</a>(uint32_t ms);</div>
-<div class="line">uint16_t <a class="code" href="group__group__board__libs.html#ga227451919676d916a38ac90daea339b3">xensiv_pasco2_plat_htons</a>(uint16_t x);</div>
-<div class="line"><span class="keywordtype">void</span> <a class="code" href="group__group__board__libs.html#ga1a3f8502b60fd6f507b66dc91210b8b6">xensiv_pasco2_plat_assert</a>(<span class="keywordtype">int</span> expr);</div>
-</div><!-- fragment --><p>The library provides default implementation of these functions. The default implementations should be overridden when using the driver in a target platform. See the implementation for the platform-specific functions in <em>xensiv_pasco2_mtb.c</em> using the PSoC™ 6 HAL.</p>
+<p>The library can be used in your own platform copying following files to your project:</p><ul>
+<li><em>xensiv_pasco2.c</em></li>
+<li><em>xensiv_pasco2.h</em></li>
+<li><em>xensiv_pasco2_platform.h</em></li>
+<li><em>xensiv_pasco2_regs.h</em>.</li>
+</ul>
+<p>The library depends on platform-specific implementation of functions declared in <em>xensiv_pasco2_platform.h</em>:</p>
+<div class="fragment"><div class="line"><span class="comment">/* Target platform-specific function to perform I2C write/read transfer. Only needed if using I2C sensor interface */</span></div>
+<div class="line">int32_t <a class="code" href="group__group__board__libs__platform.html#ga79ba3ff2b6d3b6e0d59277ad2c066295">xensiv_pasco2_plat_i2c_transfer</a>(<span class="keywordtype">void</span> * ctx, uint16_t dev_addr, <span class="keyword">const</span> uint8_t * tx_buffer, <span class="keywordtype">size_t</span> tx_len, uint8_t * rx_buffer, <span class="keywordtype">size_t</span> rx_len);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Target platform-specific function to read over UART. Only needed if using UART sensor interface */</span></div>
+<div class="line">int32_t <a class="code" href="group__group__board__libs__platform.html#ga30258b2d0b775dd70dac784ba7583a02">xensiv_pasco2_plat_uart_read</a>(<span class="keywordtype">void</span> *ctx, uint8_t * data, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Target platform-specific function to write over UART. Only needed if using UART sensor interface */</span></div>
+<div class="line">int32_t <a class="code" href="group__group__board__libs__platform.html#ga9300d953c5b0e034b91c1eb35e5b6a87">xensiv_pasco2_plat_uart_write</a>(<span class="keywordtype">void</span> *ctx, <span class="keyword">const</span> uint8_t * data, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Target platform-specific function that waits for a specified time period in milliseconds */</span></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="group__group__board__libs__platform.html#ga6b0f690782033eb82ac184e541152801">xensiv_pasco2_plat_delay</a>(uint32_t ms);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Target platform-specific function to reverse the byte order (16-bit) */</span></div>
+<div class="line">uint16_t <a class="code" href="group__group__board__libs__platform.html#ga227451919676d916a38ac90daea339b3">xensiv_pasco2_plat_htons</a>(uint16_t x);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Target platform-specific function that implements a runtime assertion; used to verify the assumptions made by the program and take appropiate actions if assumption is false */</span></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="group__group__board__libs__platform.html#ga1a3f8502b60fd6f507b66dc91210b8b6">xensiv_pasco2_plat_assert</a>(<span class="keywordtype">int</span> expr);</div>
+</div><!-- fragment --><p>See an implementation for the platform-specific functions in <em>xensiv_pasco2_mtb.c</em> using the PSoC™ 6 HAL.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 More information</h2>
 <ul>
-<li><a href="https://infineon.github.io/sensor-xensiv-pasco2/pasco2_api_reference_manual/html/index.html">PAS CO2 sensor API reference guide</a></li>
+<li><a href="https://infineon.github.io/sensor-xensiv-pasco2/html/index.html">PAS CO2 sensor API reference guide</a></li>
 <li><a href="https://www.infineon.com/cms/en/product/sensor/co2-sensors/">XENSIV™ PAS CO2 sensor</a></li>
 <li><a href="https://www.infineon.com/connectedsensorkit">Connected sensor kit</a></li>
 <li><a href="https://www.infineon.com/cms/en/product/evaluation-boards/eval_pasco2_miniboard">EVAL_PASCO2_MINIBOARD</a></li>
@@ -202,19 +266,24 @@ More information</h2>
 <li><a href="https://www.cypress.com/products/modustoolbox-software-environment">ModusToolbox&trade; software</a></li>
 </ul>
 <hr  />
-<p> © Infineon Technologies AG, 2021. </p>
+<p> © Infineon Technologies AG, 2021-2022. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="agroup__group__board__libs__mtb_html_gabea706545fb1e82b9e4e568105a23d5b"><div class="ttname"><a href="group__group__board__libs__mtb.html#gabea706545fb1e82b9e4e568105a23d5b">xensiv_pasco2_mtb_init_i2c</a></div><div class="ttdeci">cy_rslt_t xensiv_pasco2_mtb_init_i2c(xensiv_pasco2_t *dev, cyhal_i2c_t *i2c)</div><div class="ttdoc">Initializes the XENSIV™ PAS CO2 sensor and configures it to use the specified I2C peripheral.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:39</div></div>
-<div class="ttc" id="agroup__group__board__libs_html_ga79ba3ff2b6d3b6e0d59277ad2c066295"><div class="ttname"><a href="group__group__board__libs.html#ga79ba3ff2b6d3b6e0d59277ad2c066295">xensiv_pasco2_plat_i2c_transfer</a></div><div class="ttdeci">int32_t xensiv_pasco2_plat_i2c_transfer(void *ctx, uint16_t dev_addr, const uint8_t *tx_buffer, size_t tx_len, uint8_t *rx_buffer, size_t rx_len)</div><div class="ttdoc">Target platform-specific function to perform I2C write/read transfer.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:124</div></div>
-<div class="ttc" id="agroup__group__board__libs_html_ga6b0f690782033eb82ac184e541152801"><div class="ttname"><a href="group__group__board__libs.html#ga6b0f690782033eb82ac184e541152801">xensiv_pasco2_plat_delay</a></div><div class="ttdeci">void xensiv_pasco2_plat_delay(uint32_t ms)</div><div class="ttdoc">Target platform-specific function that waits for a specified time period in milliseconds.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:188</div></div>
-<div class="ttc" id="agroup__group__board__libs__mtb_html_ga1f3304bd562b511f18df659342011aea"><div class="ttname"><a href="group__group__board__libs__mtb.html#ga1f3304bd562b511f18df659342011aea">xensiv_pasco2_mtb_read</a></div><div class="ttdeci">cy_rslt_t xensiv_pasco2_mtb_read(const xensiv_pasco2_t *dev, uint16_t press_ref, uint16_t *co2_ppm_val)</div><div class="ttdoc">Reads the CO2 value value if available.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:108</div></div>
-<div class="ttc" id="agroup__group__board__libs_html_ga30258b2d0b775dd70dac784ba7583a02"><div class="ttname"><a href="group__group__board__libs.html#ga30258b2d0b775dd70dac784ba7583a02">xensiv_pasco2_plat_uart_read</a></div><div class="ttdeci">int32_t xensiv_pasco2_plat_uart_read(void *ctx, uint8_t *data, size_t len)</div><div class="ttdoc">Target platform-specific function to read over UART.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:143</div></div>
-<div class="ttc" id="agroup__group__board__libs_html_ga227451919676d916a38ac90daea339b3"><div class="ttname"><a href="group__group__board__libs.html#ga227451919676d916a38ac90daea339b3">xensiv_pasco2_plat_htons</a></div><div class="ttdeci">uint16_t xensiv_pasco2_plat_htons(uint16_t x)</div><div class="ttdoc">Target platform-specific function to reverse the byte order (16-bit)</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:193</div></div>
-<div class="ttc" id="agroup__group__board__libs_html_ga9300d953c5b0e034b91c1eb35e5b6a87"><div class="ttname"><a href="group__group__board__libs.html#ga9300d953c5b0e034b91c1eb35e5b6a87">xensiv_pasco2_plat_uart_write</a></div><div class="ttdeci">int32_t xensiv_pasco2_plat_uart_write(void *ctx, uint8_t *data, size_t len)</div><div class="ttdoc">Target platform-specific function to write over UART.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:169</div></div>
-<div class="ttc" id="astructxensiv__pasco2__t_html"><div class="ttname"><a href="structxensiv__pasco2__t.html">xensiv_pasco2_t</a></div><div class="ttdoc">Structure of the XENSIV™ PAS CO2 sensor device.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:225</div></div>
-<div class="ttc" id="agroup__group__board__libs_html_ga1a3f8502b60fd6f507b66dc91210b8b6"><div class="ttname"><a href="group__group__board__libs.html#ga1a3f8502b60fd6f507b66dc91210b8b6">xensiv_pasco2_plat_assert</a></div><div class="ttdeci">void xensiv_pasco2_plat_assert(int expr)</div><div class="ttdoc">Target platform-specific function that implements a runtime assertion; used to verify the assumptions...</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:198</div></div>
+<div class="ttc" id="agroup__group__board__libs__platform_html_ga79ba3ff2b6d3b6e0d59277ad2c066295"><div class="ttname"><a href="group__group__board__libs__platform.html#ga79ba3ff2b6d3b6e0d59277ad2c066295">xensiv_pasco2_plat_i2c_transfer</a></div><div class="ttdeci">int32_t xensiv_pasco2_plat_i2c_transfer(void *ctx, uint16_t dev_addr, const uint8_t *tx_buffer, size_t tx_len, uint8_t *rx_buffer, size_t rx_len)</div><div class="ttdoc">Target platform-specific function to perform I2C write/read transfer.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:163</div></div>
+<div class="ttc" id="aunionxensiv__pasco2__interrupt__config__t_html"><div class="ttname"><a href="unionxensiv__pasco2__interrupt__config__t.html">xensiv_pasco2_interrupt_config_t</a></div><div class="ttdoc">Structure of the sensor's interrupt configuration register (INT_CFG)</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:184</div></div>
+<div class="ttc" id="aunionxensiv__pasco2__interrupt__config__t_html_a773d45d985d2be3ab7d0dabce00ee95e"><div class="ttname"><a href="unionxensiv__pasco2__interrupt__config__t.html#a773d45d985d2be3ab7d0dabce00ee95e">xensiv_pasco2_interrupt_config_t::b</a></div><div class="ttdeci">struct xensiv_pasco2_interrupt_config_t::@3 b</div></div>
+<div class="ttc" id="agroup__group__board__libs__platform_html_ga30258b2d0b775dd70dac784ba7583a02"><div class="ttname"><a href="group__group__board__libs__platform.html#ga30258b2d0b775dd70dac784ba7583a02">xensiv_pasco2_plat_uart_read</a></div><div class="ttdeci">int32_t xensiv_pasco2_plat_uart_read(void *ctx, uint8_t *data, size_t len)</div><div class="ttdoc">Target platform-specific function to read over UART.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:182</div></div>
+<div class="ttc" id="agroup__group__board__libs__mtb_html_ga1f3304bd562b511f18df659342011aea"><div class="ttname"><a href="group__group__board__libs__mtb.html#ga1f3304bd562b511f18df659342011aea">xensiv_pasco2_mtb_read</a></div><div class="ttdeci">cy_rslt_t xensiv_pasco2_mtb_read(const xensiv_pasco2_t *dev, uint16_t press_ref, uint16_t *co2_ppm_val)</div><div class="ttdoc">Reads the CO2 value value if available.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:146</div></div>
+<div class="ttc" id="agroup__group__board__libs__platform_html_ga227451919676d916a38ac90daea339b3"><div class="ttname"><a href="group__group__board__libs__platform.html#ga227451919676d916a38ac90daea339b3">xensiv_pasco2_plat_htons</a></div><div class="ttdeci">uint16_t xensiv_pasco2_plat_htons(uint16_t x)</div><div class="ttdoc">Target platform-specific function to reverse the byte order (16-bit) A sample implementation would lo...</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:232</div></div>
+<div class="ttc" id="agroup__group__board__libs_html_ga8cddfe96e78141108553b0725733c2b8"><div class="ttname"><a href="group__group__board__libs.html#ga8cddfe96e78141108553b0725733c2b8">xensiv_pasco2_set_interrupt_config</a></div><div class="ttdeci">int32_t xensiv_pasco2_set_interrupt_config(const xensiv_pasco2_t *dev, xensiv_pasco2_interrupt_config_t int_config)</div><div class="ttdoc">Sets the sensor device interrupt configuration.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.c:330</div></div>
+<div class="ttc" id="agroup__group__board__libs_html_ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a365987c012f83651e7ba776f77199faa"><div class="ttname"><a href="group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a365987c012f83651e7ba776f77199faa">XENSIV_PASCO2_INTERRUPT_FUNCTION_NONE</a></div><div class="ttdeci">@ XENSIV_PASCO2_INTERRUPT_FUNCTION_NONE</div><div class="ttdoc">Pin INT is inactive.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:126</div></div>
+<div class="ttc" id="agroup__group__board__libs__platform_html_ga9300d953c5b0e034b91c1eb35e5b6a87"><div class="ttname"><a href="group__group__board__libs__platform.html#ga9300d953c5b0e034b91c1eb35e5b6a87">xensiv_pasco2_plat_uart_write</a></div><div class="ttdeci">int32_t xensiv_pasco2_plat_uart_write(void *ctx, uint8_t *data, size_t len)</div><div class="ttdoc">Target platform-specific function to write over UART.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:208</div></div>
+<div class="ttc" id="astructxensiv__pasco2__t_html"><div class="ttname"><a href="structxensiv__pasco2__t.html">xensiv_pasco2_t</a></div><div class="ttdoc">Structure of the XENSIV™ PAS CO2 sensor device.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:219</div></div>
+<div class="ttc" id="agroup__group__board__libs_html_gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e"><div class="ttname"><a href="group__group__board__libs.html#gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e">XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE</a></div><div class="ttdeci">@ XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE</div><div class="ttdoc">Pin INT is configured as push-pull and is active LOW.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:119</div></div>
+<div class="ttc" id="agroup__group__board__libs__platform_html_ga6b0f690782033eb82ac184e541152801"><div class="ttname"><a href="group__group__board__libs__platform.html#ga6b0f690782033eb82ac184e541152801">xensiv_pasco2_plat_delay</a></div><div class="ttdeci">void xensiv_pasco2_plat_delay(uint32_t ms)</div><div class="ttdoc">Target platform-specific function that waits for a specified time period in milliseconds.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:227</div></div>
+<div class="ttc" id="agroup__group__board__libs__platform_html_ga1a3f8502b60fd6f507b66dc91210b8b6"><div class="ttname"><a href="group__group__board__libs__platform.html#ga1a3f8502b60fd6f507b66dc91210b8b6">xensiv_pasco2_plat_assert</a></div><div class="ttdeci">void xensiv_pasco2_plat_assert(int expr)</div><div class="ttdoc">Target platform-specific function that implements a runtime assertion; used to verify the assumptions...</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:237</div></div>
 <!-- start footer part
 <div id="nav-path" class="navpath">
     <ul>

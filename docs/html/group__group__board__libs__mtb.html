@@ -102,6 +102,7 @@ Snippet 1: Simple initialization with I2C</h2>
 <div class="line">                                         0,</div>
 <div class="line">                                         I2C_MASTER_FREQUENCY};</div>
 <div class="line"> </div>
+<div class="line">    cyhal_i2c_t cyhal_i2c;</div>
 <div class="line">    result = cyhal_i2c_init(&amp;cyhal_i2c, PIN_XENSIV_PASCO2_I2C_SDA, PIN_XENSIV_PASCO2_I2C_SCL, NULL);</div>
 <div class="line">    CY_ASSERT(result == CY_RSLT_SUCCESS);</div>
 <div class="line"> </div>
@@ -112,6 +113,7 @@ Snippet 1: Simple initialization with I2C</h2>
 <div class="line">    cyhal_system_delay_ms(WAIT_SENSOR_RDY_MS);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">/* Initialize the PAS CO2 sensor with the default parameter values */</span></div>
+<div class="line">    xensiv_pasco2_mtb_t xensiv_pasco2;</div>
 <div class="line">    result = <a class="code" href="group__group__board__libs__mtb.html#gabea706545fb1e82b9e4e568105a23d5b">xensiv_pasco2_mtb_init_i2c</a>(&amp;xensiv_pasco2, &amp;cyhal_i2c);</div>
 <div class="line">    <span class="keywordflow">if</span> (result != CY_RSLT_SUCCESS)</div>
 <div class="line">    {</div>
@@ -136,12 +138,23 @@ Snippet 2: XENSIV™ PAS CO2 sensor interrupt configuration</h2>
 <div class="line">        .b.int_typ = <a class="code" href="group__group__board__libs.html#gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e">XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE</a></div>
 <div class="line">    };</div>
 <div class="line"> </div>
-<div class="line">    <a class="code" href="group__group__board__libs__mtb.html#gace71b8639212c85b83adf9178c0b2a73">xensiv_pasco2_mtb_interrupt_init</a>(&amp;xensiv_pasco2, </div>
-<div class="line">                                     int_config,</div>
-<div class="line">                                     0, </div>
-<div class="line">                                     PIN_XENSIV_PASCO2_INT,</div>
-<div class="line">                                     CYHAL_ISR_PRIORITY_DEFAULT, </div>
-<div class="line">                                     (cyhal_gpio_event_callback_t)&amp;xensiv_pasco2_int_cb, NULL);</div>
+<div class="line">    <a class="code" href="structxensiv__pasco2__mtb__interrupt__cb__t.html">xensiv_pasco2_mtb_interrupt_cb_t</a> int_cb = </div>
+<div class="line">    {</div>
+<div class="line">        .<a class="code" href="structxensiv__pasco2__mtb__interrupt__cb__t.html#a9763e6b44be250dc24f7ecc4956b0a8a">cb</a> = xensiv_pasco2_int_cb,</div>
+<div class="line">        .arg = NULL;</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="group__group__board__libs__mtb.html#gaddabe93a90bf10824a26019202332ec1">xensiv_pasco2_mtb_interrupt_init_ex</a>(&amp;xensiv_pasco2, </div>
+<div class="line">                                                 int_config,</div>
+<div class="line">                                                 0, </div>
+<div class="line">                                                 PIN_XENSIV_PASCO2_INT,</div>
+<div class="line">                                                 CYHAL_ISR_PRIORITY_DEFAULT, </div>
+<div class="line">                                                 &amp;int_cb);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != CY_RSLT_SUCCESS)</div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;PAS CO2 interrupt initialization error&quot;</span>);</div>
+<div class="line">        CY_ASSERT(0);</div>
+<div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span> (;;)</div>
 <div class="line">    {</div>
@@ -208,6 +221,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gace71b8639212c85b83adf9178c0b2a73"><td class="memItemLeft" align="right" valign="top">cy_rslt_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__board__libs__mtb.html#gace71b8639212c85b83adf9178c0b2a73">xensiv_pasco2_mtb_interrupt_init</a> (const <a class="el" href="structxensiv__pasco2__t.html">xensiv_pasco2_t</a> *dev, const <a class="el" href="unionxensiv__pasco2__interrupt__config__t.html">xensiv_pasco2_interrupt_config_t</a> int_config, uint16_t alarm_threshold, cyhal_gpio_t pin, uint8_t intr_priority, cyhal_gpio_event_callback_t callback, void *callback_arg)</td></tr>
 <tr class="memdesc:gace71b8639212c85b83adf9178c0b2a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures a GPIO pin as an interrupt for the PAS CO2 sensor.  <a href="group__group__board__libs__mtb.html#gace71b8639212c85b83adf9178c0b2a73">More...</a><br /></td></tr>
 <tr class="separator:gace71b8639212c85b83adf9178c0b2a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaddabe93a90bf10824a26019202332ec1"><td class="memItemLeft" align="right" valign="top">cy_rslt_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__board__libs__mtb.html#gaddabe93a90bf10824a26019202332ec1">xensiv_pasco2_mtb_interrupt_init_ex</a> (<a class="el" href="structxensiv__pasco2__t.html">xensiv_pasco2_t</a> *dev, const <a class="el" href="unionxensiv__pasco2__interrupt__config__t.html">xensiv_pasco2_interrupt_config_t</a> int_config, uint16_t alarm_threshold, cyhal_gpio_t pin, uint8_t intr_priority, <a class="el" href="structxensiv__pasco2__mtb__interrupt__cb__t.html">xensiv_pasco2_mtb_interrupt_cb_t</a> *interrupt_cb)</td></tr>
+<tr class="memdesc:gaddabe93a90bf10824a26019202332ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures a GPIO pin as an interrupt for the PAS CO2 sensor.  <a href="group__group__board__libs__mtb.html#gaddabe93a90bf10824a26019202332ec1">More...</a><br /></td></tr>
+<tr class="separator:gaddabe93a90bf10824a26019202332ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f3304bd562b511f18df659342011aea"><td class="memItemLeft" align="right" valign="top">cy_rslt_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__board__libs__mtb.html#ga1f3304bd562b511f18df659342011aea">xensiv_pasco2_mtb_read</a> (const <a class="el" href="structxensiv__pasco2__t.html">xensiv_pasco2_t</a> *dev, uint16_t press_ref, uint16_t *co2_ppm_val)</td></tr>
 <tr class="memdesc:ga1f3304bd562b511f18df659342011aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the CO2 value value if available.  <a href="group__group__board__libs__mtb.html#ga1f3304bd562b511f18df659342011aea">More...</a><br /></td></tr>
 <tr class="separator:ga1f3304bd562b511f18df659342011aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,12 +258,12 @@ Functions</h2></td></tr>
 <p>Initializes the XENSIV™ PAS CO2 sensor and configures it to use the specified I2C peripheral. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">dev</td><td>Pointer to the pressure sensor object. The caller must allocate the memory for this object but the init function will initialize its contents </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">obj</td><td>Pointer to the ModusToolbox&amp;trade PAS CO2 object. The caller must allocate the memory for this object but the init function will initialize its contents </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">i2c</td><td>Pointer to an initialized I2C object </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>CY_RSLT_SUCCESS if properly initialized[, an error indicating what went wrong otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>CY_RSLT_SUCCESS if the initialization was successful; an error indicating what went wrong otherwise </dd></dl>
 
 </div>
 </div>
@@ -280,7 +296,7 @@ Functions</h2></td></tr>
 <p>Initializes the XENSIV™ PAS CO2 sensor, and configures it to use the specified UART peripheral. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">dev</td><td>Pointer to the pressure sensor object. The caller must allocate the memory for this object but the init function will initialize its contents </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">obj</td><td>Pointer to the ModusToolbox&amp;trade PAS CO2 object. The caller must allocate the memory for this object but the init function will initialize its contents </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>Pointer to an initialized UART object </td></tr>
   </table>
   </dd>
@@ -347,6 +363,7 @@ Functions</h2></td></tr>
 
 <p>Configures a GPIO pin as an interrupt for the PAS CO2 sensor. </p>
 <p>This initializes and configures the pin as an interrupt, and calls the PAS CO2 interrupt configuration API with the application-supplied settings structure </p><dl class="section note"><dt>Note</dt><dd>Should be called only after <a class="el" href="group__group__board__libs__mtb.html#gabea706545fb1e82b9e4e568105a23d5b">xensiv_pasco2_mtb_init_i2c</a> or <a class="el" href="group__group__board__libs__mtb.html#ga628f5739346a7e1babdb03ae51f97a86">xensiv_pasco2_mtb_init_uart</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__group__board__libs__mtb.html#gaddabe93a90bf10824a26019202332ec1">xensiv_pasco2_mtb_interrupt_init_ex</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Pointer to the PAS CO2 sensor device </td></tr>
@@ -359,6 +376,74 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>CY_RSLT_SUCCESS if interrupt was successfully enabled; an error occurred while initializing the pin otherwise </dd></dl>
+
+</div>
+</div>
+<a id="gaddabe93a90bf10824a26019202332ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaddabe93a90bf10824a26019202332ec1">&#9670;&nbsp;</a></span>xensiv_pasco2_mtb_interrupt_init_ex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cy_rslt_t xensiv_pasco2_mtb_interrupt_init_ex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structxensiv__pasco2__t.html">xensiv_pasco2_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unionxensiv__pasco2__interrupt__config__t.html">xensiv_pasco2_interrupt_config_t</a>&#160;</td>
+          <td class="paramname"><em>int_config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>alarm_threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cyhal_gpio_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>intr_priority</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxensiv__pasco2__mtb__interrupt__cb__t.html">xensiv_pasco2_mtb_interrupt_cb_t</a> *&#160;</td>
+          <td class="paramname"><em>interrupt_cb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures a GPIO pin as an interrupt for the PAS CO2 sensor. </p>
+<p>This initializes and configures the pin as an interrupt, and calls the PAS CO2 interrupt configuration API with the application-supplied settings structure </p><dl class="section note"><dt>Note</dt><dd>Should be called only after <a class="el" href="group__group__board__libs__mtb.html#gabea706545fb1e82b9e4e568105a23d5b">xensiv_pasco2_mtb_init_i2c</a> or <a class="el" href="group__group__board__libs__mtb.html#ga628f5739346a7e1babdb03ae51f97a86">xensiv_pasco2_mtb_init_uart</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>Pointer to the ModusToolbox&amp;trade PAS CO2 sensor object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">int_config</td><td>New sensor device interrupt configuration to apply </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alarm_threshold</td><td>New alarm threshold value to apply </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pin</td><td>Pin connected to the INT pin of the sensor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intr_priority</td><td>Priority for NVIC interrupt events </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">interrupt_cb</td><td>Interrupt callback </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Instances of this object are expected to persist for the length of time the callback is registered. As such, care must be given if declaring it on the stack to ensure the frame does not go away while the callback is still registered. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>CY_RSLT_SUCCESS if interrupt was successfully enabled; an error occurred while initializing the pin otherwise </dd></dl>
 
 </div>
@@ -398,7 +483,7 @@ Functions</h2></td></tr>
 <p>Reads the CO2 value value if available. </p>
 <p>This checks whether a new CO2 value is available, in which case it returns it and sets the new pressure reference value for the next measurement </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Pointer to the PAS CO2 device </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>Pointer to the ModusToolbox&amp;trade PAS CO2 object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">press_ref</td><td>New pressure reference value to apply </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">co2_ppm_val</td><td>Pointer to populate with the CO2 ppm value </td></tr>
   </table>
@@ -410,13 +495,15 @@ Functions</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__group__board__libs_html_ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a44ce217f8dd88627466fababd822443c"><div class="ttname"><a href="group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a44ce217f8dd88627466fababd822443c">XENSIV_PASCO2_INTERRUPT_FUNCTION_DRDY</a></div><div class="ttdeci">@ XENSIV_PASCO2_INTERRUPT_FUNCTION_DRDY</div><div class="ttdoc">Pin INT is configured as the data ready notification pin.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:134</div></div>
+<div class="ttc" id="agroup__group__board__libs_html_ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a44ce217f8dd88627466fababd822443c"><div class="ttname"><a href="group__group__board__libs.html#ggaea17466bbef4f0b4f2b06ea8b6ee3bd4a44ce217f8dd88627466fababd822443c">XENSIV_PASCO2_INTERRUPT_FUNCTION_DRDY</a></div><div class="ttdeci">@ XENSIV_PASCO2_INTERRUPT_FUNCTION_DRDY</div><div class="ttdoc">Pin INT is configured as the data ready notification pin.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:128</div></div>
 <div class="ttc" id="agroup__group__board__libs__mtb_html_gabea706545fb1e82b9e4e568105a23d5b"><div class="ttname"><a href="group__group__board__libs__mtb.html#gabea706545fb1e82b9e4e568105a23d5b">xensiv_pasco2_mtb_init_i2c</a></div><div class="ttdeci">cy_rslt_t xensiv_pasco2_mtb_init_i2c(xensiv_pasco2_t *dev, cyhal_i2c_t *i2c)</div><div class="ttdoc">Initializes the XENSIV™ PAS CO2 sensor and configures it to use the specified I2C peripheral.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:39</div></div>
-<div class="ttc" id="aunionxensiv__pasco2__interrupt__config__t_html"><div class="ttname"><a href="unionxensiv__pasco2__interrupt__config__t.html">xensiv_pasco2_interrupt_config_t</a></div><div class="ttdoc">Structure of the sensor's interrupt configuration register (INT_CFG)</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:190</div></div>
+<div class="ttc" id="agroup__group__board__libs__mtb_html_gaddabe93a90bf10824a26019202332ec1"><div class="ttname"><a href="group__group__board__libs__mtb.html#gaddabe93a90bf10824a26019202332ec1">xensiv_pasco2_mtb_interrupt_init_ex</a></div><div class="ttdeci">cy_rslt_t xensiv_pasco2_mtb_interrupt_init_ex(xensiv_pasco2_t *dev, const xensiv_pasco2_interrupt_config_t int_config, uint16_t alarm_threshold, cyhal_gpio_t pin, uint8_t intr_priority, xensiv_pasco2_mtb_interrupt_cb_t *interrupt_cb)</div><div class="ttdoc">Configures a GPIO pin as an interrupt for the PAS CO2 sensor.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:110</div></div>
+<div class="ttc" id="aunionxensiv__pasco2__interrupt__config__t_html"><div class="ttname"><a href="unionxensiv__pasco2__interrupt__config__t.html">xensiv_pasco2_interrupt_config_t</a></div><div class="ttdoc">Structure of the sensor's interrupt configuration register (INT_CFG)</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:184</div></div>
 <div class="ttc" id="aunionxensiv__pasco2__interrupt__config__t_html_a773d45d985d2be3ab7d0dabce00ee95e"><div class="ttname"><a href="unionxensiv__pasco2__interrupt__config__t.html#a773d45d985d2be3ab7d0dabce00ee95e">xensiv_pasco2_interrupt_config_t::b</a></div><div class="ttdeci">struct xensiv_pasco2_interrupt_config_t::@3 b</div></div>
-<div class="ttc" id="agroup__group__board__libs__mtb_html_gace71b8639212c85b83adf9178c0b2a73"><div class="ttname"><a href="group__group__board__libs__mtb.html#gace71b8639212c85b83adf9178c0b2a73">xensiv_pasco2_mtb_interrupt_init</a></div><div class="ttdeci">cy_rslt_t xensiv_pasco2_mtb_interrupt_init(const xensiv_pasco2_t *dev, const xensiv_pasco2_interrupt_config_t int_config, uint16_t alarm_threshold, cyhal_gpio_t pin, uint8_t intr_priority, cyhal_gpio_event_callback_t callback, void *callback_arg)</div><div class="ttdoc">Configures a GPIO pin as an interrupt for the PAS CO2 sensor.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:65</div></div>
-<div class="ttc" id="agroup__group__board__libs__mtb_html_ga1f3304bd562b511f18df659342011aea"><div class="ttname"><a href="group__group__board__libs__mtb.html#ga1f3304bd562b511f18df659342011aea">xensiv_pasco2_mtb_read</a></div><div class="ttdeci">cy_rslt_t xensiv_pasco2_mtb_read(const xensiv_pasco2_t *dev, uint16_t press_ref, uint16_t *co2_ppm_val)</div><div class="ttdoc">Reads the CO2 value value if available.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:108</div></div>
-<div class="ttc" id="agroup__group__board__libs_html_gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e"><div class="ttname"><a href="group__group__board__libs.html#gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e">XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE</a></div><div class="ttdeci">@ XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE</div><div class="ttdoc">Pin INT is configured as push-pull and is active LOW.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:125</div></div>
+<div class="ttc" id="agroup__group__board__libs__mtb_html_ga1f3304bd562b511f18df659342011aea"><div class="ttname"><a href="group__group__board__libs__mtb.html#ga1f3304bd562b511f18df659342011aea">xensiv_pasco2_mtb_read</a></div><div class="ttdeci">cy_rslt_t xensiv_pasco2_mtb_read(const xensiv_pasco2_t *dev, uint16_t press_ref, uint16_t *co2_ppm_val)</div><div class="ttdoc">Reads the CO2 value value if available.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.c:146</div></div>
+<div class="ttc" id="astructxensiv__pasco2__mtb__interrupt__cb__t_html"><div class="ttname"><a href="structxensiv__pasco2__mtb__interrupt__cb__t.html">xensiv_pasco2_mtb_interrupt_cb_t</a></div><div class="ttdoc">Structure containing callback data for handling interrupts from sensor.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.h:101</div></div>
+<div class="ttc" id="agroup__group__board__libs_html_gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e"><div class="ttname"><a href="group__group__board__libs.html#gga1822f1abc722b317d95bbe888fa71855aecc3f516c45cfb08e1c9e5d81ef21c9e">XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE</a></div><div class="ttdeci">@ XENSIV_PASCO2_INTERRUPT_TYPE_LOW_ACTIVE</div><div class="ttdoc">Pin INT is configured as push-pull and is active LOW.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2.h:119</div></div>
+<div class="ttc" id="astructxensiv__pasco2__mtb__interrupt__cb__t_html_a9763e6b44be250dc24f7ecc4956b0a8a"><div class="ttname"><a href="structxensiv__pasco2__mtb__interrupt__cb__t.html#a9763e6b44be250dc24f7ecc4956b0a8a">xensiv_pasco2_mtb_interrupt_cb_t::cb</a></div><div class="ttdeci">cyhal_gpio_event_callback_t cb</div><div class="ttdoc">The callback function to run.</div><div class="ttdef"><b>Definition:</b> xensiv_pasco2_mtb.h:102</div></div>
 <!-- start footer part
 <div id="nav-path" class="navpath">
     <ul>

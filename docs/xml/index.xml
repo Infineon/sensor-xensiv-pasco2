@@ -40,6 +40,10 @@
     <member refid="structxensiv__pasco2__measurement__config__t_8b_1a33c72b967ccc59f6c56f0c2647664b71" kind="variable"><name>pwm_outen</name></member>
     <member refid="structxensiv__pasco2__measurement__config__t_8b_1a74a47a7eac047138ff811ede153943e6" kind="variable"><name>__pad0__</name></member>
   </compound>
+  <compound refid="structxensiv__pasco2__mtb__interrupt__cb__t" kind="struct"><name>xensiv_pasco2_mtb_interrupt_cb_t</name>
+    <member refid="structxensiv__pasco2__mtb__interrupt__cb__t_1a9763e6b44be250dc24f7ecc4956b0a8a" kind="variable"><name>cb</name></member>
+    <member refid="structxensiv__pasco2__mtb__interrupt__cb__t_1a9ce2ec4812a92cb6ab39f6e81e9173a9" kind="variable"><name>arg</name></member>
+  </compound>
   <compound refid="unionxensiv__pasco2__status__t" kind="union"><name>xensiv_pasco2_status_t</name>
     <member refid="unionxensiv__pasco2__status__t_1a25710adaab6a309878e0074bc0acc6bb" kind="variable"><name>b</name></member>
     <member refid="unionxensiv__pasco2__status__t_1a02ae6f520370d7aaa739c73180f091b2" kind="variable"><name>u</name></member>
@@ -104,7 +108,6 @@
     <member refid="group__group__board__libs_1ga870276bbf297981a4c09adc04637cd8b" kind="function"><name>xensiv_pasco2_start_single_mode</name></member>
     <member refid="group__group__board__libs_1gafcd452d674763aa73e6be0720f86cdf9" kind="function"><name>xensiv_pasco2_start_continuous_mode</name></member>
     <member refid="group__group__board__libs_1ga9333d87948220d17c06fc890086c856a" kind="function"><name>xensiv_pasco2_perform_forced_compensation</name></member>
-    <member refid="xensiv__pasco2_8c_1af9aace1b44b73111e15aa39f06f43456" kind="function"><name>__attribute__</name></member>
   </compound>
   <compound refid="xensiv__pasco2_8h" kind="file"><name>xensiv_pasco2.h</name>
     <member refid="group__group__board__libs_1ga903d93f0ab6d683de4d4687c4ddd76b5" kind="define"><name>XENSIV_PASCO2_OK</name></member>
@@ -146,8 +149,8 @@
     <member refid="group__group__board__libs_1gad46a9f4100efaac3b2d143e8683d90e1" kind="enum"><name>xensiv_pasco2_alarm_type_t</name></member>
     <member refid="group__group__board__libs_1ggad46a9f4100efaac3b2d143e8683d90e1a9d0a5b56dcbbd92a2ed5246c27e36d7e" kind="enumvalue"><name>XENSIV_PASCO2_ALARM_TYPE_HIGH_TO_LOW</name></member>
     <member refid="group__group__board__libs_1ggad46a9f4100efaac3b2d143e8683d90e1ae028e38de703a09473d0ec4be708b197" kind="enumvalue"><name>XENSIV_PASCO2_ALARM_TYPE_LOW_TO_HIGH</name></member>
-    <member refid="group__group__board__libs_1gac8f54ac6a19cb5c97ee31cedfc95963c" kind="typedef"><name>xensiv_pasco2_read_fptr_t</name></member>
-    <member refid="group__group__board__libs_1gac8627021b867b39067fc67d6c365e6ef" kind="typedef"><name>xensiv_pasco2_write_fptr_t</name></member>
+    <member refid="group__group__board__libs_1ga6d340129c6120703766df20bcdf3b9d8" kind="typedef"><name>xensiv_pasco2_read_fptr_t</name></member>
+    <member refid="group__group__board__libs_1ga18e67a6769187bffd4ce556ac30ed450" kind="typedef"><name>xensiv_pasco2_write_fptr_t</name></member>
     <member refid="group__group__board__libs_1ga38fe4b44ddd282af3f28bc4080932a95" kind="function"><name>xensiv_pasco2_init_i2c</name></member>
     <member refid="group__group__board__libs_1ga9fa617ee552cb1672d7d1d4fedd54783" kind="function"><name>xensiv_pasco2_init_uart</name></member>
     <member refid="group__group__board__libs_1gabd9c4332ede9561912e3bd4d761a6318" kind="function"><name>xensiv_pasco2_set_reg</name></member>
@@ -172,12 +175,6 @@
     <member refid="group__group__board__libs_1ga870276bbf297981a4c09adc04637cd8b" kind="function"><name>xensiv_pasco2_start_single_mode</name></member>
     <member refid="group__group__board__libs_1gafcd452d674763aa73e6be0720f86cdf9" kind="function"><name>xensiv_pasco2_start_continuous_mode</name></member>
     <member refid="group__group__board__libs_1ga9333d87948220d17c06fc890086c856a" kind="function"><name>xensiv_pasco2_perform_forced_compensation</name></member>
-    <member refid="group__group__board__libs_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kind="function"><name>xensiv_pasco2_plat_i2c_transfer</name></member>
-    <member refid="group__group__board__libs_1ga30258b2d0b775dd70dac784ba7583a02" kind="function"><name>xensiv_pasco2_plat_uart_read</name></member>
-    <member refid="group__group__board__libs_1ga9300d953c5b0e034b91c1eb35e5b6a87" kind="function"><name>xensiv_pasco2_plat_uart_write</name></member>
-    <member refid="group__group__board__libs_1ga6b0f690782033eb82ac184e541152801" kind="function"><name>xensiv_pasco2_plat_delay</name></member>
-    <member refid="group__group__board__libs_1ga227451919676d916a38ac90daea339b3" kind="function"><name>xensiv_pasco2_plat_htons</name></member>
-    <member refid="group__group__board__libs_1ga1a3f8502b60fd6f507b66dc91210b8b6" kind="function"><name>xensiv_pasco2_plat_assert</name></member>
   </compound>
   <compound refid="xensiv__pasco2__mtb_8c" kind="file"><name>xensiv_pasco2_mtb.c</name>
     <member refid="xensiv__pasco2__mtb_8c_1a7028eadd7af68ed6afca0f1ebe920e07" kind="define"><name>XENSIV_PASCO2_I2C_TIMEOUT_MS</name></member>
@@ -187,13 +184,14 @@
     <member refid="group__group__board__libs__mtb_1gabea706545fb1e82b9e4e568105a23d5b" kind="function"><name>xensiv_pasco2_mtb_init_i2c</name></member>
     <member refid="group__group__board__libs__mtb_1ga628f5739346a7e1babdb03ae51f97a86" kind="function"><name>xensiv_pasco2_mtb_init_uart</name></member>
     <member refid="group__group__board__libs__mtb_1gace71b8639212c85b83adf9178c0b2a73" kind="function"><name>xensiv_pasco2_mtb_interrupt_init</name></member>
+    <member refid="group__group__board__libs__mtb_1gaddabe93a90bf10824a26019202332ec1" kind="function"><name>xensiv_pasco2_mtb_interrupt_init_ex</name></member>
     <member refid="group__group__board__libs__mtb_1ga1f3304bd562b511f18df659342011aea" kind="function"><name>xensiv_pasco2_mtb_read</name></member>
-    <member refid="group__group__board__libs_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kind="function"><name>xensiv_pasco2_plat_i2c_transfer</name></member>
-    <member refid="group__group__board__libs_1ga30258b2d0b775dd70dac784ba7583a02" kind="function"><name>xensiv_pasco2_plat_uart_read</name></member>
-    <member refid="group__group__board__libs_1ga9300d953c5b0e034b91c1eb35e5b6a87" kind="function"><name>xensiv_pasco2_plat_uart_write</name></member>
-    <member refid="group__group__board__libs_1ga6b0f690782033eb82ac184e541152801" kind="function"><name>xensiv_pasco2_plat_delay</name></member>
-    <member refid="group__group__board__libs_1ga227451919676d916a38ac90daea339b3" kind="function"><name>xensiv_pasco2_plat_htons</name></member>
-    <member refid="group__group__board__libs_1ga1a3f8502b60fd6f507b66dc91210b8b6" kind="function"><name>xensiv_pasco2_plat_assert</name></member>
+    <member refid="group__group__board__libs__platform_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kind="function"><name>xensiv_pasco2_plat_i2c_transfer</name></member>
+    <member refid="group__group__board__libs__platform_1ga30258b2d0b775dd70dac784ba7583a02" kind="function"><name>xensiv_pasco2_plat_uart_read</name></member>
+    <member refid="group__group__board__libs__platform_1ga9300d953c5b0e034b91c1eb35e5b6a87" kind="function"><name>xensiv_pasco2_plat_uart_write</name></member>
+    <member refid="group__group__board__libs__platform_1ga6b0f690782033eb82ac184e541152801" kind="function"><name>xensiv_pasco2_plat_delay</name></member>
+    <member refid="group__group__board__libs__platform_1ga227451919676d916a38ac90daea339b3" kind="function"><name>xensiv_pasco2_plat_htons</name></member>
+    <member refid="group__group__board__libs__platform_1ga1a3f8502b60fd6f507b66dc91210b8b6" kind="function"><name>xensiv_pasco2_plat_assert</name></member>
   </compound>
   <compound refid="xensiv__pasco2__mtb_8h" kind="file"><name>xensiv_pasco2_mtb.h</name>
     <member refid="group__group__board__libs__mtb_1ga7914066ba3565838bd631e5dc5974a21" kind="define"><name>CY_RSLT_MODULE_BOARD_HARDWARE_XENSIV_PASCO2</name></member>
@@ -207,6 +205,7 @@
     <member refid="group__group__board__libs__mtb_1gabea706545fb1e82b9e4e568105a23d5b" kind="function"><name>xensiv_pasco2_mtb_init_i2c</name></member>
     <member refid="group__group__board__libs__mtb_1ga628f5739346a7e1babdb03ae51f97a86" kind="function"><name>xensiv_pasco2_mtb_init_uart</name></member>
     <member refid="group__group__board__libs__mtb_1gace71b8639212c85b83adf9178c0b2a73" kind="function"><name>xensiv_pasco2_mtb_interrupt_init</name></member>
+    <member refid="group__group__board__libs__mtb_1gaddabe93a90bf10824a26019202332ec1" kind="function"><name>xensiv_pasco2_mtb_interrupt_init_ex</name></member>
     <member refid="group__group__board__libs__mtb_1ga1f3304bd562b511f18df659342011aea" kind="function"><name>xensiv_pasco2_mtb_read</name></member>
   </compound>
   <compound refid="xensiv__pasco2__mtb__example_8c" kind="file"><name>xensiv_pasco2_mtb_example.c</name>
@@ -217,98 +216,104 @@
     <member refid="xensiv__pasco2__mtb__example_8c_1a7f92da5718f6242bd23475cec04770e1" kind="define"><name>I2C_MASTER_FREQUENCY</name></member>
     <member refid="xensiv__pasco2__mtb__example_8c_1a143bade0d8288ca02a2a99d25841f0bc" kind="define"><name>WAIT_SENSOR_RDY_MS</name></member>
     <member refid="xensiv__pasco2__mtb__example_8c_1a2c81838dacaa8806c2cced9213c500c5" kind="define"><name>DEFAULT_PRESSURE_REF_HPA</name></member>
-    <member refid="xensiv__pasco2__mtb__example_8c_1af2cd40361729c9aaaa453f1506e75dd7" kind="variable"><name>cyhal_i2c</name></member>
-    <member refid="xensiv__pasco2__mtb__example_8c_1a722295afa37e08a5fc0819d50d8a78a6" kind="variable"><name>xensiv_pasco2</name></member>
     <member refid="xensiv__pasco2__mtb__example_8c_1a848a89c46ac0f1f37e8059a5b62047b9" kind="variable"><name>xensiv_pasco2_drdy</name></member>
     <member refid="xensiv__pasco2__mtb__example_8c_1a634589162b8bf1b7ad48bd3faef6c6cc" kind="function"><name>xensiv_pasco2_int_cb</name></member>
     <member refid="xensiv__pasco2__mtb__example_8c_1a6b54faedaf462f7023f8516d963d1322" kind="function"><name>xensiv_pasco2_mtb_example</name></member>
   </compound>
+  <compound refid="xensiv__pasco2__platform_8h" kind="file"><name>xensiv_pasco2_platform.h</name>
+    <member refid="group__group__board__libs__platform_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kind="function"><name>xensiv_pasco2_plat_i2c_transfer</name></member>
+    <member refid="group__group__board__libs__platform_1ga30258b2d0b775dd70dac784ba7583a02" kind="function"><name>xensiv_pasco2_plat_uart_read</name></member>
+    <member refid="group__group__board__libs__platform_1ga9300d953c5b0e034b91c1eb35e5b6a87" kind="function"><name>xensiv_pasco2_plat_uart_write</name></member>
+    <member refid="group__group__board__libs__platform_1ga6b0f690782033eb82ac184e541152801" kind="function"><name>xensiv_pasco2_plat_delay</name></member>
+    <member refid="group__group__board__libs__platform_1ga227451919676d916a38ac90daea339b3" kind="function"><name>xensiv_pasco2_plat_htons</name></member>
+    <member refid="group__group__board__libs__platform_1ga1a3f8502b60fd6f507b66dc91210b8b6" kind="function"><name>xensiv_pasco2_plat_assert</name></member>
+  </compound>
   <compound refid="xensiv__pasco2__regs_8h" kind="file"><name>xensiv_pasco2_regs.h</name>
-    <member refid="xensiv__pasco2__regs_8h_1abb1ae001d8889bd964f01eeeb6fe0c1d" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a368987f9f20b466b2b9f086c07246e6b" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a6611273e04d324cdef6c4b97fc2bd4fa" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1af01c5ba33ebbcb220e556f6142688ee4" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a7244e5e4a297f536d1457560b7364717" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a22848f72ce73eaa28398f0bd96d8b5b5" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a05f7594703defe71ee4a08fe30dcd0d4" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a78a03943df0cad655414fc6f57d6a0c9" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a43a603e0d008ac1482a49e3aee6b68cb" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a2de6fbb8765768cd0688aff48f5ad5d3" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1aa88162c583a9ce1a647810e9b1d8ec81" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a714748e1de30a90ebc9e93deafa61eb4" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a33951a743456260fa3624ad40d97b047" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1adff505529c6022084d5a510ddb2388a2" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a61fd4a78c663115a5d89750fab5547e3" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1af31657b78d3cd64027269bee553e067d" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a2b47eba65e35068d4f3ad75f18df2899" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a7bc2fde1fc753fb6ded6efceb546201a" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_REV_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a6e1de700155c1f60017cafca4c7582d2" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_REV_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a2f5426af242ce3afd0039e8c80874e3e" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_PROD_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a51bff889a533eb337e0d0a3e95c7a925" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_PROD_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a51a1c1ebb25bffb996ce8652da1c1d83" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a7d23b31253a45d8cb4fdacda58a2bb8f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a451369d406cfdfdedb57f3c9a2346877" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a9d7dd5a6ff1fc083c223e1b01b553da3" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a19a35d118cfb81ef291e8f5875ecf65a" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1aa51b32f0fd749cb01ace59179adfa8e2" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a8c762f5c3f6c5814c99c631fdce81104" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a8a0f4ef342fbd7701bbb08bef7511dc9" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a93e36905dd01de352b95631185168f1f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a430b139c8e4b9c1cb7250bc4575e93af" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a7b9684eee34a10220a6acfaf1811e102" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a1f567bae2f48ae7add0d869df5427f8c" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a795dd5f84d4c0f1954c9e5885a02df65" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a9ca65f8bfad22ad3bceb4a7ae03f16de" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ada8588c1cafc6bd4eb8908f53a395106" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a146086a55eef97833b4777ddb105464f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1aa80728ef55d5b92292e846fb7145eaea" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1af9c9785c968e629d89c5c0bf180174d8" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a25e2997bfd1590c465d30d30bd4353c1" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a003155bcb4ee682cc84ae65e8dffcac1" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ab3bcd794593d3ff7f318024c7ec22bb2" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a0b031b696a9fb870ae32fa3f42a8cc22" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a985869299410e48ebc9f92c703342a74" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a352af3a736b1430a291c36e0d2e60049" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a485049e18f8f13acc5d1ec6a5d99037d" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a7d5f995fffe8c0d68e73d17245342a6d" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ac8531a8d4523c3f5e1f5b4e6ffb5c7a8" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a69be681268a438261c7ecf9d7c4a9220" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a468338d29668c87050541f30e91967a3" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1aa402319f67f14495a3b48723c0c6189d" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a9dd146053ce70df3d97ca5df4869caa9" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ad3fc7dcbbb55b376b3d341e5cba5a0fd" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1aaaa63292b3324bba64505c876f42751e" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a3c2c567a2f7195c42815858e773487f2" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ac985ec1e0fcc407476dee8a5898b4bc7" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a66224b3477a5b779650429ad9fc6b517" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a5f0d4f639c2915e6d0d3dc7024edd9c6" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a131de2bd426081511998dd31cfcd6482" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a9943372bedaad8e0b63d64a7f2384d0a" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ac090837790fdcaf80c32f1695044ba20" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a9f5c4524e76eb43b95154559e2582516" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_DRDY_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ae2d8058f5954467e9d19db9168c43abc" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_DRDY_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a8dd25c22ebfcc22eaccf688fd6cfc02d" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1aff6c038fa2915776813cb013adf21a9c" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a09c982937ca73f1f5347013b271ca1e8" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a5540036e6804b01ff09d7d1795bc4e2d" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1accbca64cea11d3b0a4277e361649c2f8" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_TYP_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a494b0f8b6e6efd5eb993fa78388dc896" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_TYP_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a4aff46ecb1c4a9020bfd90318a4d7d88" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ae809ba4ccb998e48aa10a88aa55639fc" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1afd222ec69be87fc2058678779af33a28" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a0d2acfb6837678e471404c3e76b3ca65" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1aa6c3fa223c50a5d6df29864a1afc48fa" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a373e94674d84865707717c84a9a25194" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a1deea1c63f5842f1b485dd508b8962a0" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ac79cf9d6d926eb3f80c6d0879133b1b8" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a6049b02e57d388397ad201a46a29d9ed" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a6f5070d0414b8978332100066663731b" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a3935b48328eb8ee22a6d864d8d48f90f" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a6f7a56ab83f97e71ee5127191d333fe5" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ae9f64635f5a280f04328f16fe3a8dd42" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1ad9e2bdb6b325beeb1586513e89c6a370" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_MSK</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a66bf5890bb8af135e0cb57198cbb51a6" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST_SRTRG_POS</name></member>
-    <member refid="xensiv__pasco2__regs_8h_1a8c144df6f2002704e8c4e527b14b42c2" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST_SRTRG_MSK</name></member>
+    <member refid="group__group__board__libs_1gabb1ae001d8889bd964f01eeeb6fe0c1d" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID</name></member>
+    <member refid="group__group__board__libs_1ga368987f9f20b466b2b9f086c07246e6b" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS</name></member>
+    <member refid="group__group__board__libs_1ga6611273e04d324cdef6c4b97fc2bd4fa" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H</name></member>
+    <member refid="group__group__board__libs_1gaf01c5ba33ebbcb220e556f6142688ee4" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L</name></member>
+    <member refid="group__group__board__libs_1ga7244e5e4a297f536d1457560b7364717" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG</name></member>
+    <member refid="group__group__board__libs_1ga22848f72ce73eaa28398f0bd96d8b5b5" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H</name></member>
+    <member refid="group__group__board__libs_1ga05f7594703defe71ee4a08fe30dcd0d4" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L</name></member>
+    <member refid="group__group__board__libs_1ga78a03943df0cad655414fc6f57d6a0c9" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS</name></member>
+    <member refid="group__group__board__libs_1ga43a603e0d008ac1482a49e3aee6b68cb" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG</name></member>
+    <member refid="group__group__board__libs_1ga2de6fbb8765768cd0688aff48f5ad5d3" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H</name></member>
+    <member refid="group__group__board__libs_1gaa88162c583a9ce1a647810e9b1d8ec81" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L</name></member>
+    <member refid="group__group__board__libs_1ga714748e1de30a90ebc9e93deafa61eb4" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H</name></member>
+    <member refid="group__group__board__libs_1ga33951a743456260fa3624ad40d97b047" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L</name></member>
+    <member refid="group__group__board__libs_1gadff505529c6022084d5a510ddb2388a2" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H</name></member>
+    <member refid="group__group__board__libs_1ga61fd4a78c663115a5d89750fab5547e3" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L</name></member>
+    <member refid="group__group__board__libs_1gaf31657b78d3cd64027269bee553e067d" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD</name></member>
+    <member refid="group__group__board__libs_1ga2b47eba65e35068d4f3ad75f18df2899" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST</name></member>
+    <member refid="group__group__board__libs_1ga7bc2fde1fc753fb6ded6efceb546201a" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_REV_POS</name></member>
+    <member refid="group__group__board__libs_1ga6e1de700155c1f60017cafca4c7582d2" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_REV_MSK</name></member>
+    <member refid="group__group__board__libs_1ga2f5426af242ce3afd0039e8c80874e3e" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_PROD_POS</name></member>
+    <member refid="group__group__board__libs_1ga51bff889a533eb337e0d0a3e95c7a925" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_PROD_MSK</name></member>
+    <member refid="group__group__board__libs_1ga51a1c1ebb25bffb996ce8652da1c1d83" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1ga7d23b31253a45d8cb4fdacda58a2bb8f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1ga451369d406cfdfdedb57f3c9a2346877" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1ga9d7dd5a6ff1fc083c223e1b01b553da3" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1ga19a35d118cfb81ef291e8f5875ecf65a" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1gaa51b32f0fd749cb01ace59179adfa8e2" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1ga8c762f5c3f6c5814c99c631fdce81104" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_POS</name></member>
+    <member refid="group__group__board__libs_1ga8a0f4ef342fbd7701bbb08bef7511dc9" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_MSK</name></member>
+    <member refid="group__group__board__libs_1ga93e36905dd01de352b95631185168f1f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_POS</name></member>
+    <member refid="group__group__board__libs_1ga430b139c8e4b9c1cb7250bc4575e93af" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_MSK</name></member>
+    <member refid="group__group__board__libs_1ga7b9684eee34a10220a6acfaf1811e102" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_POS</name></member>
+    <member refid="group__group__board__libs_1ga1f567bae2f48ae7add0d869df5427f8c" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_MSK</name></member>
+    <member refid="group__group__board__libs_1ga795dd5f84d4c0f1954c9e5885a02df65" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_POS</name></member>
+    <member refid="group__group__board__libs_1ga9ca65f8bfad22ad3bceb4a7ae03f16de" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_MSK</name></member>
+    <member refid="group__group__board__libs_1gada8588c1cafc6bd4eb8908f53a395106" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_POS</name></member>
+    <member refid="group__group__board__libs_1ga146086a55eef97833b4777ddb105464f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_MSK</name></member>
+    <member refid="group__group__board__libs_1gaa80728ef55d5b92292e846fb7145eaea" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gaf9c9785c968e629d89c5c0bf180174d8" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga25e2997bfd1590c465d30d30bd4353c1" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga003155bcb4ee682cc84ae65e8dffcac1" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gab3bcd794593d3ff7f318024c7ec22bb2" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_POS</name></member>
+    <member refid="group__group__board__libs_1ga0b031b696a9fb870ae32fa3f42a8cc22" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_MSK</name></member>
+    <member refid="group__group__board__libs_1ga985869299410e48ebc9f92c703342a74" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_POS</name></member>
+    <member refid="group__group__board__libs_1ga352af3a736b1430a291c36e0d2e60049" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_MSK</name></member>
+    <member refid="group__group__board__libs_1ga485049e18f8f13acc5d1ec6a5d99037d" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_POS</name></member>
+    <member refid="group__group__board__libs_1ga7d5f995fffe8c0d68e73d17245342a6d" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_MSK</name></member>
+    <member refid="group__group__board__libs_1gac8531a8d4523c3f5e1f5b4e6ffb5c7a8" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_POS</name></member>
+    <member refid="group__group__board__libs_1ga69be681268a438261c7ecf9d7c4a9220" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_MSK</name></member>
+    <member refid="group__group__board__libs_1ga468338d29668c87050541f30e91967a3" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gaa402319f67f14495a3b48723c0c6189d" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga9dd146053ce70df3d97ca5df4869caa9" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gad3fc7dcbbb55b376b3d341e5cba5a0fd" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gaaaa63292b3324bba64505c876f42751e" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1ga3c2c567a2f7195c42815858e773487f2" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1gac985ec1e0fcc407476dee8a5898b4bc7" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1ga66224b3477a5b779650429ad9fc6b517" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1ga5f0d4f639c2915e6d0d3dc7024edd9c6" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_POS</name></member>
+    <member refid="group__group__board__libs_1ga131de2bd426081511998dd31cfcd6482" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_MSK</name></member>
+    <member refid="group__group__board__libs_1ga9943372bedaad8e0b63d64a7f2384d0a" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_POS</name></member>
+    <member refid="group__group__board__libs_1gac090837790fdcaf80c32f1695044ba20" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_MSK</name></member>
+    <member refid="group__group__board__libs_1ga9f5c4524e76eb43b95154559e2582516" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_DRDY_POS</name></member>
+    <member refid="group__group__board__libs_1gae2d8058f5954467e9d19db9168c43abc" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_DRDY_MSK</name></member>
+    <member refid="group__group__board__libs_1ga8dd25c22ebfcc22eaccf688fd6cfc02d" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_POS</name></member>
+    <member refid="group__group__board__libs_1gaff6c038fa2915776813cb013adf21a9c" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_MSK</name></member>
+    <member refid="group__group__board__libs_1ga09c982937ca73f1f5347013b271ca1e8" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_POS</name></member>
+    <member refid="group__group__board__libs_1ga5540036e6804b01ff09d7d1795bc4e2d" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_MSK</name></member>
+    <member refid="group__group__board__libs_1gaccbca64cea11d3b0a4277e361649c2f8" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_TYP_POS</name></member>
+    <member refid="group__group__board__libs_1ga494b0f8b6e6efd5eb993fa78388dc896" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_TYP_MSK</name></member>
+    <member refid="group__group__board__libs_1ga4aff46ecb1c4a9020bfd90318a4d7d88" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gae809ba4ccb998e48aa10a88aa55639fc" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gafd222ec69be87fc2058678779af33a28" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga0d2acfb6837678e471404c3e76b3ca65" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gaa6c3fa223c50a5d6df29864a1afc48fa" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga373e94674d84865707717c84a9a25194" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga1deea1c63f5842f1b485dd508b8962a0" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gac79cf9d6d926eb3f80c6d0879133b1b8" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga6049b02e57d388397ad201a46a29d9ed" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga6f5070d0414b8978332100066663731b" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga3935b48328eb8ee22a6d864d8d48f90f" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga6f7a56ab83f97e71ee5127191d333fe5" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gae9f64635f5a280f04328f16fe3a8dd42" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gad9e2bdb6b325beeb1586513e89c6a370" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga66bf5890bb8af135e0cb57198cbb51a6" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST_SRTRG_POS</name></member>
+    <member refid="group__group__board__libs_1ga8c144df6f2002704e8c4e527b14b42c2" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST_SRTRG_MSK</name></member>
   </compound>
   <compound refid="group__group__board__libs" kind="group"><name>group_board_libs</name>
     <member refid="group__group__board__libs_1ga0fb0b6cde2e7d1ce92e0e126791fe9ce" kind="enum"><name>xensiv_pasco2_cmd_t</name></member>
@@ -339,8 +344,8 @@
     <member refid="group__group__board__libs_1gad46a9f4100efaac3b2d143e8683d90e1" kind="enum"><name>xensiv_pasco2_alarm_type_t</name></member>
     <member refid="group__group__board__libs_1ggad46a9f4100efaac3b2d143e8683d90e1a9d0a5b56dcbbd92a2ed5246c27e36d7e" kind="enumvalue"><name>XENSIV_PASCO2_ALARM_TYPE_HIGH_TO_LOW</name></member>
     <member refid="group__group__board__libs_1ggad46a9f4100efaac3b2d143e8683d90e1ae028e38de703a09473d0ec4be708b197" kind="enumvalue"><name>XENSIV_PASCO2_ALARM_TYPE_LOW_TO_HIGH</name></member>
-    <member refid="group__group__board__libs_1gac8f54ac6a19cb5c97ee31cedfc95963c" kind="typedef"><name>xensiv_pasco2_read_fptr_t</name></member>
-    <member refid="group__group__board__libs_1gac8627021b867b39067fc67d6c365e6ef" kind="typedef"><name>xensiv_pasco2_write_fptr_t</name></member>
+    <member refid="group__group__board__libs_1ga6d340129c6120703766df20bcdf3b9d8" kind="typedef"><name>xensiv_pasco2_read_fptr_t</name></member>
+    <member refid="group__group__board__libs_1ga18e67a6769187bffd4ce556ac30ed450" kind="typedef"><name>xensiv_pasco2_write_fptr_t</name></member>
     <member refid="group__group__board__libs_1ga38fe4b44ddd282af3f28bc4080932a95" kind="function"><name>xensiv_pasco2_init_i2c</name></member>
     <member refid="group__group__board__libs_1ga9fa617ee552cb1672d7d1d4fedd54783" kind="function"><name>xensiv_pasco2_init_uart</name></member>
     <member refid="group__group__board__libs_1gabd9c4332ede9561912e3bd4d761a6318" kind="function"><name>xensiv_pasco2_set_reg</name></member>
@@ -365,12 +370,6 @@
     <member refid="group__group__board__libs_1ga870276bbf297981a4c09adc04637cd8b" kind="function"><name>xensiv_pasco2_start_single_mode</name></member>
     <member refid="group__group__board__libs_1gafcd452d674763aa73e6be0720f86cdf9" kind="function"><name>xensiv_pasco2_start_continuous_mode</name></member>
     <member refid="group__group__board__libs_1ga9333d87948220d17c06fc890086c856a" kind="function"><name>xensiv_pasco2_perform_forced_compensation</name></member>
-    <member refid="group__group__board__libs_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kind="function"><name>xensiv_pasco2_plat_i2c_transfer</name></member>
-    <member refid="group__group__board__libs_1ga30258b2d0b775dd70dac784ba7583a02" kind="function"><name>xensiv_pasco2_plat_uart_read</name></member>
-    <member refid="group__group__board__libs_1ga9300d953c5b0e034b91c1eb35e5b6a87" kind="function"><name>xensiv_pasco2_plat_uart_write</name></member>
-    <member refid="group__group__board__libs_1ga6b0f690782033eb82ac184e541152801" kind="function"><name>xensiv_pasco2_plat_delay</name></member>
-    <member refid="group__group__board__libs_1ga227451919676d916a38ac90daea339b3" kind="function"><name>xensiv_pasco2_plat_htons</name></member>
-    <member refid="group__group__board__libs_1ga1a3f8502b60fd6f507b66dc91210b8b6" kind="function"><name>xensiv_pasco2_plat_assert</name></member>
     <member refid="group__group__board__libs_1ga903d93f0ab6d683de4d4687c4ddd76b5" kind="define"><name>XENSIV_PASCO2_OK</name></member>
     <member refid="group__group__board__libs_1ga5e84f685d2d853703ecacb7e43292b79" kind="define"><name>XENSIV_PASCO2_ERR_COMM</name></member>
     <member refid="group__group__board__libs_1gab9870212895620e8e0dfaaee561fcbb0" kind="define"><name>XENSIV_PASCO2_ERR_WRITE_TOO_LARGE</name></member>
@@ -382,11 +381,97 @@
     <member refid="group__group__board__libs_1ga32290e82ba83241c48063b6e65e27050" kind="define"><name>XENSIV_PASCO2_MEAS_RATE_MIN</name></member>
     <member refid="group__group__board__libs_1ga8127198286d3b4083fdc0e815b4cb488" kind="define"><name>XENSIV_PASCO2_MEAS_RATE_MAX</name></member>
     <member refid="group__group__board__libs_1ga4fe8f5f20ac2d5ae081592841e7a5391" kind="define"><name>XENSIV_PASCO2_I2C_ADDR</name></member>
+    <member refid="group__group__board__libs_1gabb1ae001d8889bd964f01eeeb6fe0c1d" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID</name></member>
+    <member refid="group__group__board__libs_1ga368987f9f20b466b2b9f086c07246e6b" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS</name></member>
+    <member refid="group__group__board__libs_1ga6611273e04d324cdef6c4b97fc2bd4fa" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H</name></member>
+    <member refid="group__group__board__libs_1gaf01c5ba33ebbcb220e556f6142688ee4" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L</name></member>
+    <member refid="group__group__board__libs_1ga7244e5e4a297f536d1457560b7364717" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG</name></member>
+    <member refid="group__group__board__libs_1ga22848f72ce73eaa28398f0bd96d8b5b5" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H</name></member>
+    <member refid="group__group__board__libs_1ga05f7594703defe71ee4a08fe30dcd0d4" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L</name></member>
+    <member refid="group__group__board__libs_1ga78a03943df0cad655414fc6f57d6a0c9" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS</name></member>
+    <member refid="group__group__board__libs_1ga43a603e0d008ac1482a49e3aee6b68cb" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG</name></member>
+    <member refid="group__group__board__libs_1ga2de6fbb8765768cd0688aff48f5ad5d3" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H</name></member>
+    <member refid="group__group__board__libs_1gaa88162c583a9ce1a647810e9b1d8ec81" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L</name></member>
+    <member refid="group__group__board__libs_1ga714748e1de30a90ebc9e93deafa61eb4" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H</name></member>
+    <member refid="group__group__board__libs_1ga33951a743456260fa3624ad40d97b047" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L</name></member>
+    <member refid="group__group__board__libs_1gadff505529c6022084d5a510ddb2388a2" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H</name></member>
+    <member refid="group__group__board__libs_1ga61fd4a78c663115a5d89750fab5547e3" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L</name></member>
+    <member refid="group__group__board__libs_1gaf31657b78d3cd64027269bee553e067d" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD</name></member>
+    <member refid="group__group__board__libs_1ga2b47eba65e35068d4f3ad75f18df2899" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST</name></member>
+    <member refid="group__group__board__libs_1ga7bc2fde1fc753fb6ded6efceb546201a" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_REV_POS</name></member>
+    <member refid="group__group__board__libs_1ga6e1de700155c1f60017cafca4c7582d2" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_REV_MSK</name></member>
+    <member refid="group__group__board__libs_1ga2f5426af242ce3afd0039e8c80874e3e" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_PROD_POS</name></member>
+    <member refid="group__group__board__libs_1ga51bff889a533eb337e0d0a3e95c7a925" kind="define"><name>XENSIV_PASCO2_REG_PROD_ID_PROD_MSK</name></member>
+    <member refid="group__group__board__libs_1ga51a1c1ebb25bffb996ce8652da1c1d83" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1ga7d23b31253a45d8cb4fdacda58a2bb8f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1ga451369d406cfdfdedb57f3c9a2346877" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1ga9d7dd5a6ff1fc083c223e1b01b553da3" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1ga19a35d118cfb81ef291e8f5875ecf65a" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1gaa51b32f0fd749cb01ace59179adfa8e2" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1ga8c762f5c3f6c5814c99c631fdce81104" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_POS</name></member>
+    <member refid="group__group__board__libs_1ga8a0f4ef342fbd7701bbb08bef7511dc9" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ICCER_MSK</name></member>
+    <member refid="group__group__board__libs_1ga93e36905dd01de352b95631185168f1f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_POS</name></member>
+    <member refid="group__group__board__libs_1ga430b139c8e4b9c1cb7250bc4575e93af" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORVS_MSK</name></member>
+    <member refid="group__group__board__libs_1ga7b9684eee34a10220a6acfaf1811e102" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_POS</name></member>
+    <member refid="group__group__board__libs_1ga1f567bae2f48ae7add0d869df5427f8c" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_MSK</name></member>
+    <member refid="group__group__board__libs_1ga795dd5f84d4c0f1954c9e5885a02df65" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_POS</name></member>
+    <member refid="group__group__board__libs_1ga9ca65f8bfad22ad3bceb4a7ae03f16de" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_MSK</name></member>
+    <member refid="group__group__board__libs_1gada8588c1cafc6bd4eb8908f53a395106" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_POS</name></member>
+    <member refid="group__group__board__libs_1ga146086a55eef97833b4777ddb105464f" kind="define"><name>XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_MSK</name></member>
+    <member refid="group__group__board__libs_1gaa80728ef55d5b92292e846fb7145eaea" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gaf9c9785c968e629d89c5c0bf180174d8" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga25e2997bfd1590c465d30d30bd4353c1" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga003155bcb4ee682cc84ae65e8dffcac1" kind="define"><name>XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gab3bcd794593d3ff7f318024c7ec22bb2" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_POS</name></member>
+    <member refid="group__group__board__libs_1ga0b031b696a9fb870ae32fa3f42a8cc22" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_MSK</name></member>
+    <member refid="group__group__board__libs_1ga985869299410e48ebc9f92c703342a74" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_POS</name></member>
+    <member refid="group__group__board__libs_1ga352af3a736b1430a291c36e0d2e60049" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_MSK</name></member>
+    <member refid="group__group__board__libs_1ga485049e18f8f13acc5d1ec6a5d99037d" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_POS</name></member>
+    <member refid="group__group__board__libs_1ga7d5f995fffe8c0d68e73d17245342a6d" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_MSK</name></member>
+    <member refid="group__group__board__libs_1gac8531a8d4523c3f5e1f5b4e6ffb5c7a8" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_POS</name></member>
+    <member refid="group__group__board__libs_1ga69be681268a438261c7ecf9d7c4a9220" kind="define"><name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_MSK</name></member>
+    <member refid="group__group__board__libs_1ga468338d29668c87050541f30e91967a3" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gaa402319f67f14495a3b48723c0c6189d" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga9dd146053ce70df3d97ca5df4869caa9" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gad3fc7dcbbb55b376b3d341e5cba5a0fd" kind="define"><name>XENSIV_PASCO2_REG_CO2PPM_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gaaaa63292b3324bba64505c876f42751e" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1ga3c2c567a2f7195c42815858e773487f2" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1gac985ec1e0fcc407476dee8a5898b4bc7" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_POS</name></member>
+    <member refid="group__group__board__libs_1ga66224b3477a5b779650429ad9fc6b517" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_MSK</name></member>
+    <member refid="group__group__board__libs_1ga5f0d4f639c2915e6d0d3dc7024edd9c6" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_POS</name></member>
+    <member refid="group__group__board__libs_1ga131de2bd426081511998dd31cfcd6482" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_MSK</name></member>
+    <member refid="group__group__board__libs_1ga9943372bedaad8e0b63d64a7f2384d0a" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_POS</name></member>
+    <member refid="group__group__board__libs_1gac090837790fdcaf80c32f1695044ba20" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_MSK</name></member>
+    <member refid="group__group__board__libs_1ga9f5c4524e76eb43b95154559e2582516" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_DRDY_POS</name></member>
+    <member refid="group__group__board__libs_1gae2d8058f5954467e9d19db9168c43abc" kind="define"><name>XENSIV_PASCO2_REG_MEAS_STS_DRDY_MSK</name></member>
+    <member refid="group__group__board__libs_1ga8dd25c22ebfcc22eaccf688fd6cfc02d" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_POS</name></member>
+    <member refid="group__group__board__libs_1gaff6c038fa2915776813cb013adf21a9c" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_MSK</name></member>
+    <member refid="group__group__board__libs_1ga09c982937ca73f1f5347013b271ca1e8" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_POS</name></member>
+    <member refid="group__group__board__libs_1ga5540036e6804b01ff09d7d1795bc4e2d" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_MSK</name></member>
+    <member refid="group__group__board__libs_1gaccbca64cea11d3b0a4277e361649c2f8" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_TYP_POS</name></member>
+    <member refid="group__group__board__libs_1ga494b0f8b6e6efd5eb993fa78388dc896" kind="define"><name>XENSIV_PASCO2_REG_INT_CFG_INT_TYP_MSK</name></member>
+    <member refid="group__group__board__libs_1ga4aff46ecb1c4a9020bfd90318a4d7d88" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gae809ba4ccb998e48aa10a88aa55639fc" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gafd222ec69be87fc2058678779af33a28" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga0d2acfb6837678e471404c3e76b3ca65" kind="define"><name>XENSIV_PASCO2_REG_ALARM_TH_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gaa6c3fa223c50a5d6df29864a1afc48fa" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga373e94674d84865707717c84a9a25194" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga1deea1c63f5842f1b485dd508b8962a0" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gac79cf9d6d926eb3f80c6d0879133b1b8" kind="define"><name>XENSIV_PASCO2_REG_PRESS_REF_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga6049b02e57d388397ad201a46a29d9ed" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga6f5070d0414b8978332100066663731b" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_H_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga3935b48328eb8ee22a6d864d8d48f90f" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1ga6f7a56ab83f97e71ee5127191d333fe5" kind="define"><name>XENSIV_PASCO2_REG_CALIB_REF_L_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1gae9f64635f5a280f04328f16fe3a8dd42" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_POS</name></member>
+    <member refid="group__group__board__libs_1gad9e2bdb6b325beeb1586513e89c6a370" kind="define"><name>XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_MSK</name></member>
+    <member refid="group__group__board__libs_1ga66bf5890bb8af135e0cb57198cbb51a6" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST_SRTRG_POS</name></member>
+    <member refid="group__group__board__libs_1ga8c144df6f2002704e8c4e527b14b42c2" kind="define"><name>XENSIV_PASCO2_REG_SENS_RST_SRTRG_MSK</name></member>
   </compound>
   <compound refid="group__group__board__libs__mtb" kind="group"><name>group_board_libs_mtb</name>
     <member refid="group__group__board__libs__mtb_1gabea706545fb1e82b9e4e568105a23d5b" kind="function"><name>xensiv_pasco2_mtb_init_i2c</name></member>
     <member refid="group__group__board__libs__mtb_1ga628f5739346a7e1babdb03ae51f97a86" kind="function"><name>xensiv_pasco2_mtb_init_uart</name></member>
     <member refid="group__group__board__libs__mtb_1gace71b8639212c85b83adf9178c0b2a73" kind="function"><name>xensiv_pasco2_mtb_interrupt_init</name></member>
+    <member refid="group__group__board__libs__mtb_1gaddabe93a90bf10824a26019202332ec1" kind="function"><name>xensiv_pasco2_mtb_interrupt_init_ex</name></member>
     <member refid="group__group__board__libs__mtb_1ga1f3304bd562b511f18df659342011aea" kind="function"><name>xensiv_pasco2_mtb_read</name></member>
     <member refid="group__group__board__libs__mtb_1ga7914066ba3565838bd631e5dc5974a21" kind="define"><name>CY_RSLT_MODULE_BOARD_HARDWARE_XENSIV_PASCO2</name></member>
     <member refid="group__group__board__libs__mtb_1ga017bf447a9133395b4220d32df9d2de4" kind="define"><name>XENSIV_PASCO2_RSLT_ERR_COMM</name></member>
@@ -397,7 +482,17 @@
     <member refid="group__group__board__libs__mtb_1ga03f9046a01140c8a9bc90804324f3869" kind="define"><name>XENSIV_PASCO2_RSLT_ORTMP</name></member>
     <member refid="group__group__board__libs__mtb_1gac8889466a32f46f61164acda31779d38" kind="define"><name>XENSIV_PASCO2_RSLT_READ_NRDY</name></member>
   </compound>
+  <compound refid="group__group__board__libs__platform" kind="group"><name>group_board_libs_platform</name>
+    <member refid="group__group__board__libs__platform_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kind="function"><name>xensiv_pasco2_plat_i2c_transfer</name></member>
+    <member refid="group__group__board__libs__platform_1ga30258b2d0b775dd70dac784ba7583a02" kind="function"><name>xensiv_pasco2_plat_uart_read</name></member>
+    <member refid="group__group__board__libs__platform_1ga9300d953c5b0e034b91c1eb35e5b6a87" kind="function"><name>xensiv_pasco2_plat_uart_write</name></member>
+    <member refid="group__group__board__libs__platform_1ga6b0f690782033eb82ac184e541152801" kind="function"><name>xensiv_pasco2_plat_delay</name></member>
+    <member refid="group__group__board__libs__platform_1ga227451919676d916a38ac90daea339b3" kind="function"><name>xensiv_pasco2_plat_htons</name></member>
+    <member refid="group__group__board__libs__platform_1ga1a3f8502b60fd6f507b66dc91210b8b6" kind="function"><name>xensiv_pasco2_plat_assert</name></member>
+  </compound>
   <compound refid="md__r_e_l_e_a_s_e" kind="page"><name>md_RELEASE</name>
+  </compound>
+  <compound refid="deprecated" kind="page"><name>deprecated</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

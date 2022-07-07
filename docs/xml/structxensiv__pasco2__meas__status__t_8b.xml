@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="206" column="5"/>
+        <location file="xensiv_pasco2.h" line="200" column="5"/>
       </memberdef>
       <memberdef kind="variable" id="structxensiv__pasco2__meas__status__t_8b_1a6486b4e98228b83d4b13d54febe5f170" prot="public" static="no" mutable="no">
         <type>uint32_t</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="207" column="14"/>
+        <location file="xensiv_pasco2.h" line="201" column="14"/>
       </memberdef>
       <memberdef kind="variable" id="structxensiv__pasco2__meas__status__t_8b_1a5f03e630fc9ed1490b5840d4e3d1c88a" prot="public" static="no" mutable="no">
         <type>uint32_t</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="208" column="14"/>
+        <location file="xensiv_pasco2.h" line="202" column="14"/>
       </memberdef>
       <memberdef kind="variable" id="structxensiv__pasco2__meas__status__t_8b_1ac40652e1c787d0d1538d0aee89c4ef94" prot="public" static="no" mutable="no">
         <type>uint32_t</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="209" column="14"/>
+        <location file="xensiv_pasco2.h" line="203" column="14"/>
       </memberdef>
       <memberdef kind="variable" id="structxensiv__pasco2__meas__status__t_8b_1abb67792e94e88254ca5afecf7c26c912" prot="public" static="no" mutable="no">
         <type>uint32_t</type>
@@ -74,14 +74,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="210" column="5"/>
+        <location file="xensiv_pasco2.h" line="204" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="xensiv_pasco2.h" line="204" column="3" bodyfile="xensiv_pasco2.h" bodystart="205" bodyend="211"/>
+    <location file="xensiv_pasco2.h" line="198" column="3" bodyfile="xensiv_pasco2.h" bodystart="199" bodyend="205"/>
     <listofallmembers>
       <member refid="structxensiv__pasco2__meas__status__t_8b_1a74a47a7eac047138ff811ede153943e6" prot="public" virt="non-virtual"><scope>xensiv_pasco2_meas_status_t.b</scope><name>__pad0__</name></member>
       <member refid="structxensiv__pasco2__meas__status__t_8b_1abb67792e94e88254ca5afecf7c26c912" prot="public" virt="non-virtual"><scope>xensiv_pasco2_meas_status_t.b</scope><name>__pad1__</name></member>

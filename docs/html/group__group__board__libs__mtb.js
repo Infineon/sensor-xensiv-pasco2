@@ -10,5 +10,6 @@ var group__group__board__libs__mtb =
     [ "xensiv_pasco2_mtb_init_i2c", "group__group__board__libs__mtb.html#gabea706545fb1e82b9e4e568105a23d5b", null ],
     [ "xensiv_pasco2_mtb_init_uart", "group__group__board__libs__mtb.html#ga628f5739346a7e1babdb03ae51f97a86", null ],
     [ "xensiv_pasco2_mtb_interrupt_init", "group__group__board__libs__mtb.html#gace71b8639212c85b83adf9178c0b2a73", null ],
+    [ "xensiv_pasco2_mtb_interrupt_init_ex", "group__group__board__libs__mtb.html#gaddabe93a90bf10824a26019202332ec1", null ],
     [ "xensiv_pasco2_mtb_read", "group__group__board__libs__mtb.html#ga1f3304bd562b511f18df659342011aea", null ]
 ];

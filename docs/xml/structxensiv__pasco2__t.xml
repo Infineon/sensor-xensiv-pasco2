@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="226" column="11" bodyfile="xensiv_pasco2.h" bodystart="226" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="220" column="11" bodyfile="xensiv_pasco2.h" bodystart="220" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structxensiv__pasco2__t_1a9a9fa72be93aff06daa1d626cbae3a7c" prot="public" static="no" mutable="no">
         <type>xensiv_pasco2_read_fptr_t</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="227" column="31" bodyfile="xensiv_pasco2.h" bodystart="227" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="221" column="31" bodyfile="xensiv_pasco2.h" bodystart="221" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structxensiv__pasco2__t_1a66eb18dca204e8839742e71cbb9e6502" prot="public" static="no" mutable="no">
         <type>xensiv_pasco2_write_fptr_t</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="228" column="32" bodyfile="xensiv_pasco2.h" bodystart="228" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="222" column="32" bodyfile="xensiv_pasco2.h" bodystart="222" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -53,7 +53,7 @@
     <detaileddescription>
 <para>Initialized using <ref refid="group__group__board__libs_1ga38fe4b44ddd282af3f28bc4080932a95" kindref="member">xensiv_pasco2_init_i2c</ref> or <ref refid="group__group__board__libs_1ga9fa617ee552cb1672d7d1d4fedd54783" kindref="member">xensiv_pasco2_init_uart</ref> </para>
     </detaileddescription>
-    <location file="xensiv_pasco2.h" line="224" column="1" bodyfile="xensiv_pasco2.h" bodystart="225" bodyend="229"/>
+    <location file="xensiv_pasco2.h" line="218" column="1" bodyfile="xensiv_pasco2.h" bodystart="219" bodyend="223"/>
     <listofallmembers>
       <member refid="structxensiv__pasco2__t_1a1f6d09b30c54854dfca659b7463ac207" prot="public" virt="non-virtual"><scope>xensiv_pasco2_t</scope><name>ctx</name></member>
       <member refid="structxensiv__pasco2__t_1a9a9fa72be93aff06daa1d626cbae3a7c" prot="public" virt="non-virtual"><scope>xensiv_pasco2_t</scope><name>read</name></member>

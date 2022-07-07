@@ -6,7 +6,7 @@
  *
  ***************************************************************************************************
  * \copyright
- * Copyright 2021 Infineon Technologies AG
+ * Copyright 2021-2022 Infineon Technologies AG
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,9 +22,8 @@
  * limitations under the License.
  **************************************************************************************************/
 
-#include <assert.h>
-
 #include "xensiv_pasco2.h"
+#include "xensiv_pasco2_platform.h"
 
 #define XENSIV_PASCO2_COMM_DELAY_MS             (5U)
 #define XENSIV_PASCO2_COMM_TEST_VAL             (0xA5U)
@@ -66,13 +65,14 @@ static inline uint8_t xensiv_pasco2_ascii_to_digit(uint8_t ascii)
     }
     else
     {
-        return (uint8_t)(10u + (ascii - (uint8_t)'A'));
+        return (uint8_t)(10u + (uint8_t)(ascii - (uint8_t)'A'));
     }
 }
 
 static int32_t xensiv_pasco2_i2c_read(const xensiv_pasco2_t * dev, uint8_t reg_addr, uint8_t * data, uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
+    xensiv_pasco2_plat_assert(dev->ctx != NULL);
     xensiv_pasco2_plat_assert(reg_addr <= XENSIV_PASCO2_REG_SENS_RST);
     xensiv_pasco2_plat_assert(data != NULL);
 
@@ -82,6 +82,7 @@ static int32_t xensiv_pasco2_i2c_read(const xensiv_pasco2_t * dev, uint8_t reg_a
 static int32_t xensiv_pasco2_i2c_write(const xensiv_pasco2_t * dev, uint8_t reg_addr, const uint8_t * data, uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
+    xensiv_pasco2_plat_assert(dev->ctx != NULL);
     xensiv_pasco2_plat_assert(reg_addr <= XENSIV_PASCO2_REG_SENS_RST);
     xensiv_pasco2_plat_assert(data != NULL);
     xensiv_pasco2_plat_assert((len + 1U) < XENSIV_PASCO2_I2C_WRITE_BUFFER_LEN);
@@ -101,6 +102,7 @@ static int32_t xensiv_pasco2_i2c_write(const xensiv_pasco2_t * dev, uint8_t reg_
 static int32_t xensiv_pasco2_uart_read(const xensiv_pasco2_t * dev, uint8_t reg_addr, uint8_t * data, uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
+    xensiv_pasco2_plat_assert(dev->ctx != NULL);
     xensiv_pasco2_plat_assert(reg_addr <= XENSIV_PASCO2_REG_SENS_RST);
     xensiv_pasco2_plat_assert(data != NULL);
 
@@ -142,6 +144,7 @@ static int32_t xensiv_pasco2_uart_read(const xensiv_pasco2_t * dev, uint8_t reg_
 static int32_t xensiv_pasco2_uart_write(const xensiv_pasco2_t * dev, uint8_t reg_addr, const uint8_t * data, uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
+    xensiv_pasco2_plat_assert(dev->ctx != NULL);
     xensiv_pasco2_plat_assert(reg_addr <= XENSIV_PASCO2_REG_SENS_RST);
     xensiv_pasco2_plat_assert(data != NULL);
 
@@ -501,6 +504,8 @@ int32_t xensiv_pasco2_start_continuous_mode(const xensiv_pasco2_t * dev, uint16_
 
 int32_t xensiv_pasco2_perform_forced_compensation(const xensiv_pasco2_t * dev, uint16_t co2_ref)
 {
+    xensiv_pasco2_plat_assert(dev != NULL);
+
     xensiv_pasco2_measurement_config_t meas_config;
     int32_t res = xensiv_pasco2_get_measurement_config(dev, &meas_config);
 
@@ -548,50 +553,4 @@ int32_t xensiv_pasco2_perform_forced_compensation(const xensiv_pasco2_t * dev, u
     }
 
     return res;
-}
-
-__attribute__((weak)) int32_t xensiv_pasco2_plat_i2c_transfer(void * ctx, uint16_t dev_addr, const uint8_t * tx_buffer, size_t tx_len, uint8_t * rx_buffer, size_t rx_len)
-{
-    (void)ctx;
-    (void)dev_addr;
-    (void)tx_buffer;
-    (void)tx_len;
-    (void)rx_buffer;
-    (void)rx_len;
-
-    return XENSIV_PASCO2_ERR_COMM;
-}
-
-__attribute__((weak)) int32_t xensiv_pasco2_plat_uart_read(void *ctx, uint8_t * data, size_t len)
-{
-    (void)ctx;
-    (void)data;
-    (void)len;
-
-    return XENSIV_PASCO2_ERR_COMM;
-}
-
-__attribute__((weak)) int32_t xensiv_pasco2_plat_uart_write(void *ctx, uint8_t * data, size_t len)
-{
-    (void)ctx;
-    (void)data;
-    (void)len;
-
-    return XENSIV_PASCO2_ERR_COMM;
-}
-
-__attribute__((weak)) void xensiv_pasco2_plat_delay(uint32_t ms)
-{
-    (void)ms;
-}
-
-__attribute__((weak)) uint16_t xensiv_pasco2_plat_htons(uint16_t x)
-{
-    return ((uint16_t)(((x & 0x00ffU) << 8) |
-                       ((x & 0xff00U) >> 8)));
-}
-
-__attribute__((weak)) void xensiv_pasco2_plat_assert(int expr)
-{
-    assert(expr);
 }

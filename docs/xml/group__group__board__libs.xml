@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="89" column="1" bodyfile="xensiv_pasco2.h" bodystart="90" bodyend="95"/>
+        <location file="xensiv_pasco2.h" line="83" column="1" bodyfile="xensiv_pasco2.h" bodystart="84" bodyend="89"/>
       </memberdef>
       <memberdef kind="enum" id="group__group__board__libs_1gaf74e06da88cf86200c27f319dc31cd02" prot="public" static="no" strong="no">
         <type></type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="98" column="1" bodyfile="xensiv_pasco2.h" bodystart="99" bodyend="105"/>
+        <location file="xensiv_pasco2.h" line="92" column="1" bodyfile="xensiv_pasco2.h" bodystart="93" bodyend="99"/>
       </memberdef>
       <memberdef kind="enum" id="group__group__board__libs_1ga06608546c54577ef3486d1794201362f" prot="public" static="no" strong="no">
         <type></type>
@@ -130,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="108" column="1" bodyfile="xensiv_pasco2.h" bodystart="109" bodyend="113"/>
+        <location file="xensiv_pasco2.h" line="102" column="1" bodyfile="xensiv_pasco2.h" bodystart="103" bodyend="107"/>
       </memberdef>
       <memberdef kind="enum" id="group__group__board__libs_1ga0bd29f11c6d5abff29998ac6848f4683" prot="public" static="no" strong="no">
         <type></type>
@@ -160,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="116" column="1" bodyfile="xensiv_pasco2.h" bodystart="117" bodyend="120"/>
+        <location file="xensiv_pasco2.h" line="110" column="1" bodyfile="xensiv_pasco2.h" bodystart="111" bodyend="114"/>
       </memberdef>
       <memberdef kind="enum" id="group__group__board__libs_1ga1822f1abc722b317d95bbe888fa71855" prot="public" static="no" strong="no">
         <type></type>
@@ -190,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="123" column="1" bodyfile="xensiv_pasco2.h" bodystart="124" bodyend="127"/>
+        <location file="xensiv_pasco2.h" line="117" column="1" bodyfile="xensiv_pasco2.h" bodystart="118" bodyend="121"/>
       </memberdef>
       <memberdef kind="enum" id="group__group__board__libs_1gaea17466bbef4f0b4f2b06ea8b6ee3bd4" prot="public" static="no" strong="no">
         <type></type>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="130" column="1" bodyfile="xensiv_pasco2.h" bodystart="131" bodyend="138"/>
+        <location file="xensiv_pasco2.h" line="124" column="1" bodyfile="xensiv_pasco2.h" bodystart="125" bodyend="132"/>
       </memberdef>
       <memberdef kind="enum" id="group__group__board__libs_1gad46a9f4100efaac3b2d143e8683d90e1" prot="public" static="no" strong="no">
         <type></type>
@@ -280,14 +280,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="141" column="1" bodyfile="xensiv_pasco2.h" bodystart="142" bodyend="145"/>
+        <location file="xensiv_pasco2.h" line="135" column="1" bodyfile="xensiv_pasco2.h" bodystart="136" bodyend="139"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__group__board__libs_1gac8f54ac6a19cb5c97ee31cedfc95963c" prot="public" static="no">
+      <memberdef kind="typedef" id="group__group__board__libs_1ga6d340129c6120703766df20bcdf3b9d8" prot="public" static="no">
         <type>int32_t(*</type>
-        <definition>typedef int32_t(* xensiv_pasco2_read_fptr_t) (const struct xensiv_pasco2 *dev, uint8_t reg_addr, uint8_t *data, uint8_t len)</definition>
-        <argsstring>)(const struct xensiv_pasco2 *dev, uint8_t reg_addr, uint8_t *data, uint8_t len)</argsstring>
+        <definition>typedef int32_t(* xensiv_pasco2_read_fptr_t) (const struct xensiv_pasco2_s *dev, uint8_t reg_addr, uint8_t *data, uint8_t len)</definition>
+        <argsstring>)(const struct xensiv_pasco2_s *dev, uint8_t reg_addr, uint8_t *data, uint8_t len)</argsstring>
         <name>xensiv_pasco2_read_fptr_t</name>
         <briefdescription>
         </briefdescription>
@@ -295,12 +295,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="218" column="9" bodyfile="xensiv_pasco2.h" bodystart="218" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="212" column="9" bodyfile="xensiv_pasco2.h" bodystart="212" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__group__board__libs_1gac8627021b867b39067fc67d6c365e6ef" prot="public" static="no">
+      <memberdef kind="typedef" id="group__group__board__libs_1ga18e67a6769187bffd4ce556ac30ed450" prot="public" static="no">
         <type>int32_t(*</type>
-        <definition>typedef int32_t(* xensiv_pasco2_write_fptr_t) (const struct xensiv_pasco2 *dev, uint8_t reg_addr, const uint8_t *data, uint8_t len)</definition>
-        <argsstring>)(const struct xensiv_pasco2 *dev, uint8_t reg_addr, const uint8_t *data, uint8_t len)</argsstring>
+        <definition>typedef int32_t(* xensiv_pasco2_write_fptr_t) (const struct xensiv_pasco2_s *dev, uint8_t reg_addr, const uint8_t *data, uint8_t len)</definition>
+        <argsstring>)(const struct xensiv_pasco2_s *dev, uint8_t reg_addr, const uint8_t *data, uint8_t len)</argsstring>
         <name>xensiv_pasco2_write_fptr_t</name>
         <briefdescription>
         </briefdescription>
@@ -308,7 +308,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="221" column="9" bodyfile="xensiv_pasco2.h" bodystart="221" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="215" column="9" bodyfile="xensiv_pasco2.h" bodystart="215" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -353,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="246" column="9" bodyfile="xensiv_pasco2.c" bodystart="250" bodyend="260" declfile="xensiv_pasco2.h" declline="246" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="240" column="9" bodyfile="xensiv_pasco2.c" bodystart="253" bodyend="263" declfile="xensiv_pasco2.h" declline="240" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga9fa617ee552cb1672d7d1d4fedd54783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -396,7 +396,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="257" column="9" bodyfile="xensiv_pasco2.c" bodystart="262" bodyend="272" declfile="xensiv_pasco2.h" declline="257" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="251" column="9" bodyfile="xensiv_pasco2.c" bodystart="265" bodyend="275" declfile="xensiv_pasco2.h" declline="251" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gabd9c4332ede9561912e3bd4d761a6318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -463,7 +463,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="269" column="9" bodyfile="xensiv_pasco2.c" bodystart="274" bodyend="283" declfile="xensiv_pasco2.h" declline="269" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="263" column="9" bodyfile="xensiv_pasco2.c" bodystart="277" bodyend="286" declfile="xensiv_pasco2.h" declline="263" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gaa0c49395df5ae25d9c9377d228e2f0f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -530,7 +530,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="281" column="9" bodyfile="xensiv_pasco2.c" bodystart="285" bodyend="294" declfile="xensiv_pasco2.h" declline="281" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="275" column="9" bodyfile="xensiv_pasco2.c" bodystart="288" bodyend="297" declfile="xensiv_pasco2.h" declline="275" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gad695b81af7d8a450f013be02d92a841c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -574,7 +574,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="291" column="9" bodyfile="xensiv_pasco2.c" bodystart="296" bodyend="302" declfile="xensiv_pasco2.h" declline="291" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="285" column="9" bodyfile="xensiv_pasco2.c" bodystart="299" bodyend="305" declfile="xensiv_pasco2.h" declline="285" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gac07d75efc43dcc2e4ab66fc2232df3b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -616,7 +616,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="300" column="9" bodyfile="xensiv_pasco2.c" bodystart="304" bodyend="310" declfile="xensiv_pasco2.h" declline="300" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="294" column="9" bodyfile="xensiv_pasco2.c" bodystart="307" bodyend="313" declfile="xensiv_pasco2.h" declline="294" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga2c0849ef97a9fa3f5697121b47776cfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -649,11 +649,11 @@
 </parameternamelist>
 <parameterdescription>
 <para>ORed combination of the following values: <itemizedlist>
-<listitem><para>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_MSK Clears the ICCER status sticky bit </para>
+<listitem><para><ref refid="group__group__board__libs_1ga7d23b31253a45d8cb4fdacda58a2bb8f" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_MSK</ref> Clears the ICCER status sticky bit </para>
 </listitem>
-<listitem><para>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_MSK Clears the ORVS status sticky bit </para>
+<listitem><para><ref refid="group__group__board__libs_1ga9d7dd5a6ff1fc083c223e1b01b553da3" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_MSK</ref> Clears the ORVS status sticky bit </para>
 </listitem>
-<listitem><para>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_MSK Clears the ORTMP status sticky bit </para>
+<listitem><para><ref refid="group__group__board__libs_1gaa51b32f0fd749cb01ace59179adfa8e2" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_MSK</ref> Clears the ORTMP status sticky bit </para>
 </listitem>
 </itemizedlist>
 </para>
@@ -666,7 +666,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="312" column="9" bodyfile="xensiv_pasco2.c" bodystart="312" bodyend="317" declfile="xensiv_pasco2.h" declline="312" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="306" column="9" bodyfile="xensiv_pasco2.c" bodystart="315" bodyend="320" declfile="xensiv_pasco2.h" declline="306" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga7dcc95773283e5c86793d3b9311dbff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -708,7 +708,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="321" column="9" bodyfile="xensiv_pasco2.c" bodystart="319" bodyend="325" declfile="xensiv_pasco2.h" declline="321" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="315" column="9" bodyfile="xensiv_pasco2.c" bodystart="322" bodyend="328" declfile="xensiv_pasco2.h" declline="315" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga8cddfe96e78141108553b0725733c2b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -750,7 +750,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="330" column="9" bodyfile="xensiv_pasco2.c" bodystart="327" bodyend="332" declfile="xensiv_pasco2.h" declline="330" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="324" column="9" bodyfile="xensiv_pasco2.c" bodystart="330" bodyend="335" declfile="xensiv_pasco2.h" declline="324" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gab17460e6f7abc0587d7d2fa4f7581890" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -792,7 +792,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="339" column="9" bodyfile="xensiv_pasco2.c" bodystart="334" bodyend="340" declfile="xensiv_pasco2.h" declline="339" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="333" column="9" bodyfile="xensiv_pasco2.c" bodystart="337" bodyend="343" declfile="xensiv_pasco2.h" declline="333" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga62610f2a9ace6c3c6c4757a94dd20bef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -834,7 +834,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="348" column="9" bodyfile="xensiv_pasco2.c" bodystart="342" bodyend="347" declfile="xensiv_pasco2.h" declline="348" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="342" column="9" bodyfile="xensiv_pasco2.c" bodystart="345" bodyend="350" declfile="xensiv_pasco2.h" declline="342" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gab38f6448bea3e370f3901bc09f53d83a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -876,7 +876,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="357" column="9" bodyfile="xensiv_pasco2.c" bodystart="349" bodyend="371" declfile="xensiv_pasco2.h" declline="357" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="351" column="9" bodyfile="xensiv_pasco2.c" bodystart="352" bodyend="374" declfile="xensiv_pasco2.h" declline="351" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga1f306466b229f160d02452ebf536b986" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -918,7 +918,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="366" column="9" bodyfile="xensiv_pasco2.c" bodystart="373" bodyend="380" declfile="xensiv_pasco2.h" declline="366" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="360" column="9" bodyfile="xensiv_pasco2.c" bodystart="376" bodyend="383" declfile="xensiv_pasco2.h" declline="360" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga7f7b0d945604ed1b549eafb67275c99b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -961,7 +961,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="378" column="9" bodyfile="xensiv_pasco2.c" bodystart="382" bodyend="388" declfile="xensiv_pasco2.h" declline="378" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="372" column="9" bodyfile="xensiv_pasco2.c" bodystart="385" bodyend="391" declfile="xensiv_pasco2.h" declline="372" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga47d8b24e5fb307ef67111720290f6c8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -994,9 +994,9 @@
 </parameternamelist>
 <parameterdescription>
 <para>ORed combination of the following values: <itemizedlist>
-<listitem><para>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_MSK Clears the sticky bit MEAS_STS.INT_STS and forces the INT pin to inactive level </para>
+<listitem><para><ref refid="group__group__board__libs_1ga66224b3477a5b779650429ad9fc6b517" kindref="member">XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_MSK</ref> Clears the sticky bit MEAS_STS.INT_STS and forces the INT pin to inactive level </para>
 </listitem>
-<listitem><para>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_MSK Clears the sticky bit MEAS_STS.ALARM </para>
+<listitem><para><ref refid="group__group__board__libs_1ga3c2c567a2f7195c42815858e773487f2" kindref="member">XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_MSK</ref> Clears the sticky bit MEAS_STS.ALARM </para>
 </listitem>
 </itemizedlist>
 </para>
@@ -1009,7 +1009,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="389" column="9" bodyfile="xensiv_pasco2.c" bodystart="390" bodyend="395" declfile="xensiv_pasco2.h" declline="389" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="383" column="9" bodyfile="xensiv_pasco2.c" bodystart="393" bodyend="398" declfile="xensiv_pasco2.h" declline="383" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gaba1f03526ef8182b9b36b7f428436bd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1051,7 +1051,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="398" column="9" bodyfile="xensiv_pasco2.c" bodystart="397" bodyend="403" declfile="xensiv_pasco2.h" declline="398" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="392" column="9" bodyfile="xensiv_pasco2.c" bodystart="400" bodyend="406" declfile="xensiv_pasco2.h" declline="392" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gad4af4f6ec5c55181e140ad0cd0463e87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1094,7 +1094,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="412" column="9" bodyfile="xensiv_pasco2.c" bodystart="405" bodyend="411" declfile="xensiv_pasco2.h" declline="412" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="406" column="9" bodyfile="xensiv_pasco2.c" bodystart="408" bodyend="414" declfile="xensiv_pasco2.h" declline="406" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gac41c0657da3b189dd8de64594da1e1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1136,7 +1136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="422" column="9" bodyfile="xensiv_pasco2.c" bodystart="413" bodyend="419" declfile="xensiv_pasco2.h" declline="422" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="416" column="9" bodyfile="xensiv_pasco2.c" bodystart="416" bodyend="422" declfile="xensiv_pasco2.h" declline="416" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga302ba6bdd42dff56d0ab6faafe34d4e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1178,7 +1178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="431" column="9" bodyfile="xensiv_pasco2.c" bodystart="421" bodyend="426" declfile="xensiv_pasco2.h" declline="431" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="425" column="9" bodyfile="xensiv_pasco2.c" bodystart="424" bodyend="429" declfile="xensiv_pasco2.h" declline="425" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga17cc7bf76385781d4ba3a8655d5e91f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1220,7 +1220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="440" column="9" bodyfile="xensiv_pasco2.c" bodystart="428" bodyend="434" declfile="xensiv_pasco2.h" declline="440" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="434" column="9" bodyfile="xensiv_pasco2.c" bodystart="431" bodyend="437" declfile="xensiv_pasco2.h" declline="434" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga889c7a85b1684161ff6aa2268f3a9de6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1262,7 +1262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="449" column="9" bodyfile="xensiv_pasco2.c" bodystart="436" bodyend="441" declfile="xensiv_pasco2.h" declline="449" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="443" column="9" bodyfile="xensiv_pasco2.c" bodystart="439" bodyend="444" declfile="xensiv_pasco2.h" declline="443" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga870276bbf297981a4c09adc04637cd8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1292,7 +1292,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="457" column="9" bodyfile="xensiv_pasco2.c" bodystart="443" bodyend="467" declfile="xensiv_pasco2.h" declline="457" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="451" column="9" bodyfile="xensiv_pasco2.c" bodystart="446" bodyend="470" declfile="xensiv_pasco2.h" declline="451" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1gafcd452d674763aa73e6be0720f86cdf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1334,7 +1334,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="466" column="9" bodyfile="xensiv_pasco2.c" bodystart="469" bodyend="500" declfile="xensiv_pasco2.h" declline="466" declcolumn="9"/>
+        <location file="xensiv_pasco2.h" line="460" column="9" bodyfile="xensiv_pasco2.c" bodystart="472" bodyend="503" declfile="xensiv_pasco2.h" declline="460" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs_1ga9333d87948220d17c06fc890086c856a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int32_t</type>
@@ -1353,7 +1353,7 @@
 <para>Performs force compensation. </para>
         </briefdescription>
         <detaileddescription>
-<para>Used to calculate the offset compensation when the sensor is exposed to a CO2 reference value. The device is left is idle mode and the new offset compensation value is stored in non-volatile memory.</para>
+<para>Used to calculate the offset compensation when the sensor is exposed to a CO2 reference value. The device is left in idle mode and the new offset compensation value is stored in non-volatile memory.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">dev</parametername>
@@ -1364,10 +1364,10 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">cmd</parametername>
+<parametername direction="in">co2_ref</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Command to trigger </para>
+<para>CO2 reference value </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -1377,294 +1377,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="477" column="9" bodyfile="xensiv_pasco2.c" bodystart="502" bodyend="551" declfile="xensiv_pasco2.h" declline="477" declcolumn="9"/>
-      </memberdef>
-      <memberdef kind="function" id="group__group__board__libs_1ga79ba3ff2b6d3b6e0d59277ad2c066295" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>int32_t</type>
-        <definition>int32_t xensiv_pasco2_plat_i2c_transfer</definition>
-        <argsstring>(void *ctx, uint16_t dev_addr, const uint8_t *tx_buffer, size_t tx_len, uint8_t *rx_buffer, size_t rx_len)</argsstring>
-        <name>xensiv_pasco2_plat_i2c_transfer</name>
-        <param>
-          <type>void *</type>
-          <declname>ctx</declname>
-        </param>
-        <param>
-          <type>uint16_t</type>
-          <declname>dev_addr</declname>
-        </param>
-        <param>
-          <type>const uint8_t *</type>
-          <declname>tx_buffer</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>tx_len</declname>
-        </param>
-        <param>
-          <type>uint8_t *</type>
-          <declname>rx_buffer</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>rx_len</declname>
-        </param>
-        <briefdescription>
-<para>Target platform-specific function to perform I2C write/read transfer. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Synchronously writes a block of data and optionally receive a block of data. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="in">ctx</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Target platform object </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">dev_addr</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>device address (7-bit) </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">tx_buffer</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>I2C send data </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">tx_len</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>I2C send data size </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">rx_buffer</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>I2C receive data </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="note"><para>Can be NULL to indicate no read access. </para>
-</simplesect>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="in">rx_len</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>I2C receive data size </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>XENSIV_PASCO2_OK if the I2C transfer was successful; an error indicating what went wrong otherwise </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="xensiv_pasco2.h" line="490" column="9" bodyfile="xensiv_pasco2_mtb.c" bodystart="124" bodyend="141" declfile="xensiv_pasco2.h" declline="490" declcolumn="9"/>
-      </memberdef>
-      <memberdef kind="function" id="group__group__board__libs_1ga30258b2d0b775dd70dac784ba7583a02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>int32_t</type>
-        <definition>int32_t xensiv_pasco2_plat_uart_read</definition>
-        <argsstring>(void *ctx, uint8_t *data, size_t len)</argsstring>
-        <name>xensiv_pasco2_plat_uart_read</name>
-        <param>
-          <type>void *</type>
-          <declname>ctx</declname>
-        </param>
-        <param>
-          <type>uint8_t *</type>
-          <declname>data</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>len</declname>
-        </param>
-        <briefdescription>
-<para>Target platform-specific function to read over UART. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="in">ctx</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>UART object </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="out">data</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Receive buffer </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">len</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Number of bytes to receive </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>XENSIV_PASCO2_OK if the UART read was successful; an error indicating what went wrong otherwise </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="xensiv_pasco2.h" line="500" column="9" bodyfile="xensiv_pasco2_mtb.c" bodystart="143" bodyend="167" declfile="xensiv_pasco2.h" declline="500" declcolumn="9"/>
-      </memberdef>
-      <memberdef kind="function" id="group__group__board__libs_1ga9300d953c5b0e034b91c1eb35e5b6a87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>int32_t</type>
-        <definition>int32_t xensiv_pasco2_plat_uart_write</definition>
-        <argsstring>(void *ctx, uint8_t *data, size_t len)</argsstring>
-        <name>xensiv_pasco2_plat_uart_write</name>
-        <param>
-          <type>void *</type>
-          <declname>ctx</declname>
-        </param>
-        <param>
-          <type>uint8_t *</type>
-          <declname>data</declname>
-        </param>
-        <param>
-          <type>size_t</type>
-          <declname>len</declname>
-        </param>
-        <briefdescription>
-<para>Target platform-specific function to write over UART. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="in">ctx</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>UART object </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">data</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Transmit buffer </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">len</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Number of bytes to transmit </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>XENSIV_PASCO2_OK if the UART write was successful; an error indicating what went wrong otherwise </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="xensiv_pasco2.h" line="510" column="9" bodyfile="xensiv_pasco2_mtb.c" bodystart="169" bodyend="186" declfile="xensiv_pasco2.h" declline="510" declcolumn="9"/>
-      </memberdef>
-      <memberdef kind="function" id="group__group__board__libs_1ga6b0f690782033eb82ac184e541152801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void xensiv_pasco2_plat_delay</definition>
-        <argsstring>(uint32_t ms)</argsstring>
-        <name>xensiv_pasco2_plat_delay</name>
-        <param>
-          <type>uint32_t</type>
-          <declname>ms</declname>
-        </param>
-        <briefdescription>
-<para>Target platform-specific function that waits for a specified time period in milliseconds. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="in">ms</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Number of miliseconds to wait for </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="xensiv_pasco2.h" line="517" column="6" bodyfile="xensiv_pasco2_mtb.c" bodystart="188" bodyend="191" declfile="xensiv_pasco2.h" declline="517" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="group__group__board__libs_1ga227451919676d916a38ac90daea339b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>uint16_t</type>
-        <definition>uint16_t xensiv_pasco2_plat_htons</definition>
-        <argsstring>(uint16_t x)</argsstring>
-        <name>xensiv_pasco2_plat_htons</name>
-        <param>
-          <type>uint16_t</type>
-          <declname>x</declname>
-        </param>
-        <briefdescription>
-<para>Target platform-specific function to reverse the byte order (16-bit) </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="in">x</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Value to reverse </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Reversed value </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="xensiv_pasco2.h" line="525" column="10" bodyfile="xensiv_pasco2_mtb.c" bodystart="193" bodyend="196" declfile="xensiv_pasco2.h" declline="525" declcolumn="10"/>
-      </memberdef>
-      <memberdef kind="function" id="group__group__board__libs_1ga1a3f8502b60fd6f507b66dc91210b8b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void xensiv_pasco2_plat_assert</definition>
-        <argsstring>(int expr)</argsstring>
-        <name>xensiv_pasco2_plat_assert</name>
-        <param>
-          <type>int</type>
-          <declname>expr</declname>
-        </param>
-        <briefdescription>
-<para>Target platform-specific function that implements a runtime assertion; used to verify the assumptions made by the program and take appropiate actions if assumption is false. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="in">expr</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Expression to be verified </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="xensiv_pasco2.h" line="532" column="6" bodyfile="xensiv_pasco2_mtb.c" bodystart="198" bodyend="201" declfile="xensiv_pasco2.h" declline="532" declcolumn="6"/>
+        <location file="xensiv_pasco2.h" line="471" column="9" bodyfile="xensiv_pasco2.c" bodystart="505" bodyend="556" declfile="xensiv_pasco2.h" declline="471" declcolumn="9"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="define">
@@ -1678,7 +1391,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="61" column="9" bodyfile="xensiv_pasco2.h" bodystart="61" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="55" column="9" bodyfile="xensiv_pasco2.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1ga5e84f685d2d853703ecacb7e43292b79" prot="public" static="no">
         <name>XENSIV_PASCO2_ERR_COMM</name>
@@ -1690,7 +1403,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="63" column="9" bodyfile="xensiv_pasco2.h" bodystart="63" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="57" column="9" bodyfile="xensiv_pasco2.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1gab9870212895620e8e0dfaaee561fcbb0" prot="public" static="no">
         <name>XENSIV_PASCO2_ERR_WRITE_TOO_LARGE</name>
@@ -1702,7 +1415,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="65" column="9" bodyfile="xensiv_pasco2.h" bodystart="65" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="59" column="9" bodyfile="xensiv_pasco2.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1ga3b4080fcd4374096aefd559eb8899a52" prot="public" static="no">
         <name>XENSIV_PASCO2_ERR_NOT_READY</name>
@@ -1714,7 +1427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="67" column="9" bodyfile="xensiv_pasco2.h" bodystart="67" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="61" column="9" bodyfile="xensiv_pasco2.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1ga29b2c43f6fbcc00ff7b712b72ca92735" prot="public" static="no">
         <name>XENSIV_PASCO2_ICCERR</name>
@@ -1726,7 +1439,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="69" column="9" bodyfile="xensiv_pasco2.h" bodystart="69" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="63" column="9" bodyfile="xensiv_pasco2.h" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1gab1ace4803195dcfb9bd6a57aec95f8bc" prot="public" static="no">
         <name>XENSIV_PASCO2_ORVS</name>
@@ -1738,7 +1451,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="71" column="9" bodyfile="xensiv_pasco2.h" bodystart="71" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="65" column="9" bodyfile="xensiv_pasco2.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1ga690e80c9cce92a12d6b93510878339b5" prot="public" static="no">
         <name>XENSIV_PASCO2_ORTMP</name>
@@ -1750,7 +1463,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="73" column="9" bodyfile="xensiv_pasco2.h" bodystart="73" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="67" column="9" bodyfile="xensiv_pasco2.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1ga9768e08fad2ee5c8ebaddec5819e7715" prot="public" static="no">
         <name>XENSIV_PASCO2_READ_NRDY</name>
@@ -1762,7 +1475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="75" column="9" bodyfile="xensiv_pasco2.h" bodystart="75" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="69" column="9" bodyfile="xensiv_pasco2.h" bodystart="69" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1ga32290e82ba83241c48063b6e65e27050" prot="public" static="no">
         <name>XENSIV_PASCO2_MEAS_RATE_MIN</name>
@@ -1774,7 +1487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="78" column="9" bodyfile="xensiv_pasco2.h" bodystart="78" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="72" column="9" bodyfile="xensiv_pasco2.h" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1ga8127198286d3b4083fdc0e815b4cb488" prot="public" static="no">
         <name>XENSIV_PASCO2_MEAS_RATE_MAX</name>
@@ -1786,7 +1499,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="81" column="9" bodyfile="xensiv_pasco2.h" bodystart="81" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="75" column="9" bodyfile="xensiv_pasco2.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__group__board__libs_1ga4fe8f5f20ac2d5ae081592841e7a5391" prot="public" static="no">
         <name>XENSIV_PASCO2_I2C_ADDR</name>
@@ -1798,7 +1511,1027 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2.h" line="84" column="9" bodyfile="xensiv_pasco2.h" bodystart="84" bodyend="-1"/>
+        <location file="xensiv_pasco2.h" line="78" column="9" bodyfile="xensiv_pasco2.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gabb1ae001d8889bd964f01eeeb6fe0c1d" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PROD_ID</name>
+        <initializer>(0x00U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>REG_PROD: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="33" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga368987f9f20b466b2b9f086c07246e6b" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS</name>
+        <initializer>(0x01U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="34" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga6611273e04d324cdef6c4b97fc2bd4fa" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_RATE_H</name>
+        <initializer>(0x02U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_RATE_H: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="35" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaf01c5ba33ebbcb220e556f6142688ee4" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_RATE_L</name>
+        <initializer>(0x03U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_RATE_L: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="36" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga7244e5e4a297f536d1457560b7364717" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG</name>
+        <initializer>(0x04U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="37" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga22848f72ce73eaa28398f0bd96d8b5b5" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CO2PPM_H</name>
+        <initializer>(0x05U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CO2PPM_H: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="38" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga05f7594703defe71ee4a08fe30dcd0d4" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CO2PPM_L</name>
+        <initializer>(0x06U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CO2PPM_L: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="39" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga78a03943df0cad655414fc6f57d6a0c9" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS</name>
+        <initializer>(0x07U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="40" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga43a603e0d008ac1482a49e3aee6b68cb" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_INT_CFG</name>
+        <initializer>(0x08U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>INT_CFG: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="41" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga2de6fbb8765768cd0688aff48f5ad5d3" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_ALARM_TH_H</name>
+        <initializer>(0x09U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ALARM_TH_H: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="42" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaa88162c583a9ce1a647810e9b1d8ec81" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_ALARM_TH_L</name>
+        <initializer>(0x0aU)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ALARM_TH_L: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="43" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga714748e1de30a90ebc9e93deafa61eb4" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PRESS_REF_H</name>
+        <initializer>(0x0bU)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PRESS_REF_H: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="44" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga33951a743456260fa3624ad40d97b047" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PRESS_REF_L</name>
+        <initializer>(0x0cU)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PRESS_REF_L: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="45" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gadff505529c6022084d5a510ddb2388a2" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CALIB_REF_H</name>
+        <initializer>(0x0dU)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CALIB_REF_H: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="46" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga61fd4a78c663115a5d89750fab5547e3" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CALIB_REF_L</name>
+        <initializer>(0x0eU)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CALIB_REF_L: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="47" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaf31657b78d3cd64027269bee553e067d" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SCRATCH_PAD</name>
+        <initializer>(0x0fU)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SCRATCH_PAD: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="48" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga2b47eba65e35068d4f3ad75f18df2899" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_RST</name>
+        <initializer>(0x10U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_RST: Address </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="49" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga7bc2fde1fc753fb6ded6efceb546201a" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PROD_ID_REV_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>REG_PROD: ID_REV position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="51" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga6e1de700155c1f60017cafca4c7582d2" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PROD_ID_REV_MSK</name>
+        <initializer>(0x1fU &lt;&lt; <ref refid="group__group__board__libs_1ga7bc2fde1fc753fb6ded6efceb546201a" kindref="member">XENSIV_PASCO2_REG_PROD_ID_REV_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>REG_PROD: ID_REV mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="52" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga2f5426af242ce3afd0039e8c80874e3e" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PROD_ID_PROD_POS</name>
+        <initializer>(5U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>REG_PROD: ID_PROD position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="53" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga51bff889a533eb337e0d0a3e95c7a925" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PROD_ID_PROD_MSK</name>
+        <initializer>(0x07U &lt;&lt; <ref refid="group__group__board__libs_1ga2f5426af242ce3afd0039e8c80874e3e" kindref="member">XENSIV_PASCO2_REG_PROD_ID_PROD_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>REG_PROD: ID_PROD mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="54" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga51a1c1ebb25bffb996ce8652da1c1d83" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ICCER_CLR position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="56" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga7d23b31253a45d8cb4fdacda58a2bb8f" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga51a1c1ebb25bffb996ce8652da1c1d83" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ICCER_CLR_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ICCER_CLR mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="57" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga451369d406cfdfdedb57f3c9a2346877" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_POS</name>
+        <initializer>(1U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ORVS_CLR position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="58" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga9d7dd5a6ff1fc083c223e1b01b553da3" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga451369d406cfdfdedb57f3c9a2346877" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ORVS_CLR_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ORVS_CLR mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="59" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga19a35d118cfb81ef291e8f5875ecf65a" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_POS</name>
+        <initializer>(2U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ORTMP_CLR position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="60" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaa51b32f0fd749cb01ace59179adfa8e2" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga19a35d118cfb81ef291e8f5875ecf65a" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ORTMP_CLR_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ORTMP_CLR mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="61" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga8c762f5c3f6c5814c99c631fdce81104" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ICCER_POS</name>
+        <initializer>(3U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ICCER position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="62" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga8a0f4ef342fbd7701bbb08bef7511dc9" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ICCER_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga8c762f5c3f6c5814c99c631fdce81104" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ICCER_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ICCER mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="63" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga93e36905dd01de352b95631185168f1f" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ORVS_POS</name>
+        <initializer>(4U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ORVS position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="64" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga430b139c8e4b9c1cb7250bc4575e93af" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ORVS_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga93e36905dd01de352b95631185168f1f" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ORVS_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ORVS mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="65" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga7b9684eee34a10220a6acfaf1811e102" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_POS</name>
+        <initializer>(5U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ORTMP position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="66" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga1f567bae2f48ae7add0d869df5427f8c" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_ORTMP_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga7b9684eee34a10220a6acfaf1811e102" kindref="member">XENSIV_PASCO2_REG_SENS_STS_ORTMP_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: ORTMP mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="67" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga795dd5f84d4c0f1954c9e5885a02df65" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_POS</name>
+        <initializer>(6U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: PWM_DIS_ST position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="68" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga9ca65f8bfad22ad3bceb4a7ae03f16de" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga795dd5f84d4c0f1954c9e5885a02df65" kindref="member">XENSIV_PASCO2_REG_SENS_STS_PWM_DIS_ST_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: PWM_DIS_ST mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="69" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gada8588c1cafc6bd4eb8908f53a395106" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_POS</name>
+        <initializer>(7U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: SEN_RDY position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="70" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga146086a55eef97833b4777ddb105464f" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1gada8588c1cafc6bd4eb8908f53a395106" kindref="member">XENSIV_PASCO2_REG_SENS_STS_SEN_RDY_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_STS: SEN_RDY mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="71" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaa80728ef55d5b92292e846fb7145eaea" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_RATE_H: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="73" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaf9c9785c968e629d89c5c0bf180174d8" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1gaa80728ef55d5b92292e846fb7145eaea" kindref="member">XENSIV_PASCO2_REG_MEAS_RATE_H_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_RATE_H: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="74" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga25e2997bfd1590c465d30d30bd4353c1" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_RATE_L: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="76" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga003155bcb4ee682cc84ae65e8dffcac1" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1ga25e2997bfd1590c465d30d30bd4353c1" kindref="member">XENSIV_PASCO2_REG_MEAS_RATE_L_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_RATE_L: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="77" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gab3bcd794593d3ff7f318024c7ec22bb2" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: OP_MODE position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="79" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga0b031b696a9fb870ae32fa3f42a8cc22" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_MSK</name>
+        <initializer>(0x03U &lt;&lt; <ref refid="group__group__board__libs_1gab3bcd794593d3ff7f318024c7ec22bb2" kindref="member">XENSIV_PASCO2_REG_MEAS_CFG_OP_MODE_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: OP_MODE mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="80" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga985869299410e48ebc9f92c703342a74" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_POS</name>
+        <initializer>(2U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: BOC_CFG position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="81" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga352af3a736b1430a291c36e0d2e60049" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_MSK</name>
+        <initializer>(0x03U &lt;&lt; <ref refid="group__group__board__libs_1ga985869299410e48ebc9f92c703342a74" kindref="member">XENSIV_PASCO2_REG_MEAS_CFG_BOC_CFG_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: BOC_CFG mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="82" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga485049e18f8f13acc5d1ec6a5d99037d" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_POS</name>
+        <initializer>(4U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: PWM_MODE position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="83" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga7d5f995fffe8c0d68e73d17245342a6d" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga485049e18f8f13acc5d1ec6a5d99037d" kindref="member">XENSIV_PASCO2_REG_MEAS_CFG_PWM_MODE_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: PWM_MODE mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="84" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gac8531a8d4523c3f5e1f5b4e6ffb5c7a8" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_POS</name>
+        <initializer>(5U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: PWM_OUTEN position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="85" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga69be681268a438261c7ecf9d7c4a9220" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1gac8531a8d4523c3f5e1f5b4e6ffb5c7a8" kindref="member">XENSIV_PASCO2_REG_MEAS_CFG_PWM_OUTEN_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_CFG: PWM_OUTEN mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="86" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga468338d29668c87050541f30e91967a3" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CO2PPM_H_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CO2PPM_H: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="88" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaa402319f67f14495a3b48723c0c6189d" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CO2PPM_H_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1ga468338d29668c87050541f30e91967a3" kindref="member">XENSIV_PASCO2_REG_CO2PPM_H_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CO2PPM_H: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="89" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga9dd146053ce70df3d97ca5df4869caa9" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CO2PPM_L_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CO2PPM_L: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="91" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gad3fc7dcbbb55b376b3d341e5cba5a0fd" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CO2PPM_L_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1ga9dd146053ce70df3d97ca5df4869caa9" kindref="member">XENSIV_PASCO2_REG_CO2PPM_L_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CO2PPM_L: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="92" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaaaa63292b3324bba64505c876f42751e" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: ALARM_CLR position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="94" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga3c2c567a2f7195c42815858e773487f2" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1gaaaa63292b3324bba64505c876f42751e" kindref="member">XENSIV_PASCO2_REG_MEAS_STS_ALARM_CLR_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: ALARM_CLR mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="95" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gac985ec1e0fcc407476dee8a5898b4bc7" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_POS</name>
+        <initializer>(1U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: INT_STS_CLR position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="96" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga66224b3477a5b779650429ad9fc6b517" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1gac985ec1e0fcc407476dee8a5898b4bc7" kindref="member">XENSIV_PASCO2_REG_MEAS_STS_INT_STS_CLR_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: INT_STS_CLR mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="97" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga5f0d4f639c2915e6d0d3dc7024edd9c6" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_POS</name>
+        <initializer>(2U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: ALARM position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="98" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga131de2bd426081511998dd31cfcd6482" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_ALARM_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga5f0d4f639c2915e6d0d3dc7024edd9c6" kindref="member">XENSIV_PASCO2_REG_MEAS_STS_ALARM_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: ALARM mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="99" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga9943372bedaad8e0b63d64a7f2384d0a" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_POS</name>
+        <initializer>(3U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: INT_STS position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="100" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gac090837790fdcaf80c32f1695044ba20" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_INT_STS_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga9943372bedaad8e0b63d64a7f2384d0a" kindref="member">XENSIV_PASCO2_REG_MEAS_STS_INT_STS_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: INT_STS mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="101" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga9f5c4524e76eb43b95154559e2582516" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_DRDY_POS</name>
+        <initializer>(4U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: DRDY position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="102" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gae2d8058f5954467e9d19db9168c43abc" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_MEAS_STS_DRDY_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga9f5c4524e76eb43b95154559e2582516" kindref="member">XENSIV_PASCO2_REG_MEAS_STS_DRDY_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MEAS_STS: DRDY mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="103" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga8dd25c22ebfcc22eaccf688fd6cfc02d" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>INT_CFG: ALARM_TYP position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="105" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaff6c038fa2915776813cb013adf21a9c" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1ga8dd25c22ebfcc22eaccf688fd6cfc02d" kindref="member">XENSIV_PASCO2_REG_INT_CFG_ALARM_TYP_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>INT_CFG: ALARM_TYP mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="106" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga09c982937ca73f1f5347013b271ca1e8" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_POS</name>
+        <initializer>(1U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>INT_CFG: INT_FUNC position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="107" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga5540036e6804b01ff09d7d1795bc4e2d" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_MSK</name>
+        <initializer>(0x07U &lt;&lt; <ref refid="group__group__board__libs_1ga09c982937ca73f1f5347013b271ca1e8" kindref="member">XENSIV_PASCO2_REG_INT_CFG_INT_FUNC_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>INT_CFG: INT_FUNC mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="108" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaccbca64cea11d3b0a4277e361649c2f8" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_INT_CFG_INT_TYP_POS</name>
+        <initializer>(4U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>INT_CFG: INT_TYP position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="109" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga494b0f8b6e6efd5eb993fa78388dc896" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_INT_CFG_INT_TYP_MSK</name>
+        <initializer>(0x01U &lt;&lt; <ref refid="group__group__board__libs_1gaccbca64cea11d3b0a4277e361649c2f8" kindref="member">XENSIV_PASCO2_REG_INT_CFG_INT_TYP_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>INT_CFG: INT_TYP mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="110" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga4aff46ecb1c4a9020bfd90318a4d7d88" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_ALARM_TH_H_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ALARM_TH_H: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="112" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gae809ba4ccb998e48aa10a88aa55639fc" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_ALARM_TH_H_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1ga4aff46ecb1c4a9020bfd90318a4d7d88" kindref="member">XENSIV_PASCO2_REG_ALARM_TH_H_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ALARM_TH_H: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="113" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gafd222ec69be87fc2058678779af33a28" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_ALARM_TH_L_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ALARM_TH_L: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="115" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga0d2acfb6837678e471404c3e76b3ca65" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_ALARM_TH_L_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1gafd222ec69be87fc2058678779af33a28" kindref="member">XENSIV_PASCO2_REG_ALARM_TH_L_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ALARM_TH_L: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="116" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gaa6c3fa223c50a5d6df29864a1afc48fa" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PRESS_REF_H_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PRESS_REF_H: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="118" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga373e94674d84865707717c84a9a25194" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PRESS_REF_H_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1gaa6c3fa223c50a5d6df29864a1afc48fa" kindref="member">XENSIV_PASCO2_REG_PRESS_REF_H_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PRESS_REF_H: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="119" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga1deea1c63f5842f1b485dd508b8962a0" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PRESS_REF_L_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PRESS_REF_L: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="121" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gac79cf9d6d926eb3f80c6d0879133b1b8" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_PRESS_REF_L_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1ga1deea1c63f5842f1b485dd508b8962a0" kindref="member">XENSIV_PASCO2_REG_PRESS_REF_L_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PRESS_REF_L: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="122" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga6049b02e57d388397ad201a46a29d9ed" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CALIB_REF_H_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CALIB_REF_H: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="124" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga6f5070d0414b8978332100066663731b" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CALIB_REF_H_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1ga6049b02e57d388397ad201a46a29d9ed" kindref="member">XENSIV_PASCO2_REG_CALIB_REF_H_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CALIB_REF_H: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="125" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga3935b48328eb8ee22a6d864d8d48f90f" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CALIB_REF_L_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CALIB_REF_L: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="127" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga6f7a56ab83f97e71ee5127191d333fe5" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_CALIB_REF_L_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1ga3935b48328eb8ee22a6d864d8d48f90f" kindref="member">XENSIV_PASCO2_REG_CALIB_REF_L_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CALIB_REF_L: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="128" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gae9f64635f5a280f04328f16fe3a8dd42" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SCRATCH_PAD: VAL position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="130" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1gad9e2bdb6b325beeb1586513e89c6a370" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1gae9f64635f5a280f04328f16fe3a8dd42" kindref="member">XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SCRATCH_PAD: VAL mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="131" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga66bf5890bb8af135e0cb57198cbb51a6" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_RST_SRTRG_POS</name>
+        <initializer>(0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_RST: SRTRG position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="133" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__board__libs_1ga8c144df6f2002704e8c4e527b14b42c2" prot="public" static="no">
+        <name>XENSIV_PASCO2_REG_SENS_RST_SRTRG_MSK</name>
+        <initializer>(0xffU &lt;&lt; <ref refid="group__group__board__libs_1ga66bf5890bb8af135e0cb57198cbb51a6" kindref="member">XENSIV_PASCO2_REG_SENS_RST_SRTRG_POS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SENS_RST: SRTRG mask </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_regs.h" line="134" column="9" bodyfile="xensiv_pasco2_regs.h" bodystart="134" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1807,14 +2540,13 @@
     <detaileddescription>
 <para>It provides full access to all features of the sensor.</para>
 <para>The library depends on the target platform-specific implementation of the following functions:<itemizedlist>
-<listitem><para><ref refid="group__group__board__libs_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kindref="member">xensiv_pasco2_plat_i2c_transfer</ref></para>
-</listitem><listitem><para><ref refid="group__group__board__libs_1ga30258b2d0b775dd70dac784ba7583a02" kindref="member">xensiv_pasco2_plat_uart_read</ref>, <ref refid="group__group__board__libs_1ga9300d953c5b0e034b91c1eb35e5b6a87" kindref="member">xensiv_pasco2_plat_uart_write</ref></para>
-</listitem><listitem><para><ref refid="group__group__board__libs_1ga6b0f690782033eb82ac184e541152801" kindref="member">xensiv_pasco2_plat_delay</ref></para>
-</listitem><listitem><para><ref refid="group__group__board__libs_1ga227451919676d916a38ac90daea339b3" kindref="member">xensiv_pasco2_plat_htons</ref></para>
-</listitem><listitem><para><ref refid="group__group__board__libs_1ga1a3f8502b60fd6f507b66dc91210b8b6" kindref="member">xensiv_pasco2_plat_assert</ref></para>
+<listitem><para><ref refid="group__group__board__libs__platform_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kindref="member">xensiv_pasco2_plat_i2c_transfer</ref> implementation must be provided when using the I2C interface.</para>
+</listitem><listitem><para><ref refid="group__group__board__libs__platform_1ga30258b2d0b775dd70dac784ba7583a02" kindref="member">xensiv_pasco2_plat_uart_read</ref>, <ref refid="group__group__board__libs__platform_1ga9300d953c5b0e034b91c1eb35e5b6a87" kindref="member">xensiv_pasco2_plat_uart_write</ref> implementation must be provided when using the UART interface.</para>
+</listitem><listitem><para><ref refid="group__group__board__libs__platform_1ga6b0f690782033eb82ac184e541152801" kindref="member">xensiv_pasco2_plat_delay</ref> implementation must be provided that delays the processing for a certain number of milliseconds.</para>
+</listitem><listitem><para><ref refid="group__group__board__libs__platform_1ga227451919676d916a38ac90daea339b3" kindref="member">xensiv_pasco2_plat_htons</ref> implementation must be provided for byte reversing.</para>
+</listitem><listitem><para><ref refid="group__group__board__libs__platform_1ga1a3f8502b60fd6f507b66dc91210b8b6" kindref="member">xensiv_pasco2_plat_assert</ref> implementation must be provided for runtime assertion.</para>
 </listitem></itemizedlist>
 </para>
-<para>The driver provides a default implementation of these functions with weak linkage. <ref refid="group__group__board__libs_1ga79ba3ff2b6d3b6e0d59277ad2c066295" kindref="member">xensiv_pasco2_plat_i2c_transfer</ref> must be overridden when using the I2C interface. <ref refid="group__group__board__libs_1ga30258b2d0b775dd70dac784ba7583a02" kindref="member">xensiv_pasco2_plat_uart_read</ref>, <ref refid="group__group__board__libs_1ga9300d953c5b0e034b91c1eb35e5b6a87" kindref="member">xensiv_pasco2_plat_uart_write</ref> must be overridden when using the UART interface. <ref refid="group__group__board__libs_1ga6b0f690782033eb82ac184e541152801" kindref="member">xensiv_pasco2_plat_delay</ref> must be overridden with an appropriate implementation for the target platform that delays the processing for a certain number of milliseconds. <ref refid="group__group__board__libs_1ga227451919676d916a38ac90daea339b3" kindref="member">xensiv_pasco2_plat_htons</ref> implements byte reversing in C and can be overridden optionally to optimize the performance if the target platform provides a specific instruction to byte reversing. <ref refid="group__group__board__libs_1ga1a3f8502b60fd6f507b66dc91210b8b6" kindref="member">xensiv_pasco2_plat_assert</ref> is implemented using the standard assert.h, and can be optionally overriden for the target platform.</para>
 <para>See the implementation example of these functions in xensiv_pasco2_mtb.c </para>
     </detaileddescription>
   </compounddef>

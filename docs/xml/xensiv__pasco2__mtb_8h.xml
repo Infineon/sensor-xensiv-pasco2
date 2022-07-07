@@ -10,15 +10,6 @@
     <includedby refid="xensiv__pasco2__mtb_8c" local="yes">xensiv_pasco2_mtb.c</includedby>
     <includedby refid="xensiv__pasco2__mtb__example_8c" local="yes">xensiv_pasco2_mtb_example.c</includedby>
     <incdepgraph>
-      <node id="4">
-        <label>cyhal_i2c.h</label>
-      </node>
-      <node id="5">
-        <label>cyhal_uart.h</label>
-      </node>
-      <node id="2">
-        <label>cy_result.h</label>
-      </node>
       <node id="1">
         <label>xensiv_pasco2_mtb.h</label>
         <link refid="xensiv__pasco2__mtb_8h"/>
@@ -31,10 +22,20 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
+      <node id="4">
+        <label>cyhal_i2c.h</label>
+      </node>
+      <node id="5">
+        <label>cyhal_uart.h</label>
+      </node>
+      <node id="2">
+        <label>cy_result.h</label>
+      </node>
       <node id="3">
         <label>cyhal_gpio.h</label>
       </node>
     </incdepgraph>
+    <innerclass refid="structxensiv__pasco2__mtb__interrupt__cb__t" prot="public">xensiv_pasco2_mtb_interrupt_cb_t</innerclass>
       <sectiondef kind="define">
       <memberdef kind="define" id="group__group__board__libs__mtb_1ga7914066ba3565838bd631e5dc5974a21" prot="public" static="no">
         <name>CY_RSLT_MODULE_BOARD_HARDWARE_XENSIV_PASCO2</name>
@@ -152,10 +153,10 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="inout">dev</parametername>
+<parametername direction="inout">obj</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Pointer to the pressure sensor object. The caller must allocate the memory for this object but the init function will initialize its contents </para>
+<para>Pointer to the ModusToolbox&amp;trade PAS CO2 object. The caller must allocate the memory for this object but the init function will initialize its contents </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -167,13 +168,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>CY_RSLT_SUCCESS if properly initialized[, an error indicating what went wrong otherwise </para>
+<simplesect kind="return"><para>CY_RSLT_SUCCESS if the initialization was successful; an error indicating what went wrong otherwise </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2_mtb.h" line="107" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="39" bodyend="50" declfile="xensiv_pasco2_mtb.h" declline="107" declcolumn="11"/>
+        <location file="xensiv_pasco2_mtb.h" line="121" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="39" bodyend="51" declfile="xensiv_pasco2_mtb.h" declline="121" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs__mtb_1ga628f5739346a7e1babdb03ae51f97a86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>cy_rslt_t</type>
@@ -194,10 +195,10 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="inout">dev</parametername>
+<parametername direction="inout">obj</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Pointer to the pressure sensor object. The caller must allocate the memory for this object but the init function will initialize its contents </para>
+<para>Pointer to the ModusToolbox&amp;trade PAS CO2 object. The caller must allocate the memory for this object but the init function will initialize its contents </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -215,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2_mtb.h" line="116" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="52" bodyend="63" declfile="xensiv_pasco2_mtb.h" declline="116" declcolumn="11"/>
+        <location file="xensiv_pasco2_mtb.h" line="130" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="53" bodyend="65" declfile="xensiv_pasco2_mtb.h" declline="130" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs__mtb_1gace71b8639212c85b83adf9178c0b2a73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>cy_rslt_t</type>
@@ -256,7 +257,8 @@
         <detaileddescription>
 <para>This initializes and configures the pin as an interrupt, and calls the PAS CO2 interrupt configuration API with the application-supplied settings structure <simplesect kind="note"><para>Should be called only after <ref refid="group__group__board__libs__mtb_1gabea706545fb1e82b9e4e568105a23d5b" kindref="member">xensiv_pasco2_mtb_init_i2c</ref> or <ref refid="group__group__board__libs__mtb_1ga628f5739346a7e1babdb03ae51f97a86" kindref="member">xensiv_pasco2_mtb_init_uart</ref>. </para>
 </simplesect>
-<parameterlist kind="param"><parameteritem>
+<xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="group__group__board__libs__mtb_1gaddabe93a90bf10824a26019202332ec1" kindref="member">xensiv_pasco2_mtb_interrupt_init_ex</ref> </para>
+</xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">dev</parametername>
 </parameternamelist>
@@ -319,7 +321,101 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2_mtb.h" line="131" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="65" bodyend="106" declfile="xensiv_pasco2_mtb.h" declline="131" declcolumn="11"/>
+        <location file="xensiv_pasco2_mtb.h" line="146" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="67" bodyend="108" declfile="xensiv_pasco2_mtb.h" declline="146" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__board__libs__mtb_1gaddabe93a90bf10824a26019202332ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t xensiv_pasco2_mtb_interrupt_init_ex</definition>
+        <argsstring>(xensiv_pasco2_t *dev, const xensiv_pasco2_interrupt_config_t int_config, uint16_t alarm_threshold, cyhal_gpio_t pin, uint8_t intr_priority, xensiv_pasco2_mtb_interrupt_cb_t *interrupt_cb)</argsstring>
+        <name>xensiv_pasco2_mtb_interrupt_init_ex</name>
+        <param>
+          <type><ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref> *</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="unionxensiv__pasco2__interrupt__config__t" kindref="compound">xensiv_pasco2_interrupt_config_t</ref></type>
+          <declname>int_config</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>alarm_threshold</declname>
+        </param>
+        <param>
+          <type>cyhal_gpio_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>intr_priority</declname>
+        </param>
+        <param>
+          <type><ref refid="structxensiv__pasco2__mtb__interrupt__cb__t" kindref="compound">xensiv_pasco2_mtb_interrupt_cb_t</ref> *</type>
+          <declname>interrupt_cb</declname>
+        </param>
+        <briefdescription>
+<para>Configures a GPIO pin as an interrupt for the PAS CO2 sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This initializes and configures the pin as an interrupt, and calls the PAS CO2 interrupt configuration API with the application-supplied settings structure <simplesect kind="note"><para>Should be called only after <ref refid="group__group__board__libs__mtb_1gabea706545fb1e82b9e4e568105a23d5b" kindref="member">xensiv_pasco2_mtb_init_i2c</ref> or <ref refid="group__group__board__libs__mtb_1ga628f5739346a7e1babdb03ae51f97a86" kindref="member">xensiv_pasco2_mtb_init_uart</ref>. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the ModusToolbox&amp;trade PAS CO2 sensor object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">int_config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New sensor device interrupt configuration to apply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alarm_threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New alarm threshold value to apply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin connected to the INT pin of the sensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">intr_priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Priority for NVIC interrupt events </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interrupt_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interrupt callback </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Instances of this object are expected to persist for the length of time the callback is registered. As such, care must be given if declaring it on the stack to ensure the frame does not go away while the callback is still registered. </para>
+</simplesect>
+<simplesect kind="return"><para>CY_RSLT_SUCCESS if interrupt was successfully enabled; an error occurred while initializing the pin otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="xensiv_pasco2_mtb.h" line="169" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="110" bodyend="144" declfile="xensiv_pasco2_mtb.h" declline="169" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__group__board__libs__mtb_1ga1f3304bd562b511f18df659342011aea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>cy_rslt_t</type>
@@ -344,10 +440,10 @@
         <detaileddescription>
 <para>This checks whether a new CO2 value is available, in which case it returns it and sets the new pressure reference value for the next measurement <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">dev</parametername>
+<parametername direction="in">obj</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Pointer to the PAS CO2 device </para>
+<para>Pointer to the ModusToolbox&amp;trade PAS CO2 object </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -373,14 +469,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="xensiv_pasco2_mtb.h" line="147" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="108" bodyend="120" declfile="xensiv_pasco2_mtb.h" declline="147" declcolumn="11"/>
+        <location file="xensiv_pasco2_mtb.h" line="184" column="11" bodyfile="xensiv_pasco2_mtb.c" bodystart="146" bodyend="159" declfile="xensiv_pasco2_mtb.h" declline="184" declcolumn="11"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Description: This file contains the MTB platform functions declarations for interacting with the XENSIV™ PAS CO2 sensor. </para>
     </briefdescription>
     <detaileddescription>
-<para><simplesect kind="copyright"><para>Copyright 2021 Infineon Technologies AG SPDX-License-Identifier: Apache-2.0</para>
+<para><simplesect kind="copyright"><para>Copyright 2021-2022 Infineon Technologies AG SPDX-License-Identifier: Apache-2.0</para>
 </simplesect>
 Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at <verbatim>http://www.apache.org/licenses/LICENSE-2.0
 </verbatim></para>
@@ -402,7 +498,7 @@ Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you ma
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">/**************************************<sp/>Macros<sp/>*******************************************/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CY_RSLT_MODULE_BOARD_HARDWARE_XENSIV_PASCO2<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CY_RSLT_MODULE_BOARD_HARDWARE_XENSIV_PASCO2</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CY_RSLT_MODULE_BOARD_HARDWARE_XENSIV_PASCO2<sp/>0x01CA</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
@@ -427,33 +523,53 @@ Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you ma
 <codeline lineno="91"><highlight class="preprocessor">#define<sp/>XENSIV_PASCO2_RSLT_READ_NRDY\</highlight></codeline>
 <codeline lineno="92"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(CY_RSLT_CREATE(CY_RSLT_TYPE_ERROR,<sp/>CY_RSLT_MODULE_BOARD_HARDWARE_XENSIV_PASCO2,<sp/>XENSIV_PASCO2_READ_NRDY))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">/*******************************<sp/>Function<sp/>prototypes<sp/>*************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">/********************************<sp/>Type<sp/>declarations<sp/>**************************************/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1gabea706545fb1e82b9e4e568105a23d5b" kindref="member">xensiv_pasco2_mtb_init_i2c</ref>(<ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,<sp/>cyhal_i2c_t<sp/>*<sp/>i2c);</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor">#if<sp/>defined(CYHAL_API_VERSION)<sp/>&amp;&amp;<sp/>(CYHAL_API_VERSION<sp/>&gt;=<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>cyhal_gpio_callback_data_t<sp/><ref refid="structxensiv__pasco2__mtb__interrupt__cb__t" kindref="compound">xensiv_pasco2_mtb_interrupt_cb_t</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="structxensiv__pasco2__mtb__interrupt__cb__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>cyhal_gpio_event_callback_t<sp/>cb;<sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>arg;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}<sp/><ref refid="structxensiv__pasco2__mtb__interrupt__cb__t" kindref="compound">xensiv_pasco2_mtb_interrupt_cb_t</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/*******************************<sp/>Function<sp/>prototypes<sp/>*************************************/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1ga628f5739346a7e1babdb03ae51f97a86" kindref="member">xensiv_pasco2_mtb_init_uart</ref>(<ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,<sp/>cyhal_uart_t<sp/>*<sp/>uart);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1gace71b8639212c85b83adf9178c0b2a73" kindref="member">xensiv_pasco2_mtb_interrupt_init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="unionxensiv__pasco2__interrupt__config__t" kindref="compound">xensiv_pasco2_interrupt_config_t</ref><sp/>int_config,</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>alarm_threshold,</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cyhal_gpio_t<sp/>pin,</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>intr_priority,</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cyhal_gpio_event_callback_t<sp/>callback,</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>callback_arg);</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="147"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1ga1f3304bd562b511f18df659342011aea" kindref="member">xensiv_pasco2_mtb_read</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,<sp/>uint16_t<sp/>press_ref,<sp/>uint16_t<sp/>*<sp/>co2_ppm_val);</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>defined(CY_USING_HAL)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="157"><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1gabea706545fb1e82b9e4e568105a23d5b" kindref="member">xensiv_pasco2_mtb_init_i2c</ref>(<ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,<sp/>cyhal_i2c_t<sp/>*<sp/>i2c);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1ga628f5739346a7e1babdb03ae51f97a86" kindref="member">xensiv_pasco2_mtb_init_uart</ref>(<ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,<sp/>cyhal_uart_t<sp/>*<sp/>uart);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1gace71b8639212c85b83adf9178c0b2a73" kindref="member">xensiv_pasco2_mtb_interrupt_init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="unionxensiv__pasco2__interrupt__config__t" kindref="compound">xensiv_pasco2_interrupt_config_t</ref><sp/>int_config,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>alarm_threshold,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cyhal_gpio_t<sp/>pin,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>intr_priority,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cyhal_gpio_event_callback_t<sp/>callback,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>callback_arg);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1gaddabe93a90bf10824a26019202332ec1" kindref="member">xensiv_pasco2_mtb_interrupt_init_ex</ref>(<ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="unionxensiv__pasco2__interrupt__config__t" kindref="compound">xensiv_pasco2_interrupt_config_t</ref><sp/>int_config,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>alarm_threshold,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cyhal_gpio_t<sp/>pin,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>intr_priority,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structxensiv__pasco2__mtb__interrupt__cb__t" kindref="compound">xensiv_pasco2_mtb_interrupt_cb_t</ref><sp/>*<sp/>interrupt_cb);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__board__libs__mtb_1ga1f3304bd562b511f18df659342011aea" kindref="member">xensiv_pasco2_mtb_read</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structxensiv__pasco2__t" kindref="compound">xensiv_pasco2_t</ref><sp/>*<sp/>dev,<sp/>uint16_t<sp/>press_ref,<sp/>uint16_t<sp/>*<sp/>co2_ppm_val);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>defined(CY_USING_HAL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="xensiv_pasco2_mtb.h"/>
   </compounddef>

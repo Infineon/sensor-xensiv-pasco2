@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['u_148',['u',['../unionxensiv__pasco2__id__t.html#a02ae6f520370d7aaa739c73180f091b2',1,'xensiv_pasco2_id_t::u()'],['../unionxensiv__pasco2__status__t.html#a02ae6f520370d7aaa739c73180f091b2',1,'xensiv_pasco2_status_t::u()'],['../unionxensiv__pasco2__measurement__config__t.html#a02ae6f520370d7aaa739c73180f091b2',1,'xensiv_pasco2_measurement_config_t::u()'],['../unionxensiv__pasco2__interrupt__config__t.html#a02ae6f520370d7aaa739c73180f091b2',1,'xensiv_pasco2_interrupt_config_t::u()'],['../unionxensiv__pasco2__meas__status__t.html#a02ae6f520370d7aaa739c73180f091b2',1,'xensiv_pasco2_meas_status_t::u()']]]
+  ['read_242',['read',['../structxensiv__pasco2__t.html#a9a9fa72be93aff06daa1d626cbae3a7c',1,'xensiv_pasco2_t']]]
 ];

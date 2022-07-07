@@ -6,7 +6,7 @@
  *
  ***************************************************************************************************
  * \copyright
- * Copyright 2021 Infineon Technologies AG
+ * Copyright 2021-2022 Infineon Technologies AG
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,6 +25,13 @@
 #ifndef XENSIV_PASCO2_H_
 #define XENSIV_PASCO2_H_
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "xensiv_pasco2_regs.h"
+#include "xensiv_pasco2_platform.h"
+
 /**
  * \addtogroup group_board_libs XENSIV™ PAS CO2 sensor
  * \{
@@ -32,56 +39,43 @@
  * It provides full access to all features of the sensor.
  *
  * The library depends on the target platform-specific implementation of the following functions:
- * - \ref xensiv_pasco2_plat_i2c_transfer
- * - \ref xensiv_pasco2_plat_uart_read, \ref xensiv_pasco2_plat_uart_write
- * - \ref xensiv_pasco2_plat_delay
- * - \ref xensiv_pasco2_plat_htons
- * - \ref xensiv_pasco2_plat_assert
- *
- * The driver provides a default implementation of these functions with weak linkage.
- * \ref xensiv_pasco2_plat_i2c_transfer must be overridden when using the I2C interface.
- * \ref xensiv_pasco2_plat_uart_read, \ref xensiv_pasco2_plat_uart_write must be overridden when using the UART interface.
- * \ref xensiv_pasco2_plat_delay must be overridden with an appropriate implementation for the target platform that delays the processing for a certain number of milliseconds.
- * \ref xensiv_pasco2_plat_htons implements byte reversing in C and can be overridden optionally to optimize the performance if the target platform provides a specific instruction to byte reversing.
- * \ref xensiv_pasco2_plat_assert is implemented using the standard assert.h, and can be optionally overriden for the target platform.
+ * - \ref xensiv_pasco2_plat_i2c_transfer implementation must be provided when using the I2C interface.
+ * - \ref xensiv_pasco2_plat_uart_read, \ref xensiv_pasco2_plat_uart_write implementation must be provided when using the UART interface.
+ * - \ref xensiv_pasco2_plat_delay implementation must be provided that delays the processing for a certain number of milliseconds.
+ * - \ref xensiv_pasco2_plat_htons implementation must be provided for byte reversing.
+ * - \ref xensiv_pasco2_plat_assert implementation must be provided for runtime assertion.
  *
  * See the implementation example of these functions in xensiv_pasco2_mtb.c
  *
  */
 
-#include <stdint.h>
-#include <stdbool.h>
-#include <stddef.h>
-
-#include "xensiv_pasco2_regs.h"
-
 /************************************** Macros *******************************************/
 
 /** Result code indicating a successful operation */
-#define XENSIV_PASCO2_OK                    (0)
+#define XENSIV_PASCO2_OK                        (0)
 /** Result code indicating a communication error */
-#define XENSIV_PASCO2_ERR_COMM              (1)
+#define XENSIV_PASCO2_ERR_COMM                  (1)
 /** Result code indicating that an unexpectedly large I2C write was requested which is not supported */
-#define XENSIV_PASCO2_ERR_WRITE_TOO_LARGE   (2)
+#define XENSIV_PASCO2_ERR_WRITE_TOO_LARGE       (2)
 /** Result code indicating that the sensor is not yet ready after reset */
-#define XENSIV_PASCO2_ERR_NOT_READY         (3)
+#define XENSIV_PASCO2_ERR_NOT_READY             (3)
 /** Result code indicating whether a non-valid command has been received by the serial communication interface */
-#define XENSIV_PASCO2_ICCERR                (4)
+#define XENSIV_PASCO2_ICCERR                    (4)
 /** Result code indicating whether a condition where VDD12V has been outside the specified valid range has been detected */
-#define XENSIV_PASCO2_ORVS                  (5)
+#define XENSIV_PASCO2_ORVS                      (5)
 /** Result code indicating whether a condition where the temperature has been outside the specified valid range has been detected */
-#define XENSIV_PASCO2_ORTMP                 (6)
+#define XENSIV_PASCO2_ORTMP                     (6)
 /** Result code indicating that a new CO2 value is not yet ready */
-#define XENSIV_PASCO2_READ_NRDY             (7)
+#define XENSIV_PASCO2_READ_NRDY                 (7)
 
 /** Minimum allowed measurement rate */
-#define XENSIV_PASCO2_MEAS_RATE_MIN         (5U)
+#define XENSIV_PASCO2_MEAS_RATE_MIN             (5U)
 
 /** Maximum allowed measurement rate */
-#define XENSIV_PASCO2_MEAS_RATE_MAX         (4095U)
+#define XENSIV_PASCO2_MEAS_RATE_MAX             (4095U)
 
 /** I2C address of the XENSIV™ PASCO2 sensor */
-#define XENSIV_PASCO2_I2C_ADDR              (0x28U)
+#define XENSIV_PASCO2_I2C_ADDR                  (0x28U)
 
 /********************************* Type definitions **************************************/
 
@@ -212,16 +206,16 @@ typedef union
   uint8_t u;                                            /*!< Type used for byte access */
 } xensiv_pasco2_meas_status_t;
 
-struct xensiv_pasco2;                                   /* Forward declaration */
+struct xensiv_pasco2_s;                                   /* Forward declaration */
 
 /* Function pointer to the platform-specific function for reading the sensor registers via I2C/UART */
-typedef int32_t (*xensiv_pasco2_read_fptr_t)(const struct xensiv_pasco2 * dev, uint8_t reg_addr, uint8_t * data, uint8_t len);
+typedef int32_t (*xensiv_pasco2_read_fptr_t)(const struct xensiv_pasco2_s * dev, uint8_t reg_addr, uint8_t * data, uint8_t len);
 
 /* Function pointer to the platform-specific function for writing  the sensor registers via I2C/UART */
-typedef int32_t (*xensiv_pasco2_write_fptr_t)(const struct xensiv_pasco2 * dev, uint8_t reg_addr, const uint8_t * data, uint8_t len);
+typedef int32_t (*xensiv_pasco2_write_fptr_t)(const struct xensiv_pasco2_s * dev, uint8_t reg_addr, const uint8_t * data, uint8_t len);
 
 /** Structure of the XENSIV™ PAS CO2 sensor device. Initialized using \ref xensiv_pasco2_init_i2c or \ref xensiv_pasco2_init_uart */
-typedef struct xensiv_pasco2
+typedef struct xensiv_pasco2_s
 {
     void * ctx;                         /*!< Context for I2C/UART platform-specific read and write functions */
     xensiv_pasco2_read_fptr_t read;     /*!< Pointer to the register read function which depends on the communication interface used */
@@ -468,68 +462,13 @@ int32_t xensiv_pasco2_start_continuous_mode(const xensiv_pasco2_t * dev, uint16_
 /**
  * @brief Performs force compensation.
  * Used to calculate the offset compensation when the sensor is exposed to a CO2 reference value.
- * The device is left is idle mode and the new offset compensation value is stored in non-volatile memory.
+ * The device is left in idle mode and the new offset compensation value is stored in non-volatile memory.
  *
  * @param[in] dev Pointer to the XENSIV™ PAS CO2 sensor device
- * @param[in] cmd Command to trigger
+ * @param[in] co2_ref CO2 reference value
  * @return XENSIV_PASCO2_OK if the force compensation was successful; an error indicating what went wrong otherwise
  */
 int32_t xensiv_pasco2_perform_forced_compensation(const xensiv_pasco2_t * dev, uint16_t co2_ref);
-
-/**
- * @brief Target platform-specific function to perform I2C write/read transfer.
- * Synchronously writes a block of data and optionally receive a block of data.
- * @param[in] ctx Target platform object
- * @param[in] dev_addr device address (7-bit)
- * @param[in] tx_buffer I2C send data
- * @param[in] tx_len I2C send data size
- * @param[in] rx_buffer I2C receive data @note Can be NULL to indicate no read access.
- * @param[in] rx_len I2C receive data size
- * @return XENSIV_PASCO2_OK if the I2C transfer was successful; an error indicating what went wrong otherwise
- */
-int32_t xensiv_pasco2_plat_i2c_transfer(void * ctx, uint16_t dev_addr, const uint8_t * tx_buffer, size_t tx_len, uint8_t * rx_buffer, size_t rx_len);
-
-/**
- * @brief Target platform-specific function to read over UART
- *
- * @param[in] ctx UART object
- * @param[out] data Receive buffer
- * @param[in] len Number of bytes to receive
- * @return XENSIV_PASCO2_OK if the UART read was successful; an error indicating what went wrong otherwise
- */
-int32_t xensiv_pasco2_plat_uart_read(void *ctx, uint8_t * data, size_t len);
-
-/**
- * @brief Target platform-specific function to write over UART
- *
- * @param[in] ctx UART object
- * @param[in] data Transmit buffer
- * @param[in] len Number of bytes to transmit
- * @return XENSIV_PASCO2_OK if the UART write was successful; an error indicating what went wrong otherwise
- */
-int32_t xensiv_pasco2_plat_uart_write(void *ctx, uint8_t * data, size_t len);
-
-/**
- * @brief Target platform-specific function that waits for a specified time period in milliseconds
- *
- * @param[in] ms Number of miliseconds to wait for
- */
-void xensiv_pasco2_plat_delay(uint32_t ms);
-
-/**
- * @brief Target platform-specific function to reverse the byte order (16-bit)
- *
- * @param[in] x Value to reverse
- * @return Reversed value
- */
-uint16_t xensiv_pasco2_plat_htons(uint16_t x);
-
-/**
- * @brief Target platform-specific function that implements a runtime assertion; used to verify the assumptions made by the program and take appropiate actions if assumption is false
- *
- * @param[in] expr Expression to be verified
- */
-void xensiv_pasco2_plat_assert(int expr);
 
 #ifdef __cplusplus
 }
