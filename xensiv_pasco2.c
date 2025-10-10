@@ -2,7 +2,7 @@
  * \file xensiv_pasco2.c
  *
  * Description: This file contains the functions for interacting with the
- *              XENSIV™ PAS CO2 sensor.
+ *              XENSIV PAS CO2 sensor.
  *
  ***************************************************************************************************
  * \copyright
@@ -21,6 +21,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  **************************************************************************************************/
+
 
 #include "xensiv_pasco2.h"
 #include "xensiv_pasco2_platform.h"
@@ -55,9 +56,11 @@ static inline uint8_t xensiv_pasco2_digit_to_ascii(uint8_t digit)
     }
 }
 
+
 static inline uint8_t xensiv_pasco2_ascii_to_digit(uint8_t ascii)
 {
-    xensiv_pasco2_plat_assert(((ascii >= (uint8_t)'0') && (ascii <= (uint8_t)'9')) || ((ascii >= (uint8_t)'A') && (ascii <= (uint8_t)'F')));
+    xensiv_pasco2_plat_assert(((ascii >= (uint8_t)'0') && (ascii <= (uint8_t)'9')) ||
+                              ((ascii >= (uint8_t)'A') && (ascii <= (uint8_t)'F')));
 
     if (ascii < (uint8_t)'A')
     {
@@ -69,17 +72,22 @@ static inline uint8_t xensiv_pasco2_ascii_to_digit(uint8_t ascii)
     }
 }
 
-static int32_t xensiv_pasco2_i2c_read(const xensiv_pasco2_t * dev, uint8_t reg_addr, uint8_t * data, uint8_t len)
+
+static int32_t xensiv_pasco2_i2c_read(const xensiv_pasco2_t* dev, uint8_t reg_addr, uint8_t* data,
+                                      uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(dev->ctx != NULL);
     xensiv_pasco2_plat_assert(reg_addr <= XENSIV_PASCO2_REG_SENS_RST);
     xensiv_pasco2_plat_assert(data != NULL);
 
-    return xensiv_pasco2_plat_i2c_transfer(dev->ctx, XENSIV_PASCO2_I2C_ADDR, &reg_addr, 1, data, len);
+    return xensiv_pasco2_plat_i2c_transfer(dev->ctx, XENSIV_PASCO2_I2C_ADDR, &reg_addr, 1, data,
+                                           len);
 }
 
-static int32_t xensiv_pasco2_i2c_write(const xensiv_pasco2_t * dev, uint8_t reg_addr, const uint8_t * data, uint8_t len)
+
+static int32_t xensiv_pasco2_i2c_write(const xensiv_pasco2_t* dev, uint8_t reg_addr,
+                                       const uint8_t* data, uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(dev->ctx != NULL);
@@ -96,10 +104,13 @@ static int32_t xensiv_pasco2_i2c_write(const xensiv_pasco2_t * dev, uint8_t reg_
 
     uint16_t w_len = (uint16_t)((uint16_t)len + 1U);
 
-    return xensiv_pasco2_plat_i2c_transfer(dev->ctx, XENSIV_PASCO2_I2C_ADDR, w_data, w_len, NULL, 0);
+    return xensiv_pasco2_plat_i2c_transfer(dev->ctx, XENSIV_PASCO2_I2C_ADDR, w_data, w_len, NULL,
+                                           0);
 }
 
-static int32_t xensiv_pasco2_uart_read(const xensiv_pasco2_t * dev, uint8_t reg_addr, uint8_t * data, uint8_t len)
+
+static int32_t xensiv_pasco2_uart_read(const xensiv_pasco2_t* dev, uint8_t reg_addr, uint8_t* data,
+                                       uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(dev->ctx != NULL);
@@ -119,14 +130,18 @@ static int32_t xensiv_pasco2_uart_read(const xensiv_pasco2_t * dev, uint8_t reg_
             (uint8_t)'\n'
         };
 
-        res = xensiv_pasco2_plat_uart_write(dev->ctx, uart_buf, XENSIV_PASCO2_UART_READ_XFER_BUF_SIZE);
+        res = xensiv_pasco2_plat_uart_write(dev->ctx, uart_buf,
+                                            XENSIV_PASCO2_UART_READ_XFER_BUF_SIZE);
 
         if (XENSIV_PASCO2_OK == res)
         {
-            res = xensiv_pasco2_plat_uart_read(dev->ctx, uart_buf, XENSIV_PASCO2_UART_READ_XFER_RESP_LEN);
+            res = xensiv_pasco2_plat_uart_read(dev->ctx, uart_buf,
+                                               XENSIV_PASCO2_UART_READ_XFER_RESP_LEN);
             if (XENSIV_PASCO2_OK == res)
             {
-                data[i] = (uint8_t)((xensiv_pasco2_ascii_to_digit(uart_buf[0]) << 4) + xensiv_pasco2_ascii_to_digit(uart_buf[1]));
+                data[i] =
+                    (uint8_t)((xensiv_pasco2_ascii_to_digit(uart_buf[0]) <<
+                               4) + xensiv_pasco2_ascii_to_digit(uart_buf[1]));
             }
         }
 
@@ -141,7 +156,9 @@ static int32_t xensiv_pasco2_uart_read(const xensiv_pasco2_t * dev, uint8_t reg_
     return res;
 }
 
-static int32_t xensiv_pasco2_uart_write(const xensiv_pasco2_t * dev, uint8_t reg_addr, const uint8_t * data, uint8_t len)
+
+static int32_t xensiv_pasco2_uart_write(const xensiv_pasco2_t* dev, uint8_t reg_addr,
+                                        const uint8_t* data, uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(dev->ctx != NULL);
@@ -156,23 +173,29 @@ static int32_t xensiv_pasco2_uart_write(const xensiv_pasco2_t * dev, uint8_t reg
         {
             (uint8_t)'w',
             (uint8_t)',',
-            xensiv_pasco2_digit_to_ascii((reg_addr & 0xF0U) >> 4U), xensiv_pasco2_digit_to_ascii(reg_addr & 0x0FU),
+            xensiv_pasco2_digit_to_ascii((reg_addr & 0xF0U) >> 4U), xensiv_pasco2_digit_to_ascii(
+                reg_addr & 0x0FU),
             (uint8_t)',',
-            xensiv_pasco2_digit_to_ascii((data[i] & 0xF0U) >> 4U), xensiv_pasco2_digit_to_ascii(data[i] & 0x0FU),
+            xensiv_pasco2_digit_to_ascii((data[i] & 0xF0U) >> 4U), xensiv_pasco2_digit_to_ascii(
+                data[i] & 0x0FU),
             (uint8_t)'\n'
         };
 
-        res = xensiv_pasco2_plat_uart_write(dev->ctx, uart_buf, XENSIV_PASCO2_UART_WRITE_XFER_BUF_SIZE);
+        res = xensiv_pasco2_plat_uart_write(dev->ctx, uart_buf,
+                                            XENSIV_PASCO2_UART_WRITE_XFER_BUF_SIZE);
 
         if (XENSIV_PASCO2_OK == res)
         {
-            res = xensiv_pasco2_plat_uart_read(dev->ctx, uart_buf, XENSIV_PASCO2_UART_WRITE_XFER_RESP_LEN);
+            res = xensiv_pasco2_plat_uart_read(dev->ctx, uart_buf,
+                                               XENSIV_PASCO2_UART_WRITE_XFER_RESP_LEN);
 
             /* If command triggers a software reset ignores the sensor response */
-            if ((XENSIV_PASCO2_REG_SENS_RST != reg_addr) || ((uint8_t)XENSIV_PASCO2_CMD_SOFT_RESET != data[i]))
+            if ((XENSIV_PASCO2_REG_SENS_RST != reg_addr) ||
+                ((uint8_t)XENSIV_PASCO2_CMD_SOFT_RESET != data[i]))
             {
                 res = (XENSIV_PASCO2_OK == res) ?
-                      ((XENSIV_PASCO2_UART_ACK == uart_buf[0]) ? XENSIV_PASCO2_OK : XENSIV_PASCO2_ERR_COMM) :
+                      ((XENSIV_PASCO2_UART_ACK ==
+                        uart_buf[0]) ? XENSIV_PASCO2_OK : XENSIV_PASCO2_ERR_COMM) :
                       XENSIV_PASCO2_ERR_COMM;
             }
             else
@@ -186,13 +209,14 @@ static int32_t xensiv_pasco2_uart_write(const xensiv_pasco2_t * dev, uint8_t reg
             break;
         }
 
-           reg_addr++;
+        reg_addr++;
     }
 
     return res;
 }
 
-static int32_t xensiv_pasco2_init(const xensiv_pasco2_t * dev)
+
+static int32_t xensiv_pasco2_init(const xensiv_pasco2_t* dev)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
@@ -250,7 +274,8 @@ static int32_t xensiv_pasco2_init(const xensiv_pasco2_t * dev)
     return res;
 }
 
-int32_t xensiv_pasco2_init_i2c(xensiv_pasco2_t * dev, void * ctx)
+
+int32_t xensiv_pasco2_init_i2c(xensiv_pasco2_t* dev, void* ctx)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(ctx != NULL);
@@ -262,7 +287,8 @@ int32_t xensiv_pasco2_init_i2c(xensiv_pasco2_t * dev, void * ctx)
     return xensiv_pasco2_init(dev);
 }
 
-int32_t xensiv_pasco2_init_uart(xensiv_pasco2_t * dev, void * ctx)
+
+int32_t xensiv_pasco2_init_uart(xensiv_pasco2_t* dev, void* ctx)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(ctx != NULL);
@@ -274,7 +300,9 @@ int32_t xensiv_pasco2_init_uart(xensiv_pasco2_t * dev, void * ctx)
     return xensiv_pasco2_init(dev);
 }
 
-int32_t xensiv_pasco2_set_reg(const xensiv_pasco2_t * dev, uint8_t reg_addr, const uint8_t * data, uint8_t len)
+
+int32_t xensiv_pasco2_set_reg(const xensiv_pasco2_t* dev, uint8_t reg_addr, const uint8_t* data,
+                              uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(data != NULL);
@@ -285,7 +313,9 @@ int32_t xensiv_pasco2_set_reg(const xensiv_pasco2_t * dev, uint8_t reg_addr, con
     return res;
 }
 
-int32_t xensiv_pasco2_get_reg(const xensiv_pasco2_t * dev, uint8_t reg_addr, uint8_t * data, uint8_t len)
+
+int32_t xensiv_pasco2_get_reg(const xensiv_pasco2_t* dev, uint8_t reg_addr, uint8_t* data,
+                              uint8_t len)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(data != NULL);
@@ -296,7 +326,8 @@ int32_t xensiv_pasco2_get_reg(const xensiv_pasco2_t * dev, uint8_t reg_addr, uin
     return res;
 }
 
-int32_t xensiv_pasco2_get_id(const xensiv_pasco2_t * dev, xensiv_pasco2_id_t * id)
+
+int32_t xensiv_pasco2_get_id(const xensiv_pasco2_t* dev, xensiv_pasco2_id_t* id)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(id != NULL);
@@ -304,7 +335,8 @@ int32_t xensiv_pasco2_get_id(const xensiv_pasco2_t * dev, xensiv_pasco2_id_t * i
     return xensiv_pasco2_get_reg(dev, (uint8_t)XENSIV_PASCO2_REG_PROD_ID, &(id->u), 1U);
 }
 
-int32_t xensiv_pasco2_get_status(const xensiv_pasco2_t * dev, xensiv_pasco2_status_t * status)
+
+int32_t xensiv_pasco2_get_status(const xensiv_pasco2_t* dev, xensiv_pasco2_status_t* status)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(status != NULL);
@@ -312,14 +344,17 @@ int32_t xensiv_pasco2_get_status(const xensiv_pasco2_t * dev, xensiv_pasco2_stat
     return xensiv_pasco2_get_reg(dev, (uint8_t)XENSIV_PASCO2_REG_SENS_STS, &(status->u), 1U);
 }
 
-int32_t xensiv_pasco2_clear_status(const xensiv_pasco2_t * dev, uint8_t mask)
+
+int32_t xensiv_pasco2_clear_status(const xensiv_pasco2_t* dev, uint8_t mask)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
     return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_SENS_STS, &mask, 1U);
 }
 
-int32_t xensiv_pasco2_get_interrupt_config(const xensiv_pasco2_t * dev, xensiv_pasco2_interrupt_config_t * int_config)
+
+int32_t xensiv_pasco2_get_interrupt_config(const xensiv_pasco2_t* dev,
+                                           xensiv_pasco2_interrupt_config_t* int_config)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(int_config != NULL);
@@ -327,14 +362,18 @@ int32_t xensiv_pasco2_get_interrupt_config(const xensiv_pasco2_t * dev, xensiv_p
     return xensiv_pasco2_get_reg(dev, (uint8_t)XENSIV_PASCO2_REG_INT_CFG, &(int_config->u), 1U);
 }
 
-int32_t xensiv_pasco2_set_interrupt_config(const xensiv_pasco2_t * dev, xensiv_pasco2_interrupt_config_t int_config)
+
+int32_t xensiv_pasco2_set_interrupt_config(const xensiv_pasco2_t* dev,
+                                           xensiv_pasco2_interrupt_config_t int_config)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
     return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_INT_CFG, &(int_config.u), 1U);
 }
 
-int32_t xensiv_pasco2_get_measurement_config(const xensiv_pasco2_t * dev, xensiv_pasco2_measurement_config_t * meas_config)
+
+int32_t xensiv_pasco2_get_measurement_config(const xensiv_pasco2_t* dev,
+                                             xensiv_pasco2_measurement_config_t* meas_config)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(meas_config != NULL);
@@ -342,14 +381,17 @@ int32_t xensiv_pasco2_get_measurement_config(const xensiv_pasco2_t * dev, xensiv
     return xensiv_pasco2_get_reg(dev, (uint8_t)XENSIV_PASCO2_REG_MEAS_CFG, &(meas_config->u), 1U);
 }
 
-int32_t xensiv_pasco2_set_measurement_config(const xensiv_pasco2_t * dev, xensiv_pasco2_measurement_config_t meas_config)
+
+int32_t xensiv_pasco2_set_measurement_config(const xensiv_pasco2_t* dev,
+                                             xensiv_pasco2_measurement_config_t meas_config)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
     return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_MEAS_CFG, &(meas_config.u), 1U);
 }
 
-int32_t xensiv_pasco2_get_result(const xensiv_pasco2_t * dev, uint16_t * val)
+
+int32_t xensiv_pasco2_get_result(const xensiv_pasco2_t* dev, uint16_t* val)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(val != NULL);
@@ -361,7 +403,8 @@ int32_t xensiv_pasco2_get_result(const xensiv_pasco2_t * dev, uint16_t * val)
     {
         if (meas_status.b.drdy != 0U)
         {
-            res = xensiv_pasco2_get_reg(dev, (uint8_t)XENSIV_PASCO2_REG_CO2PPM_H, (uint8_t *)val, 2U);
+            res =
+                xensiv_pasco2_get_reg(dev, (uint8_t)XENSIV_PASCO2_REG_CO2PPM_H, (uint8_t*)val, 2U);
             *val = xensiv_pasco2_plat_htons(*val);
         }
         else
@@ -373,16 +416,20 @@ int32_t xensiv_pasco2_get_result(const xensiv_pasco2_t * dev, uint16_t * val)
     return res;
 }
 
-int32_t xensiv_pasco2_set_measurement_rate(const xensiv_pasco2_t * dev, uint16_t val)
+
+int32_t xensiv_pasco2_set_measurement_rate(const xensiv_pasco2_t* dev, uint16_t val)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
-    xensiv_pasco2_plat_assert((val >= XENSIV_PASCO2_MEAS_RATE_MIN) && (val <= XENSIV_PASCO2_MEAS_RATE_MAX));
+    xensiv_pasco2_plat_assert((val >= XENSIV_PASCO2_MEAS_RATE_MIN) &&
+                              (val <= XENSIV_PASCO2_MEAS_RATE_MAX));
 
     val = xensiv_pasco2_plat_htons(val);
-    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_MEAS_RATE_H, (uint8_t *)&val, 2U);
+    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_MEAS_RATE_H, (uint8_t*)&val, 2U);
 }
 
-int32_t xensiv_pasco2_get_measurement_status(const xensiv_pasco2_t * dev, xensiv_pasco2_meas_status_t * status)
+
+int32_t xensiv_pasco2_get_measurement_status(const xensiv_pasco2_t* dev,
+                                             xensiv_pasco2_meas_status_t* status)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(status != NULL);
@@ -390,45 +437,51 @@ int32_t xensiv_pasco2_get_measurement_status(const xensiv_pasco2_t * dev, xensiv
     return xensiv_pasco2_get_reg(dev, (uint8_t)XENSIV_PASCO2_REG_MEAS_STS, &(status->u), 1U);
 }
 
-int32_t xensiv_pasco2_clear_measurement_status(const xensiv_pasco2_t * dev, uint8_t mask)
+
+int32_t xensiv_pasco2_clear_measurement_status(const xensiv_pasco2_t* dev, uint8_t mask)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
     return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_MEAS_STS, &mask, 1U);
 }
 
-int32_t xensiv_pasco2_set_alarm_threshold(const xensiv_pasco2_t * dev, uint16_t val)
+
+int32_t xensiv_pasco2_set_alarm_threshold(const xensiv_pasco2_t* dev, uint16_t val)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
     val = (uint16_t)xensiv_pasco2_plat_htons(val);
-    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_ALARM_TH_H, (uint8_t *)&val, 2U);
+    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_ALARM_TH_H, (uint8_t*)&val, 2U);
 }
 
-int32_t xensiv_pasco2_set_pressure_compensation(const xensiv_pasco2_t * dev, uint16_t val)
+
+int32_t xensiv_pasco2_set_pressure_compensation(const xensiv_pasco2_t* dev, uint16_t val)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
     val = (uint16_t)xensiv_pasco2_plat_htons(val);
-    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_PRESS_REF_H, (uint8_t *)&val, 2U);
+    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_PRESS_REF_H, (uint8_t*)&val, 2U);
 }
 
-int32_t xensiv_pasco2_set_offset_compensation(const xensiv_pasco2_t * dev, uint16_t val)
+
+int32_t xensiv_pasco2_set_offset_compensation(const xensiv_pasco2_t* dev, uint16_t val)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
     val = (uint16_t)xensiv_pasco2_plat_htons(val);
-    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_CALIB_REF_H, (uint8_t *)&val, 2U);
+    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_CALIB_REF_H, (uint8_t*)&val, 2U);
 }
 
-int32_t xensiv_pasco2_set_scratch_pad(const xensiv_pasco2_t * dev, uint8_t val)
+
+int32_t xensiv_pasco2_set_scratch_pad(const xensiv_pasco2_t* dev, uint8_t val)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
     return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_SCRATCH_PAD, &val, 1U);
 }
 
-int32_t xensiv_pasco2_get_scratch_pad(const xensiv_pasco2_t * dev, uint8_t * val)
+
+int32_t xensiv_pasco2_get_scratch_pad(const xensiv_pasco2_t* dev, uint8_t* val)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
     xensiv_pasco2_plat_assert(val != NULL);
@@ -436,14 +489,17 @@ int32_t xensiv_pasco2_get_scratch_pad(const xensiv_pasco2_t * dev, uint8_t * val
     return xensiv_pasco2_get_reg(dev, (uint8_t)XENSIV_PASCO2_REG_SCRATCH_PAD, val, 1U);
 }
 
-int32_t xensiv_pasco2_cmd(const xensiv_pasco2_t * dev, xensiv_pasco2_cmd_t cmd)
+
+int32_t xensiv_pasco2_cmd(const xensiv_pasco2_t* dev, xensiv_pasco2_cmd_t cmd)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
-    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_SENS_RST, (const uint8_t * )&cmd, 1U);
+    return xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_SENS_RST, (const uint8_t*)&cmd,
+                                 1U);
 }
 
-int32_t xensiv_pasco2_start_single_mode(const xensiv_pasco2_t * dev)
+
+int32_t xensiv_pasco2_start_single_mode(const xensiv_pasco2_t* dev)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
@@ -469,10 +525,12 @@ int32_t xensiv_pasco2_start_single_mode(const xensiv_pasco2_t * dev)
     return res;
 }
 
-int32_t xensiv_pasco2_start_continuous_mode(const xensiv_pasco2_t * dev, uint16_t val)
+
+int32_t xensiv_pasco2_start_continuous_mode(const xensiv_pasco2_t* dev, uint16_t val)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
-    xensiv_pasco2_plat_assert((val >= XENSIV_PASCO2_MEAS_RATE_MIN) && (val <= XENSIV_PASCO2_MEAS_RATE_MAX));
+    xensiv_pasco2_plat_assert((val >= XENSIV_PASCO2_MEAS_RATE_MIN) &&
+                              (val <= XENSIV_PASCO2_MEAS_RATE_MAX));
 
     xensiv_pasco2_measurement_config_t meas_config;
     int32_t res = xensiv_pasco2_get_measurement_config(dev, &meas_config);
@@ -489,7 +547,8 @@ int32_t xensiv_pasco2_start_continuous_mode(const xensiv_pasco2_t * dev, uint16_
     if (XENSIV_PASCO2_OK == res)
     {
         val = xensiv_pasco2_plat_htons(val);
-        res = xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_MEAS_RATE_H, (uint8_t *)&val, 2U);
+        res =
+            xensiv_pasco2_set_reg(dev, (uint8_t)XENSIV_PASCO2_REG_MEAS_RATE_H, (uint8_t*)&val, 2U);
     }
 
     if (XENSIV_PASCO2_OK == res)
@@ -502,7 +561,8 @@ int32_t xensiv_pasco2_start_continuous_mode(const xensiv_pasco2_t * dev, uint16_
     return res;
 }
 
-int32_t xensiv_pasco2_perform_forced_compensation(const xensiv_pasco2_t * dev, uint16_t co2_ref)
+
+int32_t xensiv_pasco2_perform_forced_compensation(const xensiv_pasco2_t* dev, uint16_t co2_ref)
 {
     xensiv_pasco2_plat_assert(dev != NULL);
 
@@ -538,7 +598,8 @@ int32_t xensiv_pasco2_perform_forced_compensation(const xensiv_pasco2_t * dev, u
         do
         {
             res = xensiv_pasco2_get_measurement_config(dev, &meas_config);
-        } while ((XENSIV_PASCO2_OK != res) || (XENSIV_PASCO2_BOC_CFG_FORCED == meas_config.b.boc_cfg));
+        } while ((XENSIV_PASCO2_OK != res) ||
+                 (XENSIV_PASCO2_BOC_CFG_FORCED == meas_config.b.boc_cfg));
     }
 
     if (XENSIV_PASCO2_OK == res)

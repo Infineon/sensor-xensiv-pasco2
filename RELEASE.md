@@ -6,6 +6,9 @@ This library provides functions for interfacing with the XENSIV™ PAS CO2 senso
 * APIs for reading CO2 PPM value out of the XENSIV™ PAS CO2 sensor
 
 ### What Changed?
+#### v1.2.0
+* Added the support for the psoc edge 
+
 #### v1.1.0
 * Added new xensiv_pasco2_mtb_interrupt_init_ex() to fix compatibility with HAL v2. 
   It deprecates usage of xensiv_pasco2_mtb_interrupt_init().
@@ -24,10 +27,10 @@ This version of the XENSIV™ PAS CO2 library was validated for compatibility wi
 
 | Software and tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox™ Software Environment        | 2.4.0   |
-| GCC Compiler                              | 10.3.1  |
-| IAR Compiler                              | 8.4     |
-| ARM Compiler 6                            | 6.11    |
+| ModusToolbox™ Software Environment        | 3.5.0   |
+| GCC Compiler                              | 11.3.1  |
+| IAR Compiler                              | 9.50.2  |
+| ARM Compiler 6                            | 6.22    |
 
 Minimum required ModusToolbox&trade; software environment: v2.2
 

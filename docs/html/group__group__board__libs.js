@@ -1,5 +1,57 @@
 var group__group__board__libs =
 [
+    [ "xensiv_pasco2_id_t", "group__group__board__libs.html#unionxensiv__pasco2__id__t", [
+      [ "b", "group__group__board__libs.html#ae2348bae3a123d980720e3921fe3edd8", null ],
+      [ "u", "group__group__board__libs.html#a53d00ca6647524e0d65f4f269a258f16", null ]
+    ] ],
+    [ "xensiv_pasco2_status_t", "group__group__board__libs.html#unionxensiv__pasco2__status__t", [
+      [ "b", "group__group__board__libs.html#a6ee0dbf092bad795627c7bbdd41f92ea", null ],
+      [ "u", "group__group__board__libs.html#a711dbd919b300c6a72ae757c1b0bdec9", null ]
+    ] ],
+    [ "xensiv_pasco2_measurement_config_t", "group__group__board__libs.html#unionxensiv__pasco2__measurement__config__t", [
+      [ "b", "group__group__board__libs.html#ad0b804a93e8229b842cc05728899f047", null ],
+      [ "u", "group__group__board__libs.html#afadb3e7bbeb6e8aadd492bd5a1f68866", null ]
+    ] ],
+    [ "xensiv_pasco2_interrupt_config_t", "group__group__board__libs.html#unionxensiv__pasco2__interrupt__config__t", [
+      [ "b", "group__group__board__libs.html#ae7702c57345efab9b9843ef12d5d0cda", null ],
+      [ "u", "group__group__board__libs.html#ae0a2b17af8a10779a75cd65c0362053e", null ]
+    ] ],
+    [ "xensiv_pasco2_meas_status_t", "group__group__board__libs.html#unionxensiv__pasco2__meas__status__t", [
+      [ "b", "group__group__board__libs.html#ad031541c3b83386400c0effdb32adc70", null ],
+      [ "u", "group__group__board__libs.html#aa0d6d5c80b89467dab3481bc76a94fc2", null ]
+    ] ],
+    [ "xensiv_pasco2_t", "group__group__board__libs.html#structxensiv__pasco2__t", [
+      [ "ctx", "group__group__board__libs.html#a49defa45a6235feb8e7a372b9a2b80a1", null ],
+      [ "read", "group__group__board__libs.html#acbf034fc1a61906b08e3b808b0c0e164", null ],
+      [ "write", "group__group__board__libs.html#a5f2aabc6fc6357e32d228a51ad4b15cb", null ]
+    ] ],
+    [ "xensiv_pasco2_id_t.b", "group__group__board__libs.html#structxensiv__pasco2__id__t_8b", [
+      [ "rev", "group__group__board__libs.html#a48cd7517d21176f980daa5502d9efb31", null ],
+      [ "prod", "group__group__board__libs.html#ad6e4a9b6646c62fc48baa6dd6150d1f7", null ]
+    ] ],
+    [ "xensiv_pasco2_status_t.b", "group__group__board__libs.html#structxensiv__pasco2__status__t_8b", [
+      [ "iccerr", "group__group__board__libs.html#abbb868b473ee7b58544bb93a44e3f16d", null ],
+      [ "orvs", "group__group__board__libs.html#a2968af6e561826715f64986d1556264c", null ],
+      [ "ortmp", "group__group__board__libs.html#ac6fa0c9866aa1ddf69274377fcfe6c92", null ],
+      [ "pwm_dis_st", "group__group__board__libs.html#a77475c980a51c76b1e7a7bf9e6892f52", null ],
+      [ "sen_rdy", "group__group__board__libs.html#acdbb7baab9e2d804525dd167cf04f82f", null ]
+    ] ],
+    [ "xensiv_pasco2_measurement_config_t.b", "group__group__board__libs.html#structxensiv__pasco2__measurement__config__t_8b", [
+      [ "op_mode", "group__group__board__libs.html#a1c7cc88fe166d9847140ceab2d4811e7", null ],
+      [ "boc_cfg", "group__group__board__libs.html#a62c94d72c56c68704cab63877418b1ab", null ],
+      [ "pwm_mode", "group__group__board__libs.html#ad392ee49b0eb5ac50f17e8929ade175b", null ],
+      [ "pwm_outen", "group__group__board__libs.html#a33c72b967ccc59f6c56f0c2647664b71", null ]
+    ] ],
+    [ "xensiv_pasco2_interrupt_config_t.b", "group__group__board__libs.html#structxensiv__pasco2__interrupt__config__t_8b", [
+      [ "alarm_typ", "group__group__board__libs.html#a202fd8b774699e3676da938de7edbf62", null ],
+      [ "int_func", "group__group__board__libs.html#a10a30d9211a99e982ef86769ea117410", null ],
+      [ "int_typ", "group__group__board__libs.html#a785c4112c3bf2037fea44fba15a0b905", null ]
+    ] ],
+    [ "xensiv_pasco2_meas_status_t.b", "group__group__board__libs.html#structxensiv__pasco2__meas__status__t_8b", [
+      [ "alarm", "group__group__board__libs.html#a6486b4e98228b83d4b13d54febe5f170", null ],
+      [ "int_sts", "group__group__board__libs.html#a5f03e630fc9ed1490b5840d4e3d1c88a", null ],
+      [ "drdy", "group__group__board__libs.html#ac40652e1c787d0d1538d0aee89c4ef94", null ]
+    ] ],
     [ "XENSIV_PASCO2_OK", "group__group__board__libs.html#ga903d93f0ab6d683de4d4687c4ddd76b5", null ],
     [ "XENSIV_PASCO2_ERR_COMM", "group__group__board__libs.html#ga5e84f685d2d853703ecacb7e43292b79", null ],
     [ "XENSIV_PASCO2_ERR_WRITE_TOO_LARGE", "group__group__board__libs.html#gab9870212895620e8e0dfaaee561fcbb0", null ],
@@ -96,6 +148,8 @@ var group__group__board__libs =
     [ "XENSIV_PASCO2_REG_SCRATCH_PAD_VAL_MSK", "group__group__board__libs.html#gad9e2bdb6b325beeb1586513e89c6a370", null ],
     [ "XENSIV_PASCO2_REG_SENS_RST_SRTRG_POS", "group__group__board__libs.html#ga66bf5890bb8af135e0cb57198cbb51a6", null ],
     [ "XENSIV_PASCO2_REG_SENS_RST_SRTRG_MSK", "group__group__board__libs.html#ga8c144df6f2002704e8c4e527b14b42c2", null ],
+    [ "xensiv_pasco2_read_fptr_t", "group__group__board__libs.html#ga6d340129c6120703766df20bcdf3b9d8", null ],
+    [ "xensiv_pasco2_write_fptr_t", "group__group__board__libs.html#ga18e67a6769187bffd4ce556ac30ed450", null ],
     [ "xensiv_pasco2_cmd_t", "group__group__board__libs.html#ga0fb0b6cde2e7d1ce92e0e126791fe9ce", [
       [ "XENSIV_PASCO2_CMD_SOFT_RESET", "group__group__board__libs.html#gga0fb0b6cde2e7d1ce92e0e126791fe9cea4886ef1600c106f8d672ce61a3947c4e", null ],
       [ "XENSIV_PASCO2_CMD_RESET_ABOC", "group__group__board__libs.html#gga0fb0b6cde2e7d1ce92e0e126791fe9ceacb9d7a28e46ae054429a92414811c865", null ],

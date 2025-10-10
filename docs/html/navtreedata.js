@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "sensor-xensiv-pasco2", "index.html", [
+  [ "Driver library to interface with XENSIV™ PAS CO2 Carbon Dioxide sensor in ModusToolbox™", "index.html", [
     [ "XENSIV™ PAS CO2 sensor", "index.html", [
       [ "Overview", "index.html#autotoc_md1", [
         [ "Quick start", "index.html#autotoc_md2", null ],

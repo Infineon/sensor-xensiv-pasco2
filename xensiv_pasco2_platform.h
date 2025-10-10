@@ -28,7 +28,7 @@
  * \addtogroup group_board_libs_platform XENSIV PAS CO2 Sensor platform functions
  * \{
  * XENSIV PAS CO2 Sensor platform functions.
- * 
+ *
  * To adapt the driver to your platform you need to provide an implementation for the functions
  * declared in this file. See example implementation in xensiv_pasco2_mtb.c using the PSoC6 HAL.
  *
@@ -51,9 +51,11 @@ extern "C" {
  * @param[in] tx_len I2C send data size
  * @param[in] rx_buffer I2C receive data @note Can be NULL to indicate no read access.
  * @param[in] rx_len I2C receive data size
- * @return XENSIV_PASCO2_OK if the I2C transfer was successful; an error indicating what went wrong otherwise
+ * @return XENSIV_PASCO2_OK if the I2C transfer was successful; an error indicating what went wrong
+ * otherwise
  */
-int32_t xensiv_pasco2_plat_i2c_transfer(void * ctx, uint16_t dev_addr, const uint8_t * tx_buffer, size_t tx_len, uint8_t * rx_buffer, size_t rx_len);
+int32_t xensiv_pasco2_plat_i2c_transfer(void* ctx, uint16_t dev_addr, const uint8_t* tx_buffer,
+                                        size_t tx_len, uint8_t* rx_buffer, size_t rx_len);
 
 /**
  * @brief Target platform-specific function to read over UART
@@ -61,9 +63,10 @@ int32_t xensiv_pasco2_plat_i2c_transfer(void * ctx, uint16_t dev_addr, const uin
  * @param[in] ctx UART object
  * @param[out] data Receive buffer
  * @param[in] len Number of bytes to receive
- * @return XENSIV_PASCO2_OK if the UART read was successful; an error indicating what went wrong otherwise
+ * @return XENSIV_PASCO2_OK if the UART read was successful; an error indicating what went wrong
+ * otherwise
  */
-int32_t xensiv_pasco2_plat_uart_read(void *ctx, uint8_t * data, size_t len);
+int32_t xensiv_pasco2_plat_uart_read(void* ctx, uint8_t* data, size_t len);
 
 /**
  * @brief Target platform-specific function to write over UART
@@ -71,9 +74,10 @@ int32_t xensiv_pasco2_plat_uart_read(void *ctx, uint8_t * data, size_t len);
  * @param[in] ctx UART object
  * @param[in] data Transmit buffer
  * @param[in] len Number of bytes to transmit
- * @return XENSIV_PASCO2_OK if the UART write was successful; an error indicating what went wrong otherwise
+ * @return XENSIV_PASCO2_OK if the UART write was successful; an error indicating what went wrong
+ * otherwise
  */
-int32_t xensiv_pasco2_plat_uart_write(void *ctx, uint8_t * data, size_t len);
+int32_t xensiv_pasco2_plat_uart_write(void* ctx, uint8_t* data, size_t len);
 
 /**
  * @brief Target platform-specific function that waits for a specified time period in milliseconds
@@ -84,7 +88,7 @@ void xensiv_pasco2_plat_delay(uint32_t ms);
 
 /**
  * @brief Target platform-specific function to reverse the byte order (16-bit)
- * A sample implementation would look like 
+ * A sample implementation would look like
  * \code
  *  return ((uint16_t)(((x & 0x00ffU) << 8) |
  *                     ((x & 0xff00U) >> 8)));
@@ -95,7 +99,8 @@ void xensiv_pasco2_plat_delay(uint32_t ms);
 uint16_t xensiv_pasco2_plat_htons(uint16_t x);
 
 /**
- * @brief Target platform-specific function that implements a runtime assertion; used to verify the assumptions made by the program and take appropiate actions if assumption is false
+ * @brief Target platform-specific function that implements a runtime assertion; used to verify the
+ * assumptions made by the program and take appropiate actions if assumption is false
  *
  * @param[in] expr Expression to be verified
  */

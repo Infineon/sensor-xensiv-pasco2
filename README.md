@@ -36,6 +36,10 @@ Do the following to create a simple application which outputs the CO2 ppm data f
 
 5. Define I2C SDA and SCL as appropriate for your hardware configuration. 
    **Note** If using CYSBSYSDEV-DEV-01 kit and PAS CO2 wingboard, define macro USE_CYSBSYSDEV_KIT_01_WINGBOARD
+\cond
+<details>
+
+<summary>PSOC6</summary>
 
 ```cpp
 #include "cyhal.h"
@@ -147,6 +151,103 @@ int main(void)
     }
 }
 ```
+</details>
+
+<details>
+
+<summary>PSOC Edge</summary>
+
+
+```cpp
+/*******************************************************************************
+* Header Files
+*******************************************************************************/
+
+#include "cybsp.h"
+#include "retarget_io_init.h"
+#include "xensiv_pasco2_edge.h"
+
+/*******************************************************************************
+* Macros
+*******************************************************************************/
+
+#define DEFAULT_PRESSURE_REF_HPA        (0x3F7)     /* Default atmospheric pressure to compensate
+                                                       for (hPa) */
+
+
+static mtb_hal_i2c_t CYBSP_I2C_3V3_hal_obj;
+cy_stc_scb_i2c_context_t CYBSP_I2C_3V3_context;
+static xensiv_pasco2_t xensiv_pasco2;
+
+int main(void)
+{
+    cy_rslt_t result = CY_RSLT_SUCCESS;
+
+    /* Initialize the device and board peripherals */
+    result = cybsp_init();
+
+
+    /* Enable global interrupts */
+    __enable_irq();
+
+    /* Initialize retarget-io middleware */
+    init_retarget_io();
+
+
+    Cy_GPIO_Write(CYBSP_CO2_5V_EN_PORT, CYBSP_CO2_5V_EN_PIN, 1u);
+
+    result = Cy_SCB_I2C_Init(CYBSP_I2C_3V3_HW, &CYBSP_I2C_3V3_config, &CYBSP_I2C_3V3_context);
+
+    if (CY_RSLT_SUCCESS != result)
+    {
+        printf(" Error : I2C initialization failed !!\r\n");
+        handle_app_error();
+    }
+
+
+    Cy_SCB_I2C_Enable(CYBSP_I2C_3V3_HW);
+
+    result = mtb_hal_i2c_setup(&CYBSP_I2C_3V3_hal_obj, &CYBSP_I2C_3V3_hal_config,
+                               &CYBSP_I2C_3V3_context, NULL);
+
+    if (CY_RSLT_SUCCESS != result)
+    {
+        printf(" Error : I2C setup failed !!\r\n");
+        handle_app_error();
+    }
+
+
+
+    /* Initialize PAS CO2 sensor with default parameter values */
+    result = xensiv_pasco2_mtb_init_i2c(&xensiv_pasco2, &CYBSP_I2C_3V3_hal_obj);
+    if (result != CY_RSLT_SUCCESS)
+    {
+        printf("PAS CO2 device initialization error\r\n");
+        handle_app_error();
+    }
+
+
+    uint16_t ppm;
+
+
+    for (;;)
+    {
+        result = xensiv_pasco2_mtb_read(&xensiv_pasco2, DEFAULT_PRESSURE_REF_HPA, &ppm);
+        if (result == CY_RSLT_SUCCESS)
+        {
+            printf("CO2 %d ppm.\r\n", ppm);
+        }
+        Cy_SysLib_Delay(10);
+    }
+}
+
+/* [] END OF FILE */
+```
+
+</details>
+\endcond
+
+
 6. Connect the board to your PC using the provided USB cable through the KitProg3 USB connector.
 
 7. Open a terminal program and select the KitProg3 COM port. Set the serial port parameters to 8N1 and 115200 baud.
